@@ -1,5 +1,7 @@
 # FE-Internship-2021_Quang-Nguyen-H-D_FE-Exercise
 
-# Name: Nguyen Hoang Duy Quang
+## Name: Nguyen Hoang Duy Quang
 
-# Age: 25
+## Phone: 0834275980
+
+## Age: 25
