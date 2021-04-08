@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div>
+          <img src="./assets/images/logo.svg" alt="logo" class="header-logo" />
+        </div>
+        <div>
+          <div class="header-menu">
+            <span class="menu-row-center">menu-row-center</span>
+          </div>
+          <div>
+            <img src="./assets/images/search.svg" alt="search" />
+            <input type="text" placeholder="Search" />
+            <img src="./assets/images/clear.svg" alt="clear" />
+          </div>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <a href="#"
+                ><img src="./assets/images/cart.svg" alt="cart" /><span
+                  >1</span
+                ></a
+              >
+            </li>
+            <li><a href="#">Sign in</a></li>
+            <li><a href="#">Sign up</a></li>
+          </ul>
+        </div>
+        <div>
+          <nav>
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="#" class="nav-item__link"
+                  ><img
+                    src="./assets/images/clothes.svg"
+                    alt="clothes"
+                    class="nav-item_icon"
+                  /><span>Clothing & Shoes</span></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    src="./assets/images/entertainment.svg"
+                    alt="entertainment"
+                    class="nav-item_icon"
+                  /><span>Entertainment</span></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    src="./assets/images/music.svg"
+                    alt="music"
+                    class="nav-item_icon"
+                  /><span>Music</span></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    src="./assets/images/sport.svg"
+                    alt="sport-life"
+                    class="nav-item_icon"
+                  /><span>Sport & Lifestyle</span></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    src="./assets/images/pet.svg"
+                    alt="pet"
+                    class="nav-item_icon"
+                  /><span>Pets</span></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    src="./assets/images/sknife-folk.svg"
+                    alt="kitchen"
+                    class="nav-item_icon"
+                  /><span>Kitchen Accessories</span></a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="banner">
+        <img
+          src="./assets/images/banner.jpg"
+          alt="this is the banner"
+          class="banner-image"
+        />
+      </section>
+      <section class="product">
+        <section class="product-control space-between">
+          <div class="product-control-left">
+            <div>
+              <span>SORT BY</span
+              ><select name="sort-by" id="sort-by">
+                <option value="useless" selected>Useless</option>
+              </select>
+            </div>
+            <div>
+              <select name="condition" id="condition">
+                <option value="useless" selected>Condition</option>
+              </select>
+            </div>
+            <div>
+              <select name="delivery-option" id="delivery-option">
+                <option value="useless" selected>Delivery Option</option>
+              </select>
+            </div>
+          </div>
+          <div class="product-control-right">
+            <div>
+              <ul>
+                <li><button>Show all</button></li>
+                <li><button>Auction</button></li>
+                <li><button>Buy now</button></li>
+              </ul>
+            </div>
+            <div>
+              <ul class="product-view-option">
+                <li class="product-view-option__list">
+                  <span><img src="./assets/images/list.svg" alt="list" /></span>
+                </li>
+                <li class="product-view-option__grid">
+                  <span><img src="./assets/images/grid.svg" alt="grid" /></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="products-container">
+          <ul class="product-list">
+            <li class="product-item">
+              <a href="#"
+                ><figure>
+                  <img
+                    src="./assets/images/product-1.png"
+                    alt="this is the product image"
+                    class="product-item__image"
+                  />
+                  <figcapture class="product-item_image-description"
+                    >Vintage Typewriter to post awesome stories about UI design
+                    and webdev.</figcapture
+                  >
+                </figure></a
+              >
+
+              <h2 class="product-item__price">$49.50</h2>
+              <span class="product-item__status"></span>
+              <p class="product-item_description">
+                Eligible for Shipping To Mars or somewhere else
+              </p>
+              <button class="product-btn__add-to-cart">Add to cart</button>
+            </li>
+            <li class="product-item">
+              <a href="#"
+                ><figure>
+                  <img
+                    src="./assets/images/product-2.png"
+                    alt="this is the product image"
+                    class="product-item__image"
+                  />
+                  <figcapture class="product-item_image-description"
+                    >Lee Pucker design. Leather botinki for handsome designers.
+                    Free shipping.</figcapture
+                  >
+                </figure></a
+              >
+
+              <h2 class="product-item__price">$13.95</h2>
+              <span class="product-item__status"></span>
+              <p class="product-item_description">
+                1258 bids, 359 watchers $5.95 for shipping
+              </p>
+              <button class="product-btn__add-to-cart">Add to cart</button>
+            </li>
+            <li class="product-item">
+              <a href="#"
+                ><figure>
+                  <img
+                    src="./assets/images/product-3.png"
+                    alt="this is the product image"
+                    class="product-item__image"
+                  />
+                  <figcapture class="product-item_image-description"
+                    >Timesaving kitten to save months on development. Playful,
+                    cute, cheap!</figcapture
+                  >
+                </figure></a
+              >
+
+              <h2 class="product-item__price">$128.99</h2>
+              <span class="product-item__status"></span>
+              <p class="product-item_description">Eligible for nothing :(</p>
+              <button class="product-btn__add-to-cart">Add to cart</button>
+            </li>
+            <li class="product-item">
+              <a href="#"
+                ><figure>
+                  <img
+                    src="./assets/images/product-4.png"
+                    alt="this is the product image"
+                    class="product-item__image"
+                  />
+                  <figcapture class="product-item_image-description"
+                    >Plastic useless plugs and tubes for high-fidelity
+                    prototyping. Fit & Eat!</figcapture
+                  >
+                </figure></a
+              >
+
+              <h2 class="product-item__price">$12.48</h2>
+              <span class="product-item__status">50% OFF</span>
+              <p class="product-item_description">
+                Wordwide shitting available Buyers protection possible!
+              </p>
+              <button class="product-btn__add-to-cart">Add to cart</button>
+            </li>
+            <li class="product-item">
+              <a href="#"
+                ><figure>
+                  <img
+                    src="./assets/images/product-5.png"
+                    alt="this is the product image"
+                    class="product-item__image"
+                  />
+                  <figcapture class="product-item_image-description"
+                    >TCreativity stimulating lotion. Drink every morning to
+                    generate better ideas!</figcapture
+                  >
+                </figure></a
+              >
+
+              <h2 class="product-item__price">$12.48</h2>
+              <span class="product-item__status"></span>
+              <p class="product-item_description">
+                Wordwide shifting available Buyers protection possible!
+              </p>
+              <button class="product-btn__add-to-cart">Add to cart</button>
+            </li>
+            <li class="product-item">
+              <a href="#"
+                ><figure>
+                  <img
+                    src="./assets/images/product-6.png"
+                    alt="this is the product image"
+                    class="product-item__image"
+                  />
+                  <figcapture class="product-item_image-description"
+                    >Prototyping items to create a lot if useless
+                    things...</figcapture
+                  >
+                </figure></a
+              >
+
+              <h2 class="product-item__price">$128.99</h2>
+              <span class="product-item__status"></span>
+              <p class="product-item_description">Showcasing onHovered state</p>
+              <button class="product-btn__add-to-cart">Add to cart</button>
+            </li>
+            <li class="product-item">
+              <a href="#"
+                ><figure>
+                  <img
+                    src="./assets/images/product-7.png"
+                    alt="this is the product image"
+                    class="product-item__image"
+                  />
+                  <figcapture class="product-item_image-description"
+                    >John Von Ebalkin SPRING
+                  </figcapture>
+                </figure></a
+              >
+
+              <h2 class="product-item__price">$13.95</h2>
+              <span class="product-item__status"></span>
+              <p class="product-item_description">
+                1258 bids, 359 watchers $5.95 for shipping
+              </p>
+              <button class="product-btn__add-to-cart">Add to cart</button>
+            </li>
+            <li class="product-item">
+              <a href="#"
+                ><figure>
+                  <img
+                    src="./assets/images/product-8.png"
+                    alt="this is the product image"
+                    class="product-item__image"
+                  />
+                  <figcapture class="product-item_image-description"
+                    >Envelope, Stripes, Pencil and etc. Purchase this kit today
+                    and feel OKAY</figcapture
+                  >
+                </figure></a
+              >
+
+              <h2 class="product-item__price">$9.50</h2>
+              <span class="product-item__status"></span>
+              <p class="product-item_description">
+                Eligible for Shipping To Mars or somewhere else
+              </p>
+              <button class="product-btn__add-to-cart">Add to cart</button>
+            </li>
+            <li class="product-item">
+              <a href="#"
+                ><figure>
+                  <img
+                    src="./assets/images/product-9.png"
+                    alt="this is the product image"
+                    class="product-item__image"
+                  />
+                  <figcapture class="product-item_image-description"
+                    >Professional teadrinking set for every designer and
+                    developer</figcapture
+                  >
+                </figure></a
+              >
+
+              <h2 class="product-item__price">$128.99</h2>
+              <span class="product-item__status"></span>
+              <p class="product-item_description">Eligible for nothing :(</p>
+              <button class="product-btn__add-to-cart">Add to cart</button>
+            </li>
+            <li class="product-item">
+              <a href="#"
+                ><figure>
+                  <img
+                    src="./assets/images/product-10.png"
+                    alt="this is the product image"
+                    class="product-item__image"
+                  />
+                  <figcapture class="product-item_image-description"
+                    >One string Bonsai description</figcapture
+                  >
+                </figure></a
+              >
+
+              <h2 class="product-item__price">$11.68</h2>
+              <span class="product-item__status"></span>
+              <p class="product-item_description">
+                Wordwide shifting available Buyers protection possible!
+              </p>
+              <button class="product-btn__add-to-cart">Add to cart</button>
+            </li>
+            <li class="product-item">
+              <a href="#"
+                ><figure>
+                  <img
+                    src="./assets/images/product-11.png"
+                    alt="this is the product image"
+                    class="product-item__image"
+                  />
+                  <figcapture class="product-item_image-description"
+                    >Simply best item in town to shine bright with your Nine
+                    Inch Nails</figcapture
+                  >
+                </figure></a
+              >
+
+              <h2 class="product-item__price">$1.25</h2>
+              <span class="product-item__status">Cool deal!</span>
+              <p class="product-item_description">
+                Eligible for Shipping To Mars or somewhere else
+              </p>
+              <button class="product-btn__add-to-cart">Add to cart</button>
+            </li>
+            <li class="product-item">
+              <a href="#"
+                ><figure>
+                  <img
+                    src="./assets/images/product-12.png"
+                    alt="this is the product image"
+                    class="product-item__image"
+                  />
+                  <figcapture class="product-item_image-description"
+                    >KISTOCHKI & KRASIBO. Top cosmetics brand from Chelyabinsk
+                    is here!</figcapture
+                  >
+                </figure></a
+              >
+
+              <h2 class="product-item__price">$23.25</h2>
+              <span class="product-item__status"></span>
+              <p class="product-item_description">
+                1258 bids, 359 watchers $5.95 for shipping
+              </p>
+              <button class="product-btn__add-to-cart">Add to cart</button>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-question">Are you ready?</div>
+      <h1 class="footer-slogan">Let's get started!</h1>
+      <div class="footer-copyright">
+        Copyright © 2020. LogoIpsum. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>
