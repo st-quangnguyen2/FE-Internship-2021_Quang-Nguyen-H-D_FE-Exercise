@@ -179,15 +179,15 @@ input.toggle-menu {
   opacity: 0;
   display: block;
   position: absolute;
-  width: 300px;
+  width: 355px;
   top: 89px;
-  right: 0;
+  right: 20px;
   background: #ffffff;
   box-shadow: 0px 4px 8px rgba(90, 91, 106, 0.2);
 }
 
 .nav-item {
-  padding: 8px 12px;
+  padding: 8px 16px;
   align-items: center;
 }
 
@@ -201,7 +201,8 @@ input.toggle-menu {
 }
 
 .nav-item > a > div > img {
-  margin-right: 20px;
+  width: 20px;
+  margin-right: 24px;
 }
 
 .nav-item > a > div > span {
