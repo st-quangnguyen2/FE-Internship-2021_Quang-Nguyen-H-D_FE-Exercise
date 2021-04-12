@@ -4,9 +4,6 @@
   box-sizing: border-box;
   outline: none;
   transition: all 0.4s;
-}
-
-button {
   border: none;
 }
 
@@ -149,18 +146,18 @@ header {
   margin-bottom: 24px;
   background: #ffffff;
 }
-.header-content {
+
+h1 {
+  align-items: center;
+}
+
+.container {
   max-width: 1120px;
+  width: 100%;
   margin: 0 auto;
 }
 
-.banner,
-.product {
-  max-width: 1120px;
-  margin: 0 auto;
-}
-
-.banner > img {
+.banner img {
   width: 100%;
 }
 
@@ -179,11 +176,12 @@ input.toggle-menu {
   opacity: 0;
   display: block;
   position: absolute;
-  width: 355px;
+  width: 353px;
   top: 89px;
   right: 20px;
   background: #ffffff;
   box-shadow: 0px 4px 8px rgba(90, 91, 106, 0.2);
+  z-index: 3;
 }
 
 .nav-item {
@@ -195,17 +193,17 @@ input.toggle-menu {
   box-shadow: inset 0px 4px 8px rgba(90, 91, 106, 0.2);
 }
 
-.nav-item > a > div {
+.nav-item div {
   align-items: center;
   padding: 12px 10px;
 }
 
-.nav-item > a > div > img {
+.nav-item img {
   width: 20px;
   margin-right: 24px;
 }
 
-.nav-item > a > div > span {
+.nav-item span {
   font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -213,7 +211,7 @@ input.toggle-menu {
   color: #787885;
 }
 
-.nav-item:hover > a > div > span {
+.nav-item:hover span {
   color: #2264d1;
   font-size: 14px;
 }
@@ -285,7 +283,8 @@ input.toggle-menu:checked ~ .hamburger > .hamburger-line::after {
 }
 
 .search-input {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: 48px;
   border-radius: 100px;
   border: 1px solid #ededf0;
@@ -325,8 +324,9 @@ input.toggle-menu:checked ~ .hamburger > .hamburger-line::after {
   background-color: #ef0909;
   border-radius: 50%;
   color: #ffffff;
-  font-family: inter sans-serif;
-  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
   display: inline-block;
   text-align: center;
 }
@@ -362,7 +362,7 @@ select:hover {
   position: relative;
 }
 
-.select-sortby > span {
+.select-sortby span {
   position: absolute;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
@@ -375,20 +375,26 @@ select:hover {
   color: #787885;
 }
 
-.product-control-right > div > ul > li {
+.product-control-right {
+  justify-content: center;
+  align-items: center;
+}
+
+.product-control-right li {
   background: #ebf2ff;
   border-radius: 4px;
   padding: 12px 16px;
   color: #5a5b6a;
   font-family: "Inter", sans-serif;
   font-size: 14px;
+  text-align: center;
 }
 
-.product-control-right > div > ul > li:hover {
+.product-control-right li:hover {
   box-shadow: 0px 4px 8px rgba(90, 91, 106, 0.2);
 }
 
-.product-control-right > div > ul > li.active {
+.product-control-right li.active {
   background: #ffffff;
   color: #2264d1;
   box-shadow: 0px 4px 8px rgba(90, 91, 106, 0.2);
@@ -400,8 +406,9 @@ select:hover {
 }
 
 .products-container {
+  width: 100%;
   max-width: 1160px;
-  margin: 0 auto;
+  margin: 0 auto 120px;
   padding: 10px;
 }
 
@@ -409,11 +416,13 @@ select:hover {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, auto);
-  grid-template-rows: repeat(3, auto);
+  /* grid-template-rows: repeat(3, auto); */
   gap: 10px;
+  justify-items: center;
 }
 
 .product-item {
+  width: 267px;
   padding: 16px 16px 12px 16px;
   font-family: "Inter", sans-serif;
 }
@@ -469,8 +478,79 @@ footer {
   margin: 16px;
   font-size: 3rem;
   line-height: 1.5;
+  text-align: center;
 }
 
 .footer-copyright {
   font-size: 0.85rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1160px) and (min-width: 901px) {
+  header > div {
+    height: 80px;
+  }
+
+  .menu {
+    top: 71px;
+    left: -10px;
+  }
+
+  .product-list {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .wrap-menu {
+    order: 1;
+    margin-left: 30px;
+  }
+
+  .menu {
+    top: 71px !important;
+    right: 20px !important;
+  }
+
+  .nav-sub-container {
+    display: none !important;
+  }
+
+  .product-action {
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .product-list {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  header {
+    padding: 20px 10px 20px 20px;
+  }
+
+  header h1 {
+    display: none;
+  }
+
+  header > div > div {
+    width: 100%;
+  }
+  .menu {
+    right: 0 !important;
+    width: 300px;
+  }
+
+  .product-list {
+    grid-template-columns: repeat(1, auto);
+  }
+
+  .product-control-left {
+    flex-wrap: wrap;
+    gap: 20px 0;
+  }
 }
