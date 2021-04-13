@@ -1,427 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home Page</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/styles/home.css" />
-</head>
-<body>
-  <header>
-    <div class="container fl-space-between">
-      <h1>
-        <img src="./assets/images/main/logo.svg" alt="logo" class="header-logo" />
-      </h1>
-      <div class="fl-space-between">
-        <div class="wrap-menu fl-center">
-          <input type="checkbox" class="toggle-menu">
-          <div class="hamburger fl-center">
-            <div class="hamburger-line"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles/home.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container fl-space-between">
+        <h1>
+          <img
+            src="./assets/images/main/logo.svg"
+            alt="logo"
+            class="header-logo"
+          />
+        </h1>
+        <div class="fl-space-between">
+          <div class="wrap-menu fl-center">
+            <input type="checkbox" class="toggle-menu" />
+            <div class="hamburger fl-center">
+              <div class="hamburger-line"></div>
+            </div>
+            <div class="menu">
+              <nav>
+                <ul class="nav-list fl-col">
+                  <li class="nav-item">
+                    <a href="#" class="link">
+                      <div class="flex">
+                        <img
+                          src="./assets/images/icon/clothes.svg"
+                          alt="clothes"
+                          class="icon"
+                        />
+                        <span>Clothing & Shoes</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="link">
+                      <div class="flex">
+                        <img
+                          src="./assets/images/icon/entertainment.svg"
+                          alt="entertainment"
+                          class="icon"
+                        />
+                        <span>Entertainment</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="link">
+                      <div class="flex">
+                        <img
+                          src="./assets/images/icon/music.svg"
+                          alt="music"
+                          class="icon"
+                        />
+                        <span>Music</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="link">
+                      <div class="flex">
+                        <img
+                          src="./assets/images/icon/sport.svg"
+                          alt="sport-life"
+                          class="icon"
+                        />
+                        <span>Sport & Lifestyle</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="link">
+                      <div class="flex">
+                        <img
+                          src="./assets/images/icon/pet.svg"
+                          alt="pet"
+                          class="icon"
+                        />
+                        <span>Pets</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="link">
+                      <div class="flex">
+                        <img
+                          src="./assets/images/icon/sknife-folk.svg"
+                          alt="kitchen"
+                          class="icon"
+                        />
+                        <span>Kitchen Accessories</span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
-          <div class="menu">
-            <nav>
-              <ul class="nav-list fl-col">
-                <li class="nav-item">
-                  <a href="#" class="link">
-                    <div class="flex">
-                      <img src="./assets/images/icon/clothes.svg" alt="clothes" class="icon" />
-                      <span>Clothing & Shoes</span>
-                    </div>
-                  </a>
+          <div class="search-group flex">
+            <img
+              src="./assets/images/icon/search.svg"
+              alt="search"
+              class="search-icon left"
+            />
+            <input
+              class="search-input"
+              type="text"
+              placeholder="Search"
+              required
+            />
+            <img
+              src="./assets/images/icon/clear.svg"
+              alt="clear"
+              class="search-icon search-icon-clear right"
+            />
+          </div>
+        </div>
+        <div class="fl-center nav-sub-container">
+          <ul class="nav-sub flex">
+            <li class="cart-group">
+              <a href="#">
+                <img
+                  src="./assets/images/icon/cart.svg"
+                  alt="cart"
+                  class="cart-icon"
+                />
+                <span>1</span>
+              </a>
+            </li>
+            <li class="fl-center">
+              <a href="#" class="btn btn-flat-primary">Sign in</a>
+            </li>
+            <li class="fl-center mr-0">
+              <a href="#" class="btn btn-primary">Sign up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="container banner-section">
+        <img
+          src="./assets/images/main/banner.jpg"
+          alt="this is the banner"
+          class="banner-image"
+        />
+      </section>
+      <section class="container prd-section">
+        <div class="fl-space-between section-header">
+          <div class="control-left flex">
+            <div class="select-cus" data-select-legend="SORT BY">
+              <select name="sort-by" id="sort-by" class="select-cus">
+                <option value="useless" selected>Useless first</option>
+              </select>
+            </div>
+            <div>
+              <select name="condition" id="condition">
+                <option value="useless" selected>Condition</option>
+              </select>
+            </div>
+            <div>
+              <select name="delivery-option" id="delivery-option">
+                <option value="useless" selected>Delivery Option</option>
+              </select>
+            </div>
+          </div>
+          <div class="control-right flex">
+            <div class="mr-20">
+              <ul class="payment-radio-list radio-group flex">
+                <li class="payment-radio radio-item">
+                  <input
+                    type="radio"
+                    name="payment-radio"
+                    id="show-all"
+                    value="show-all"
+                    checked
+                  />
+                  <label for="show-all">Show All</label>
                 </li>
-                <li class="nav-item">
-                  <a href="#" class="link">
-                    <div class="flex">
-                      <img src="./assets/images/icon/entertainment.svg" alt="entertainment" class="icon" />
-                      <span>Entertainment</span>
-                    </div>
-                  </a>
+                <li class="payment-radio radio-item">
+                  <input
+                    type="radio"
+                    name="payment-radio"
+                    id="auction"
+                    value="auction"
+                  />
+                  <label for="auction">Auction</label>
                 </li>
-                <li class="nav-item">
-                  <a href="#" class="link">
-                    <div class="flex">
-                      <img src="./assets/images/icon/music.svg" alt="music" class="icon" />
-                      <span>Music</span>
-                    </div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="link">
-                    <div class="flex">
-                      <img src="./assets/images/icon/sport.svg" alt="sport-life" class="icon" />
-                      <span>Sport & Lifestyle</span>
-                    </div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="link">
-                    <div class="flex">
-                      <img src="./assets/images/icon/pet.svg" alt="pet" class="icon" />
-                      <span>Pets</span>
-                    </div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="link">
-                    <div class="flex">
-                      <img src="./assets/images/icon/sknife-folk.svg" alt="kitchen" class="icon" />
-                      <span>Kitchen Accessories</span>
-                    </div>
-                  </a>
+                <li class="payment-radio radio-item">
+                  <input
+                    type="radio"
+                    name="payment-radio"
+                    id="buy-now"
+                    value="buy-now"
+                  />
+                  <label for="buy-now">Buy Now</label>
                 </li>
               </ul>
-            </nav>
+            </div>
+            <div>
+              <ul class="view-radio-list radio-group flex">
+                <li class="view-radio radio-item">
+                  <input
+                    type="radio"
+                    name="view-radio"
+                    id="list-view"
+                    value="list-view"
+                    checked
+                  />
+                  <label for="list-view">
+                    <img src="./assets/images/icon/list.svg" alt="list-view" />
+                  </label>
+                </li>
+                <li class="view-radio radio-item">
+                  <input
+                    type="radio"
+                    name="view-radio"
+                    id="grid-view"
+                    value="grid-view"
+                  />
+                  <label for="grid-view">
+                    <img src="./assets/images/icon/grid.svg" alt="grid-view" />
+                  </label>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="search-container flex">
-          <img src="./assets/images/icon/search.svg" alt="search" class="search-icon  left" />
-          <input class="search-input" type="text" placeholder="Search" required/>
-          <img src="./assets/images/icon/clear.svg" alt="clear" class="search-icon  search-icon-clear right" />
-        </div>
-      </div>
-      <div class="fl-center nav-sub-container">
-        <ul class="nav-sub flex ">
-          <li class="cart-icon-container">
-            <a href="#">
-              <img src="./assets/images/icon/cart.svg" alt="cart" class="cart-icon" />
-              <span>1</span>
-            </a>
-          </li>
-          <li class="fl-center">
-            <a href="#" class="btn btn-flat-primary">Sign in</a>
-          </li>
-          <li class="fl-center mr-0">
-            <a href="#" class="btn btn-primary">Sign up</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </header>
-  <main>
-    <section class="container banner-section">
-      <img src="./assets/images/main/banner.jpg" alt="this is the banner" class="banner-image" />
-    </section>
-    <section class="container prd-section">
-      <div class="fl-space-between prd-section-header">
-        <div class="product-control-left flex">
-          <div class="select-sortby">
-            <span>SORT BY</span>
-            <select name="sort-by" id="sort-by">
-              <option value="useless" selected>Useless first</option>
-            </select>
-          </div>
-          <div>
-            <select name="condition" id="condition">
-              <option value="useless" selected>Condition</option>
-            </select>
-          </div>
-          <div>
-            <select name="delivery-option" id="delivery-option">
-              <option value="useless" selected>Delivery Option</option>
-            </select>
-          </div>
-        </div>
-        <div class="product-control-right flex">
-          <div class="mr-20">
-            <ul class="filter-payment-list flex">
-              <li class="filter-payment">Show all</li>
-              <li class="filter-payment active">Auction</li>
-              <li class="filter-payment">Buy now</li>
-            </ul>
-          </div>
-          <div>
-            <ul class="view-option-list flex">
-              <li class="view-option fl-center">
-                <img src="./assets/images/icon/list.svg" alt="list" />
-              </li>
-              <li class="view-option fl-center active">
-                <img src="./assets/images/icon/grid.svg" alt="grid" />
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="products-container section-body">
-        <ul class="list-group">
-          <li class="list-item">
-            <div class="prd">
-              <a href="">
-                <img src="./assets/images/sample/product-1.png" alt="this is the product image" class="prd-image"/>
-              </a>
-              <div class="prd-body">
+        <div class="products-container section-body">
+          <ul class="list-group">
+            <li class="list-item">
+              <div class="prd">
+                <a href="">
+                  <img
+                    src="./assets/images/sample/product-1.png"
+                    alt="this is the product image"
+                    class="prd-image"
+                  />
+                </a>
+                <div class="prd-body">
+                  <a href="#">
+                    <p class="prd-name">
+                      Vintage Typewriter to post awesome stories about UI design
+                      and webdev.
+                    </p>
+                  </a>
+                  <p class="prd-price">$49.50</p>
+                  <p class="prd-description">
+                    Eligible for Shipping To Mars or somewhere else
+                  </p>
+                </div>
+                <div class="prd-action">
+                  <button class="btn btn-outline-primary">Add to cart</button>
+                </div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="prd">
                 <a href="#">
-                  <p class="prd-name">Vintage Typewriter to post awesome stories about UI design
-                    and webdev.
-                  </p>
+                  <img
+                    src="./assets/images/sample/product-2.png"
+                    alt="this is the product image"
+                    class="prd-image"
+                  />
                 </a>
-                <div><span class="prd-price">$49.50</span></div>
-                <p class="prd-description">
-                  Eligible for Shipping To Mars or somewhere else
-                </p>
-              </div>
-              <div class="prd-action">
-                <button class="btn btn-outline-primary">Add to cart</button>
-              </div>
-            </div>
-          </li>
-          <li class="list-item">
-            <div class="prd">
-              <a href="#">
-                <img src="./assets/images/sample/product-2.png" alt="this is the product image" class="prd-image" />
-              </a>
-              <div class="prd-body">
-                <a href="">
-                  <p class="prd-name">Lee Pucker design. Leather botinki for handsome designers.
-                    Free shipping.
+                <div class="prd-body">
+                  <a href="">
+                    <p class="prd-name">
+                      Lee Pucker design. Leather botinki for handsome designers.
+                      Free shipping.
+                    </p>
+                  </a>
+                  <p class="prd-price">$13.95</p>
+                  <p class="prd-description">
+                    1258 bids, 359 watchers $5.95 for shipping
                   </p>
-                </a>
-                <div><span class="prd-price">$13.95</span></div>
-                <p class="prd-description">
-                  1258 bids, 359 watchers $5.95 for shipping
-                </p>
-              </div>
-              <div class="prd-action">
-                <button class="btn btn-outline-primary">Add to cart</button>
-              </div>
-            </div>  
-          </li>
-          <li class="list-item">
-            <div class="prd">
-              <a href="">
-                <img src="./assets/images/sample/product-3.png" alt="this is the product image" class="prd-image" />
-              </a>
-              <div class="prd-body">
-                <a href="">
-                  <p class="prd-name">Timesaving kitten to save months on development. Playful,
-                    cute, cheap!
-                  </p>
-                </a>
-                <div><span class="prd-price">$128.99</span></div>
-                <p class="prd-description">Eligible for nothing :(</p>
-              </div>
-            </div>
-            <button class="btn btn-outline-primary">Add to cart</button>
-          </li>
-          <li class="list-item">
-            <div class="prd">
-              <a href="">
-                <img src="./assets/images/sample/product-4.png" alt="this is the product image" class="prd-image" />
-              </a>
-              <div class="prd-body">
-                <a href="">
-                  <p class="prd-name">
-                    Plastic useless plugs and tubes for high-fidelity
-                    prototyping. Fit & Eat!
-                  </p>
-                </a>
-                <div class="fl-space-between">
-                  <span class="prd-price">$12.48</span>
-                  <div class="fl-center"><span class="tag tag-success">50% OFF</span></div>
                 </div>
-                <p class="prd-description">
-                  Wordwide shitting available Buyers protection possible!
-                </p>
-              </div>
-              <div class="prd-action">
-                <button class="btn btn-outline-primary">Add to cart</button>
-              </div>
-            </div>
-          </li>
-          <li class="list-item">
-            <div class="prd">
-              <a href="">
-                <img src="./assets/images/sample/product-5.png" alt="this is the product image" class="prd-image" />
-              </a>
-              <div class="prd-body">
-                <a href="">
-                  <p class="prd-name">
-                    TCreativity stimulating lotion. Drink every morning to
-                    generate better ideas!
-                  </p>
-                </a>
-                <div><span class="prd-price">$12.48</span></div>
-                <p class="prd-description">
-                  Wordwide shifting available Buyers protection possible!
-                </p>
-              </div>
-              <div class="prd-action">
-                <button class="btn btn-outline-primary">Add to cart</button>
-              </div>
-            </div>
-          </li>
-          <li class="list-item">
-            <div class="prd">
-              <a href="">
-                <img src="./assets/images/sample/product-6.png" alt="this is the product image" class="prd-image" />
-              </a>
-              <div class="prd-body">
-                <a href="">
-                  <p class="prd-name">
-                    Prototyping items to create a lot if useless things...
-                  </p>
-                </a>
-                <div>
-                  <span class="prd-price">$128.99</span>
+                <div class="prd-action">
+                  <button class="btn btn-outline-primary">Add to cart</button>
                 </div>
-                <p class="prd-description">Showcasing onHovered state</p>
               </div>
-              <div class="prd-action">
-                <button class="btn btn-outline-primary">Add to cart</button>
-              </div>
-            </div>
-          </li>
-          <li class="list-item">
-            <div class="prd">
-              <a href="">
-                <img src="./assets/images/sample/product-7.png" alt="this is the product image" class="prd-image" />
-              </a>
-              <div class="prd-body">
+            </li>
+            <li class="list-item">
+              <div class="prd">
                 <a href="">
-                  <p class="prd-name">
-                    John Von Ebalkin SPRING
-                  </p>
+                  <img
+                    src="./assets/images/sample/product-3.png"
+                    alt="this is the product image"
+                    class="prd-image"
+                  />
                 </a>
-                <div><span class="prd-price">$13.95</span></div>
-                <p class="prd-description">
-                  1258 bids, 359 watchers $5.95 for shipping
-                </p>
-              </div>
-              <div class="prd-action">
-                <button class="btn btn-outline-primary">Add to cart</button>
-              </div>
-            </div>
-          </li>
-          <li class="list-item">
-            <div class="prd">
-              <a href="">
-                <img src="./assets/images/sample/product-8.png" alt="this is the product image" class="prd-image" />
-              </a>
-              <div class="prd-body">
-                <a href="">
-                  <p class="prd-name">
-                    Envelope, Stripes, Pencil and etc. Purchase this kit today
-                    and feel OKAY
-                  </p>
-                </a>
-                <div>
-                  <span class="prd-price">$9.50</span>
+                <div class="prd-body">
+                  <a href="">
+                    <p class="prd-name">
+                      Timesaving kitten to save months on development. Playful,
+                      cute, cheap!
+                    </p>
+                  </a>
+                  <p class="prd-price">$128.99</p>
+                  <p class="prd-description">Eligible for nothing :(</p>
                 </div>
-                <p class="prd-description">
-                  Eligible for Shipping To Mars or somewhere else
-                </p>
               </div>
-              <div class="prd-action">
-                <button class="btn btn-outline-primary">Add to cart</button>
-              </div>
-            </div>
-          </li>
-          <li class="list-item">
-            <div class="prd">
-              <a href="">
-                <img src="./assets/images/sample/product-9.png" alt="this is the product image" class="prd-image" />
-              </a>
-              <div class="prd-body">
+              <button class="btn btn-outline-primary">Add to cart</button>
+            </li>
+            <li class="list-item">
+              <div class="prd">
                 <a href="">
-                  <p class="prd-name">
-                    Professional teadrinking set for every designer and
-                    developer
-                  </p>
+                  <img
+                    src="./assets/images/sample/product-4.png"
+                    alt="this is the product image"
+                    class="prd-image"
+                  />
                 </a>
-                <div>
-                  <span class="prd-price">$128.99</span>
+                <div class="prd-body">
+                  <a href="">
+                    <p class="prd-name">
+                      Plastic useless plugs and tubes for high-fidelity
+                      prototyping. Fit & Eat!
+                    </p>
+                  </a>
+                  <p class="prd-price tag tag-success" data-tag="50% OFF">
+                    $12.48
+                  </p>
+                  <p class="prd-description">
+                    Wordwide shitting available Buyers protection possible!
+                  </p>
                 </div>
-                <p class="prd-description">Eligible for nothing :(</p>
-              </div>
-              <div class="prd-action">
-                <button class="btn btn-outline-primary">Add to cart</button>
-              </div>
-            </div>
-          </li>
-          <li class="list-item">
-            <div class="prd">
-              <a href="">
-                <img src="./assets/images/sample/product-10.png" alt="this is the product image" class="prd-image" />
-              </a>
-              <div class="prd-body">
-                <a href="">
-                  <p class="prd-name">
-                    One string Bonsai description
-                  </p>
-                </a>
-                <div><span class="prd-price">$11.68</span></div>
-                <p class="prd-description">
-                  Wordwide shifting available Buyers protection possible!
-                </p>
-              </div>
-              <div class="prd-action">
-                <button class="btn btn-outline-primary">Add to cart</button>
-              </div>
-            </div>
-          </li>
-          <li class="list-item">
-            <div class="prd">
-              <a href="">
-                <img src="./assets/images/sample/product-11.png" alt="this is the product image" class="prd-image" />
-              </a>
-              <div class="prd-body">
-                <a href="">
-                  <p class="prd-name">
-                    Simply best item in town to shine bright with your Nine Inch
-                    Nails
-                  </p>
-                </a>
-                <div class="fl-space-between">
-                  <span class="prd-price">$1.25</span>
-                  <div class="fl-center"><span class="tag tag-danger">Cool deal!</span></div>
+                <div class="prd-action">
+                  <button class="btn btn-outline-primary">Add to cart</button>
                 </div>
-                <p class="prd-description">
-                  Eligible for Shipping To Mars or somewhere else
-                </p>
               </div>
-              <prd class="action">
-                <button class="btn btn-outline-primary">Add to cart</button>
-              </prd>
-            </div>
-          </li>
-          <li class="list-item">
-            <div class="prd">
-              <a href="">
-                <img src="./assets/images/sample/product-12.png" alt="this is the product image" class="prd-image" />
-              </a>
-              <div class="prd-body">
+            </li>
+            <li class="list-item">
+              <div class="prd">
                 <a href="">
-                  <p class="prd-name">
-                    KISTOCHKI & KRASIBO. Top cosmetics brand from Chelyabinsk is
-                    here!
-                  </p>
+                  <img
+                    src="./assets/images/sample/product-5.png"
+                    alt="this is the product image"
+                    class="prd-image"
+                  />
                 </a>
-                <div ><span class="prd-price">$23.25</span></div>
-                <p class="prd-description">
-                  1258 bids, 359 watchers $5.95 for shipping
-                </p>
+                <div class="prd-body">
+                  <a href="">
+                    <p class="prd-name">
+                      TCreativity stimulating lotion. Drink every morning to
+                      generate better ideas!
+                    </p>
+                  </a>
+                  <p class="prd-price">$12.48</p>
+                  <p class="prd-description">
+                    Wordwide shifting available Buyers protection possible!
+                  </p>
+                </div>
+                <div class="prd-action">
+                  <button class="btn btn-outline-primary">Add to cart</button>
+                </div>
               </div>
-              <div class="prd-action">
-                <button class="btn btn-outline-primary">Add to cart</button>
+            </li>
+            <li class="list-item">
+              <div class="prd">
+                <a href="">
+                  <img
+                    src="./assets/images/sample/product-6.png"
+                    alt="this is the product image"
+                    class="prd-image"
+                  />
+                </a>
+                <div class="prd-body">
+                  <a href="">
+                    <p class="prd-name">
+                      Prototyping items to create a lot if useless things...
+                    </p>
+                  </a>
+                  <p class="prd-price">$128.99</p>
+                  <p class="prd-description">Showcasing onHovered state</p>
+                </div>
+                <div class="prd-action">
+                  <button class="btn btn-outline-primary">Add to cart</button>
+                </div>
               </div>
-            </div>
-          </li>
-        </ul>
-    </section>
-    </section>
-  </main>
-  <footer class="flex-col">
-    <p>Are you ready?</p>
-    <h3>Let's get started!</h3>
-    <p>
-      Copyright &copy; 2020. LogoIpsum. All rights reserved.
-    </p>
-  </footer>
-</body>
+            </li>
+            <li class="list-item">
+              <div class="prd">
+                <a href="">
+                  <img
+                    src="./assets/images/sample/product-7.png"
+                    alt="this is the product image"
+                    class="prd-image"
+                  />
+                </a>
+                <div class="prd-body">
+                  <a href="">
+                    <p class="prd-name">John Von Ebalkin SPRING</p>
+                  </a>
+                  <p class="prd-price">$13.95</p>
+                  <p class="prd-description">
+                    1258 bids, 359 watchers $5.95 for shipping
+                  </p>
+                </div>
+                <div class="prd-action">
+                  <button class="btn btn-outline-primary">Add to cart</button>
+                </div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="prd">
+                <a href="">
+                  <img
+                    src="./assets/images/sample/product-8.png"
+                    alt="this is the product image"
+                    class="prd-image"
+                  />
+                </a>
+                <div class="prd-body">
+                  <a href="">
+                    <p class="prd-name">
+                      Envelope, Stripes, Pencil and etc. Purchase this kit today
+                      and feel OKAY
+                    </p>
+                  </a>
+                  <p class="prd-price">$9.50</p>
+                  <p class="prd-description">
+                    Eligible for Shipping To Mars or somewhere else
+                  </p>
+                </div>
+                <div class="prd-action">
+                  <button class="btn btn-outline-primary">Add to cart</button>
+                </div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="prd">
+                <a href="">
+                  <img
+                    src="./assets/images/sample/product-9.png"
+                    alt="this is the product image"
+                    class="prd-image"
+                  />
+                </a>
+                <div class="prd-body">
+                  <a href="">
+                    <p class="prd-name">
+                      Professional teadrinking set for every designer and
+                      developer
+                    </p>
+                  </a>
+                  <p class="prd-price">$128.99</p>
+                  <p class="prd-description">Eligible for nothing :(</p>
+                </div>
+                <div class="prd-action">
+                  <button class="btn btn-outline-primary">Add to cart</button>
+                </div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="prd">
+                <a href="">
+                  <img
+                    src="./assets/images/sample/product-10.png"
+                    alt="this is the product image"
+                    class="prd-image"
+                  />
+                </a>
+                <div class="prd-body">
+                  <a href="">
+                    <p class="prd-name">One string Bonsai description</p>
+                  </a>
+                  <p class="prd-price">$11.68</p>
+                  <p class="prd-description">
+                    Wordwide shifting available Buyers protection possible!
+                  </p>
+                </div>
+                <div class="prd-action">
+                  <button class="btn btn-outline-primary">Add to cart</button>
+                </div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="prd">
+                <a href="">
+                  <img
+                    src="./assets/images/sample/product-11.png"
+                    alt="this is the product image"
+                    class="prd-image"
+                  />
+                </a>
+                <div class="prd-body">
+                  <a href="">
+                    <p class="prd-name">
+                      Simply best item in town to shine bright with your Nine
+                      Inch Nails
+                    </p>
+                  </a>
+                  <p class="prd-price tag tag-danger" data-tag="Cool deal!">
+                    $1.25
+                  </p>
+                  <p class="prd-description">
+                    Eligible for Shipping To Mars or somewhere else
+                  </p>
+                </div>
+                <prd class="action">
+                  <button class="btn btn-outline-primary">Add to cart</button>
+                </prd>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="prd">
+                <a href="">
+                  <img
+                    src="./assets/images/sample/product-12.png"
+                    alt="this is the product image"
+                    class="prd-image"
+                  />
+                </a>
+                <div class="prd-body">
+                  <a href="">
+                    <p class="prd-name">
+                      KISTOCHKI & KRASIBO. Top cosmetics brand from Chelyabinsk
+                      is here!
+                    </p>
+                  </a>
+                  <p class="prd-price">$23.25</p>
+                  <p class="prd-description">
+                    1258 bids, 359 watchers $5.95 for shipping
+                  </p>
+                </div>
+                <div class="prd-action">
+                  <button class="btn btn-outline-primary">Add to cart</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Are you ready?</p>
+      <h3>Let's get started!</h3>
+      <p>Copyright &copy; 2020. LogoIpsum. All rights reserved.</p>
+    </footer>
+  </body>
 </html>

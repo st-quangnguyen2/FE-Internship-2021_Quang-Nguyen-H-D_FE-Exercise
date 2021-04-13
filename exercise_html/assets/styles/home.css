@@ -29,6 +29,7 @@ a {
 
 html {
   font-size: 16px;
+  font-family: "Inter", sans-serif;
 }
 
 .flex {
@@ -78,29 +79,6 @@ html {
   justify-content: center;
 }
 
-.tag {
-  padding: 4px 6px;
-  border-radius: 4px;
-  font-family: "Roboto", sans-serif;
-  font-size: 12px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  line-height: 16px;
-  display: block;
-}
-
-.tag-success {
-  background: #ecf7ed;
-  color: #37833b;
-}
-
-.tag-danger {
-  background: #fdedf2;
-  color: #c23564;
-}
-
 .btn {
   padding: 8px 18px;
   border-radius: 4px;
@@ -130,9 +108,8 @@ html {
 }
 
 .btn-outline-primary {
-  font-family: "Inter", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   background: #ffffff;
   border: 1px solid #9dc2ff;
   border-radius: 4px;
@@ -265,7 +242,7 @@ input.toggle-menu:checked ~ .hamburger > .hamburger-line::after {
   top: 0;
 }
 
-.search-container {
+.search-group {
   position: relative;
   justify-content: center;
   align-items: center;
@@ -288,7 +265,6 @@ input.toggle-menu:checked ~ .hamburger > .hamburger-line::after {
   border-radius: 100px;
   border: 1px solid #ededf0;
   padding: 0 44px;
-  font-family: "Inter", sans-serif;
   font-size: 20px;
   color: #9696a0;
   background: #ededf0;
@@ -296,6 +272,7 @@ input.toggle-menu:checked ~ .hamburger > .hamburger-line::after {
 
 .search-input:focus {
   box-shadow: 0px 4px 8px rgba(90, 91, 106, 0.2);
+  background-color: #ffffff;
 }
 
 .search-input:valid ~ .search-icon-clear {
@@ -309,7 +286,7 @@ input.toggle-menu:checked ~ .hamburger > .hamburger-line::after {
   font-weight: 700;
 }
 
-.cart-icon-container > a {
+.cart-group > a {
   position: relative;
 }
 
@@ -327,14 +304,13 @@ input.toggle-menu:checked ~ .hamburger > .hamburger-line::after {
   background-color: #ef0909;
   border-radius: 50%;
   color: #ffffff;
-  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 700;
   display: inline-block;
   text-align: center;
 }
 
-.prd-section-header {
+.section-header {
   margin: 20px 0;
 }
 
@@ -350,7 +326,6 @@ select {
   border-radius: 4px;
   border: 1px solid #b4b4bb;
   color: #787885;
-  font-family: "Inter", sans-serif;
   font-size: 14px;
   line-height: 1.5;
   cursor: pointer;
@@ -360,54 +335,72 @@ select:hover {
   color: #19191d;
   border: 1px solid #5a5b6a;
   box-shadow: 0px 4px 8px rgba(90, 91, 106, 0.2);
+  font-weight: 400;
 }
 
-.select-sortby {
+.select-cus {
   position: relative;
 }
 
-.select-sortby span {
+.select-cus::after {
+  content: attr(data-select-legend);
   position: absolute;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 10px;
-  top: -5px;
+  padding: 4px;
+  top: 0;
   left: 10px;
+  transform: translateY(-50%);
   z-index: 1;
   background: #ffffff;
   letter-spacing: 1.5px;
   color: #787885;
 }
 
-.product-control-right {
+.control-right {
   justify-content: center;
   align-items: center;
 }
 
-.product-control-right li {
+.radio-item {
+  position: relative;
+}
+
+input[type="radio"] {
+  position: absolute;
+  right: -10000px;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.radio-item > label {
+  display: inline-block;
   background: #ebf2ff;
   border-radius: 4px;
   padding: 12px 16px;
   color: #5a5b6a;
-  font-family: "Inter", sans-serif;
   font-size: 14px;
   text-align: center;
   cursor: pointer;
+  font-weight: 500;
 }
 
-.product-control-right li:hover {
+.radio-item label:hover {
   box-shadow: 0px 4px 8px rgba(90, 91, 106, 0.2);
 }
 
-.product-control-right li.active {
+input[type="radio"]:checked + label {
   background: #ffffff;
   color: #2264d1;
-  box-shadow: 0px 4px 8px rgba(90, 91, 106, 0.2);
+  box-shadow: 0px 1px 2px rgba(27, 78, 163, 0.24);
 }
 
-.view-option > img {
+.view-radio img {
   width: 16px;
   height: 16px;
+  fill: #787885;
 }
 
 .prd-section .section-body {
@@ -428,7 +421,6 @@ select:hover {
   flex: 1;
   min-width: 267px;
   padding: 16px 16px 12px 16px;
-  font-family: "Inter", sans-serif;
 }
 
 .list-item:hover {
@@ -438,34 +430,58 @@ select:hover {
 
 .pr-image {
   display: block;
-  margin: 0 auto 12px;
+  margin: 0 auto 16px;
 }
 
 .prd-name {
   height: 74px;
   font-size: 16px;
   line-height: 1.5;
-  margin-bottom: 8px;
   color: #19191d;
 }
 
 .prd-description {
   height: 41px;
-  margin: 8px 0;
+  margin: 16px 0;
   color: #787885;
 }
 
 .prd-price {
+  margin: 16px 0;
   font-size: 24px;
   font-weight: bold;
   color: #19191d;
+  position: relative;
+}
+
+.tag::after {
+  position: absolute;
+  content: attr(data-tag);
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  display: block;
+}
+
+.tag-success::after {
+  background: #ecf7ed;
+  color: #37833b;
+}
+
+.tag-danger::after {
+  background: #fdedf2;
+  color: #c23564;
 }
 
 footer {
   padding: 64px;
-  align-items: center;
   background-color: #2264d1;
-  font-family: "Inter", sans-serif;
   color: #ffffff;
 }
 
@@ -486,41 +502,7 @@ footer p:last-child {
   font-size: 0.85rem;
 }
 
-@media only screen and (max-width: 1160px) and (min-width: 901px) {
-  header > div {
-    height: 80px;
-  }
-
-  .menu {
-    top: 71px;
-    left: -10px;
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  .wrap-menu {
-    order: 1;
-    margin-left: 30px;
-  }
-
-  .menu {
-    top: 71px !important;
-    right: 20px !important;
-  }
-
-  .nav-sub-container {
-    display: none !important;
-  }
-
-  .prd-section-header {
-    padding: 10px;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-}
-
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 768px) {
   header {
     padding: 20px 10px 20px 20px;
   }
@@ -538,8 +520,42 @@ footer p:last-child {
     width: 300px;
   }
 
-  .product-control-left {
+  .control-left {
     flex-wrap: wrap;
     gap: 20px 0;
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1025px) {
+  header > div {
+    height: 80px;
+  }
+
+  .menu {
+    top: 71px;
+    left: -10px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .wrap-menu {
+    order: 1;
+    margin-left: 30px;
+  }
+
+  .menu {
+    top: 71px !important;
+    right: 20px !important;
+  }
+
+  .nav-sub-container {
+    display: none !important;
+  }
+
+  .prd-section > .section-header {
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 }
