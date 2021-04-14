@@ -40,7 +40,7 @@ select {
 }
 
 select:hover {
-  font-weight: 400;
+  font-weight: 500;
   color: #19191d;
   border: 1px solid #5a5b6a;
   box-shadow: 0px 4px 8px rgba(90, 91, 106, 0.2);
