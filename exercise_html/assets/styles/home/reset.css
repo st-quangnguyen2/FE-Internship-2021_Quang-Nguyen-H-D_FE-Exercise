@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  transition: all 0.4s;
+}
+
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+li:last-child {
+  margin-right: 0 !important;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+select {
+  appearance: none;
+  margin-right: 10px;
+  padding: 8px 32px 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #b4b4bb;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #787885;
+  cursor: pointer;
+}
+
+select:hover,
+select:focus {
+  font-weight: 500;
+  color: #19191d;
+  border: 1px solid #5a5b6a;
+  box-shadow: 0px 4px 8px rgba(90, 91, 106, 0.2);
+}
