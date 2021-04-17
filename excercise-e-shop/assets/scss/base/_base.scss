@@ -1,0 +1,40 @@
+html {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+}
+
+.container {
+  max-width: 1152px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  &.fl-row {
+    flex-direction: row;
+  }
+  &.fl-row-rev {
+    flex-direction: row-reverse;
+  }
+  &.fl-column {
+    flex-direction: column;
+  }
+  &.fl-center-x {
+    justify-content: center;
+  }
+  &.fl-center-y {
+    align-items: center;
+  }
+  &.fl-space-between {
+    justify-content: space-between;
+  }
+}
+
+.fl-1 {
+  flex: 1;
+}
+
+.fl-2 {
+  flex: 2;
+}

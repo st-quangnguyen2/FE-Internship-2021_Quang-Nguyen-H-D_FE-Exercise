@@ -1,0 +1,43 @@
+header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 55px 0;
+  background: transparent;
+}
+
+.logo-image {
+  width: 139px;
+  height: 35px;
+}
+
+.nav-main {
+  .nav-item {
+    margin-right: 96px;
+    .nav-link {
+      padding: 4px 8px;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 27px;
+      color: #fbb03b;
+    }
+  }
+  .nav-item:last-child {
+    margin-right: 0;
+  }
+}
+
+.nav-sub {
+  .nav-item {
+    margin-right: 24px;
+    .nav-link {
+      padding: 4px;
+    }
+    .nav-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
