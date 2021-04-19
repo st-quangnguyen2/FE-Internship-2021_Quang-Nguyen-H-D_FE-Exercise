@@ -1,0 +1,35 @@
+.section-newsletter {
+  width: 100%;
+  height: 240px;
+  .overlap {
+    padding: 85px 0;
+  }
+  .section-header {
+    .section-title {
+      @include styleText($font-size-xxl, $weight-regular);
+      color: $color-white;
+    }
+  }
+
+  .section-body {
+    input {
+      padding: 14px 24px;
+      width: 350px;
+      @include styleText($font-size-btn, $weight-regular);
+      border-radius: 60px;
+      color: #ababab;
+      background-color: $color-white;
+      &::placeholder {
+        color: #ababab;
+      }
+    }
+    button {
+      padding: 14px 56px;
+      @include styleText($font-size-btn, $weight-bold);
+      color: $color-black-secondary;
+      background-color: $color-yellow-primary;
+      border-radius: 56px;
+      cursor: pointer;
+    }
+  }
+}

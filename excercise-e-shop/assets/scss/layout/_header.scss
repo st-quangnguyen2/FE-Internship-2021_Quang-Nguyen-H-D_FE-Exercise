@@ -18,10 +18,8 @@ header {
     margin-right: 96px;
     .nav-link {
       padding: 4px 8px;
-      font-size: 18px;
-      font-weight: bold;
-      line-height: 27px;
-      color: #fbb03b;
+      @include styleText($font-size-lg, $weight-bold);
+      color: $color-yellow-primary;
     }
   }
   .nav-item:last-child {

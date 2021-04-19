@@ -1,0 +1,39 @@
+.section-news {
+  padding: 48px 0;
+  .news-group {
+    gap: 20px;
+    .news-item {
+      height: 360px;
+    }
+  }
+}
+
+.news {
+  position: relative;
+  padding: 167px 40px 53px;
+  &.has-sale::after {
+    @include styleText($font-size-xs, $weight-bold);
+    content: attr(data-sale);
+    position: absolute;
+    padding: 6px 12px;
+    top: 130px;
+    left: 40px;
+    color: $color-white;
+    background-color: $color-sale;
+    border-radius: 20px;
+  }
+  .news-body {
+    height: 100%;
+    .news-name {
+      @include styleText($font-size-xxl, $weight-regular);
+      color: $color-white;
+    }
+    .news-link {
+      padding: 14px 18px;
+      @include styleText($font-size-btn, $weight-bold);
+      color: $color-black-primary;
+      background-color: $color-white;
+      border-radius: 33px;
+    }
+  }
+}
