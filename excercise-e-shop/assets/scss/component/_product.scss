@@ -4,11 +4,11 @@
     margin-top: 16px;
     .prd-name {
       @include styleText($font-size-md, $weight-light);
-      color: #333333;
+      color: $color-black-secondary;
     }
     .prd-price {
       @include styleText($font-size-xl, $weight-regular);
-      color: #333333;
+      color: $color-black-secondary;
     }
   }
 
@@ -20,13 +20,13 @@
       top: 30px;
       left: 27px;
       @include styleText($font-size-xs, $weight-bold);
-      color: #ffffff;
-      background-color: #ff0000;
+      color: $color-white;
+      background-color: $color-sale;
       border-radius: 20px;
     }
     .prd-price {
       position: relative;
-      color: #ff0000;
+      color: $color-sale;
       &::after {
         content: attr(data-price);
         position: absolute;
@@ -34,7 +34,6 @@
         right: 0;
         transform: translateY(-50%);
         color: #cecece;
-        text-decoration: line-through;
       }
     }
   }

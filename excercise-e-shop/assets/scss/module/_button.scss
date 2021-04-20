@@ -1,0 +1,19 @@
+.btn {
+  @include styleText($font-size-btn, $weight-bold);
+  color: $color-black-primary;
+  border-radius: 33px;
+  cursor: pointer;
+  &.btn-primary {
+    padding: 14px 18px;
+    background: $color-white;
+  }
+  &.btn-outline-primary {
+    padding: 14px 30px;
+    background: $color-white;
+    border: 1px solid #c4c4c4;
+  }
+  &.btn-secondary {
+    padding: 14px 56px;
+    background: $color-yellow-primary;
+  }
+}

@@ -28,12 +28,5 @@
       @include styleText($font-size-xxl, $weight-regular);
       color: $color-white;
     }
-    .news-link {
-      padding: 14px 18px;
-      @include styleText($font-size-btn, $weight-bold);
-      color: $color-black-primary;
-      background-color: $color-white;
-      border-radius: 33px;
-    }
   }
 }

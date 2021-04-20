@@ -3,6 +3,11 @@
   height: 240px;
   .overlap {
     padding: 85px 0;
+    background: linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 0.3) 33.28%,
+      rgba(0, 0, 0, 0.7) 94.05%
+    );
   }
   .section-header {
     .section-title {
@@ -22,14 +27,6 @@
       &::placeholder {
         color: #ababab;
       }
-    }
-    button {
-      padding: 14px 56px;
-      @include styleText($font-size-btn, $weight-bold);
-      color: $color-black-secondary;
-      background-color: $color-yellow-primary;
-      border-radius: 56px;
-      cursor: pointer;
     }
   }
 }
