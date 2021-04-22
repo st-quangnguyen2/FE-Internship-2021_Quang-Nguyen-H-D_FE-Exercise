@@ -10,15 +10,13 @@
   <body>
     <header>
       <div class="container flex fl-center-y fl-space-between">
-        <h1>
-          <a href="#">
-            <img
-              src="./assets/images/main/logo.svg"
-              alt="e-shop-logo"
-              class="logo-image"
-            />
-          </a>
-        </h1>
+        <a href="#">
+          <img
+            src="./assets/images/main/logo.svg"
+            alt="e-shop-logo"
+            class="logo-image"
+          />
+        </a>
         <div class="nav-main">
           <ul class="nav-list flex">
             <li class="nav-item"><a href="#" class="nav-link">Men</a></li>
@@ -69,15 +67,15 @@
         <div class="overlap">
           <div class="container">
             <div class="section-body">
-              <p class="section-title">
+              <h1 class="section-title">
                 Sale of the <span class="highlight">summer</span> collection
-              </p>
+              </h1>
               <div>
-                <a href="#" class="section-link flex">
+                <a href="#" class="section-link flex fl-center-y">
                   <span class="btn-cir flex fl-center-x fl-center-y">
                     <img
                       src="./assets/images/icon/arrow-forward.svg"
-                      alt="forward arrow"
+                      alt="forward-arrow"
                     />
                   </span>
                   <span>SHOP NOW</span>
@@ -86,39 +84,48 @@
             </div>
           </div>
           <div class="section-footer flex fl-row-rev">
-            <ul class="spotlight-group flex">
-              <li class="spotlight-item">
-                <div class="spotlight flex">
-                  <div class="spotlight-icon flex fl-center-x fl-center-y">
-                    <img src="./assets/images/icon/shipping.svg" alt="" />
+            <ul class="list-group flex">
+              <li class="list-item">
+                <div class="campaign flex">
+                  <div class="campaign-icon flex fl-center-x fl-center-y">
+                    <img
+                      src="./assets/images/icon/shipping.svg"
+                      alt="Free Shipping"
+                    />
                   </div>
-                  <div class="spotlight-body">
-                    <p class="spotlight-name">Free Shipping</p>
-                    <p class="spotlight-description">On purchases over $199</p>
+                  <div class="campaign-body">
+                    <p class="campaign-name">Free Shipping</p>
+                    <p class="campaign-description">On purchases over $199</p>
                   </div>
                 </div>
               </li>
-              <li class="spotlight-item">
-                <div class="spotlight flex">
-                  <div class="spotlight-icon flex fl-center-x fl-center-y">
-                    <img src="./assets/images/icon/satisfied.svg" alt="" />
+              <li class="list-item">
+                <div class="campaign flex">
+                  <div class="campaign-icon flex fl-center-x fl-center-y">
+                    <img
+                      src="./assets/images/icon/satisfied.svg"
+                      alt="99% Satisfied Customers"
+                    />
                   </div>
-                  <div class="spotlight-body">
-                    <p class="spotlight-name">99% Satisfied Customers</p>
-                    <p class="spotlight-description">
+                  <div class="campaign-body">
+                    <p class="campaign-name">99% Satisfied Customers</p>
+                    <p class="campaign-description">
                       Our clients' opinions speak for themselves
                     </p>
                   </div>
                 </div>
               </li>
-              <li class="spotlight-item">
-                <div class="spotlight flex">
-                  <div class="spotlight-icon flex fl-center-x fl-center-y">
-                    <img src="./assets/images/icon/guarantee.svg" alt="" />
+              <li class="list-item">
+                <div class="campaign flex">
+                  <div class="campaign-icon flex fl-center-x fl-center-y">
+                    <img
+                      src="./assets/images/icon/guarantee.svg"
+                      alt="Originality Guaranteed"
+                    />
                   </div>
-                  <div class="spotlight-body">
-                    <p class="spotlight-name">Originality Guaranteed</p>
-                    <p class="spotlight-description">
+                  <div class="campaign-body">
+                    <p class="campaign-name">Originality Guaranteed</p>
+                    <p class="campaign-description">
                       30 days warranty for each product from our store
                     </p>
                   </div>
@@ -130,43 +137,59 @@
       </section>
       <section class="section-news">
         <div class="container">
-          <ul class="news-group flex">
-            <li class="news-item fl-2 overlap-group">
-              <img
-                src="./assets/images/sample/news-1.png"
-                alt=""
-                class="overlap-image"
-              />
-              <div class="news overlap">
-                <div class="news-body flex fl-column fl-space-between">
-                  <p class="news-name">New arrivalsare now in!</p>
-                  <div><a href="#" class="news-link">SHOW COLLECTION</a></div>
+          <ul class="news-group row">
+            <li class="news-item col-md-6 col-sm-12">
+              <div class="overlap-group news-wrap">
+                <img
+                  src="./assets/images/sample/news-1.png"
+                  alt="news-1"
+                  class="overlap-image"
+                />
+                <div class="news overlap">
+                  <div class="news-body flex fl-column fl-space-between">
+                    <p class="news-name">New arrivalsare now in!</p>
+                    <div>
+                      <a href="#" class="news-link btn btn-primary"
+                        >SHOW COLLECTION</a
+                      >
+                    </div>
+                  </div>
                 </div>
               </div>
             </li>
-            <li class="news-item fl-1 overlap-group">
-              <img
-                src="./assets/images/sample/news-2.png"
-                alt=""
-                class="overlap-image"
-              />
-              <div class="news overlap">
-                <div class="news-body flex fl-column fl-space-between">
-                  <p class="news-name">Basic t-shirts $29,99</p>
-                  <div><a href="#" class="news-link">MORE DETAILS</a></div>
+            <li class="news-item col-md-3 col-sm-6">
+              <div class="overlap-group news-wrap">
+                <img
+                  src="./assets/images/sample/news-2.png"
+                  alt="news-2"
+                  class="overlap-image"
+                />
+                <div class="news overlap">
+                  <div class="news-body flex fl-column fl-space-between">
+                    <p class="news-name">Basic t-shirts $29,99</p>
+                    <div>
+                      <a href="#" class="news-link btn btn-primary"
+                        >MORE DETAILS</a
+                      >
+                    </div>
+                  </div>
                 </div>
               </div>
             </li>
-            <li class="news-item fl-1 overlap-group">
-              <img
-                src="./assets/images/sample/news-3.png"
-                alt=""
-                class="overlap-image"
-              />
-              <div class="news overlap has-sale" data-sale="-50%">
-                <div class="news-body flex fl-column fl-space-between">
-                  <p class="news-name">Sale this summer</p>
-                  <div><a href="#" class="news-link">VIEW ALL</a></div>
+            <li class="news-item col-md-3 col-sm-6 overlap-group">
+              <div class="overlap-group news-wrap">
+                <img
+                  src="./assets/images/sample/news-3.png"
+                  alt="news-3"
+                  class="overlap-image"
+                />
+                <div class="news overlap has-sale" data-sale="-50%">
+                  <div class="news-body flex fl-column fl-space-between">
+                    <p class="news-name">Sale this summer</p>
+                    <div>
+                      <a href="#" class="news-link btn btn-primary">VIEW ALL</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </li>
@@ -177,13 +200,13 @@
         <div class="container">
           <div class="section-header flex fl-center-y fl-space-between">
             <p class="section-title">Selected just for you</p>
-            <a href="#">SHOW MORE</a>
+            <a href="#" class="btn btn-outline-primary">SHOW MORE</a>
           </div>
           <div class="section-body">
-            <ul class="list-group flex">
-              <li class="list-item fl-1">
+            <ul class="list-group row">
+              <li class="list-item col-md-3 col-sm-6">
                 <div class="prd has-sale" data-sale="-30%">
-                  <a href="#">
+                  <a href="#" class="prd-link">
                     <img
                       src="./assets/images/sample/product-1.png"
                       alt="product image"
@@ -191,16 +214,16 @@
                     />
                   </a>
                   <div class="prd-body">
-                    <a href="#">
+                    <a href="#" class="prd-link">
                       <p class="prd-name">T-Shirt Summer Vibes</p>
                     </a>
                     <p class="prd-price" data-price="$119.99">$89.99</p>
                   </div>
                 </div>
               </li>
-              <li class="list-item fl-1">
+              <li class="list-item col-md-3 col-sm-6">
                 <div class="prd">
-                  <a href="#">
+                  <a href="#" class="prd-link">
                     <img
                       src="./assets/images/sample/product-2.png"
                       alt="product image"
@@ -208,16 +231,16 @@
                     />
                   </a>
                   <div class="prd-body">
-                    <a href="#">
+                    <a href="#" class="prd-link">
                       <p class="prd-name">Loose Knit 3/4 Sleeve</p>
                     </a>
                     <p class="prd-price">$119.99</p>
                   </div>
                 </div>
               </li>
-              <li class="list-item fl-1">
+              <li class="list-item col-md-3 col-sm-6">
                 <div class="prd">
-                  <a href="#">
+                  <a href="#" class="prd-link">
                     <img
                       src="./assets/images/sample/product-3.png"
                       alt="product image"
@@ -225,16 +248,16 @@
                     />
                   </a>
                   <div class="prd-body">
-                    <a href="#">
+                    <a href="#" class="prd-link">
                       <p class="prd-name">Basic Slim Fit T-Shirt</p>
                     </a>
                     <p class="prd-price">$79.99</p>
                   </div>
                 </div>
               </li>
-              <li class="list-item fl-1">
+              <li class="list-item col-md-3 col-sm-6">
                 <div class="prd">
-                  <a href="#">
+                  <a href="#" class="prd-link">
                     <img
                       src="./assets/images/sample/product-4.png"
                       alt="product image"
@@ -242,7 +265,7 @@
                     />
                   </a>
                   <div class="prd-body">
-                    <a href="#">
+                    <a href="#" class="prd-link">
                       <p class="prd-name">Loose Textured T-Shirt</p>
                     </a>
                     <p class="prd-price">$119.99</p>
@@ -338,10 +361,10 @@
             <div class="section-title">Products in today</div>
           </div>
           <div class="section-body">
-            <ul class="list-group flex">
-              <li class="list-item fl-1">
+            <ul class="list-group row">
+              <li class="list-item col-md-3 col-sm-6">
                 <div class="prd has-sale" data-sale="-30%">
-                  <a href="#">
+                  <a href="#" class="prd-link">
                     <img
                       src="./assets/images/sample/product-1.png"
                       alt="product image"
@@ -356,9 +379,9 @@
                   </div>
                 </div>
               </li>
-              <li class="list-item fl-1">
+              <li class="list-item col-md-3 col-sm-6">
                 <div class="prd">
-                  <a href="#">
+                  <a href="#" class="prd-link">
                     <img
                       src="./assets/images/sample/product-2.png"
                       alt="product image"
@@ -373,9 +396,9 @@
                   </div>
                 </div>
               </li>
-              <li class="list-item fl-1">
+              <li class="list-item col-md-3 col-sm-6">
                 <div class="prd">
-                  <a href="#">
+                  <a href="#" class="prd-link">
                     <img
                       src="./assets/images/sample/product-3.png"
                       alt="product image"
@@ -390,9 +413,9 @@
                   </div>
                 </div>
               </li>
-              <li class="list-item fl-1">
+              <li class="list-item col-md-3 col-sm-6">
                 <div class="prd">
-                  <a href="#">
+                  <a href="#" class="prd-link">
                     <img
                       src="./assets/images/sample/product-4.png"
                       alt="product image"
@@ -414,16 +437,16 @@
       <section class="section-newsletter overlap-group">
         <img
           src="./assets/images/main/newsletter.png"
-          alt="This is banner"
-          class="banner-image overlap-image"
+          alt="newsletter"
+          class="newsletter-image overlap-image"
         />
         <div class="overlap">
           <div class="container flex fl-center-y">
             <div class="section-header fl-1">
-              <div class="section-title">
+              <p class="section-title">
                 Subscribe to our newsletter andreceive exclusive offers every
                 week
-              </div>
+              </p>
             </div>
             <div class="section-body fl-1">
               <form action="" class="newsletter-form flex fl-space-between">
@@ -433,7 +456,9 @@
                   id=""
                   placeholder="Enter your email"
                 />
-                <button type="submit">SUBSCRIBE</button>
+                <button type="submit" class="btn btn-secondary">
+                  SUBSCRIBE
+                </button>
               </form>
             </div>
           </div>
@@ -446,7 +471,7 @@
           <div class="body-left">
             <img
               src="./assets/images/main/logo.svg"
-              alt=""
+              alt="E-Shop"
               class="footer-logo"
             />
             <p class="footer-title">
@@ -459,7 +484,7 @@
                   <a href="#" class="social-link flex fl-center-x fl-center-y">
                     <img
                       src="./assets/images/icon/facebook.svg"
-                      alt=""
+                      alt="facebook"
                       class="social-icon"
                     />
                   </a>
@@ -468,7 +493,7 @@
                   <a href="#" class="social-link">
                     <img
                       src="./assets/images/icon/twitter.svg"
-                      alt=""
+                      alt="twitter"
                       class="social-icon"
                     />
                   </a>
@@ -477,7 +502,7 @@
                   <a href="#" class="social-link">
                     <img
                       src="./assets/images/icon/linkedin.svg"
-                      alt=""
+                      alt="linkedin"
                       class="social-icon"
                     />
                   </a>
@@ -485,8 +510,8 @@
                 <li class="social-item">
                   <a href="#" class="social-link">
                     <img
-                      src="./assets/images/icon/instagram.svg"
-                      alt=""
+                      src="./assets/images/icon/linkedin.svg"
+                      alt="linkedin"
                       class="social-icon"
                     />
                   </a>
@@ -495,7 +520,7 @@
                   <a href="#" class="social-link">
                     <img
                       src="./assets/images/icon/youtube.svg"
-                      alt=""
+                      alt="youtube"
                       class="social-icon"
                     />
                   </a>
@@ -567,11 +592,11 @@
               </li>
               <li class="nav-item">
                 <p class="nav-item-title">Contact</p>
-                <ul>
-                  <li>
+                <ul class="contact-group">
+                  <li class="contact-item">
                     <p>store@uikit.com</p>
                   </li>
-                  <li>
+                  <li class="contact-item">
                     <p>Hotline: +1 131 138 138</p>
                   </li>
                 </ul>

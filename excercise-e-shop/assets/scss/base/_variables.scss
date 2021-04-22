@@ -1,5 +1,4 @@
 $font-size-btn: 13px;
-
 $font-size-xs: 12px;
 $font-size-sm: 14px;
 $font-size-md: 16px;
@@ -20,3 +19,11 @@ $color-yellow-secondary: #fff3df;
 $color-white: #ffffff;
 $color-black-primary: #000000;
 $color-black-secondary: #333333;
+
+$grid-column: 12;
+$grid-gutter: 20;
+
+$screen-size: (
+  md: "",
+  sm: 768px,
+);

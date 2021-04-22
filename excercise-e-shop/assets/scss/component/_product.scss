@@ -1,5 +1,11 @@
 .prd {
   position: relative;
+  .prd-link {
+    width: 100%;
+    .prd-img {
+      width: 100%;
+    }
+  }
   .prd-body {
     margin-top: 16px;
     .prd-name {

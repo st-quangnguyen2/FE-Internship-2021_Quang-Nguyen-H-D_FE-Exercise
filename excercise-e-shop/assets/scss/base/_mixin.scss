@@ -2,3 +2,30 @@
   font-size: $font-size;
   font-weight: $font-weight;
 }
+
+@mixin create-media-query($break-point) {
+  @if ($break-point == "") {
+    @content;
+  } @else {
+    @media only screen and(max-width: $break-point) {
+      @content;
+    }
+  }
+}
+
+@mixin create-col-classes($size, $column, $break-point, $gutter) {
+  @include create-media-query($break-point) {
+    @for $i from 1 through $column {
+      .col-#{$size}-#{$i} {
+        width: percentage($i / $column);
+        padding: #{$gutter/2}px;
+      }
+    }
+  }
+}
+
+@mixin build-grid($column, $gutter, $screen-size) {
+  @each $size, $break-point in $screen-size {
+    @include create-col-classes($size, $column, $break-point, $gutter);
+  }
+}
