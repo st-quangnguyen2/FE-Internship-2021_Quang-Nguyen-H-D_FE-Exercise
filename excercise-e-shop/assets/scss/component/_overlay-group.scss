@@ -2,17 +2,17 @@
   position: relative;
   .overlay-image {
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
   }
   .overlay {
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     right: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(51, 51, 51, 0.5);
   }
 }

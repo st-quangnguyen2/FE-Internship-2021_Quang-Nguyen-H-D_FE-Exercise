@@ -53,41 +53,11 @@ img {
   max-width: 1152px;
   margin: 0 auto; }
 
-.flex, .fl-row, .fl-row-rev, .fl-column {
-  display: flex; }
-
-.fl-row {
-  flex-direction: row; }
-
-.fl-row-rev {
-  flex-direction: row-reverse; }
-
-.fl-column {
-  flex-direction: column; }
-
-.fl-center-x {
-  justify-content: center; }
-
-.fl-center-y {
-  align-items: center; }
-
-.fl-space-between {
-  justify-content: space-between; }
-
-.fl-1 {
-  flex: 1; }
-
-.fl-2 {
-  flex: 2; }
-
 .txt-center {
   text-align: center; }
 
-.d-xs {
+.d-none {
   display: none; }
-
-.d-lg {
-  display: flex; }
 
 @media only screen and (max-width: 575px) {
   .container {
@@ -153,59 +123,59 @@ img {
 @media only screen and (max-width: 575px) {
   .col-xs-1 {
     width: 8.33333%;
-    padding: 4.5px 4.5px; }
+    padding: 4px 4px; }
   .col-xs-2 {
     width: 16.66667%;
-    padding: 4.5px 4.5px; }
+    padding: 4px 4px; }
   .col-xs-3 {
     width: 25%;
-    padding: 4.5px 4.5px; }
+    padding: 4px 4px; }
   .col-xs-4 {
     width: 33.33333%;
-    padding: 4.5px 4.5px; }
+    padding: 4px 4px; }
   .col-xs-5 {
     width: 41.66667%;
-    padding: 4.5px 4.5px; }
+    padding: 4px 4px; }
   .col-xs-6 {
     width: 50%;
-    padding: 4.5px 4.5px; }
+    padding: 4px 4px; }
   .col-xs-7 {
     width: 58.33333%;
-    padding: 4.5px 4.5px; }
+    padding: 4px 4px; }
   .col-xs-8 {
     width: 66.66667%;
-    padding: 4.5px 4.5px; }
+    padding: 4px 4px; }
   .col-xs-9 {
     width: 75%;
-    padding: 4.5px 4.5px; }
+    padding: 4px 4px; }
   .col-xs-10 {
     width: 83.33333%;
-    padding: 4.5px 4.5px; }
+    padding: 4px 4px; }
   .col-xs-11 {
     width: 91.66667%;
-    padding: 4.5px 4.5px; }
+    padding: 4px 4px; }
   .col-xs-12 {
     width: 100%;
-    padding: 4.5px 4.5px; } }
+    padding: 4px 4px; } }
 
 @media only screen and (max-width: 575px) {
   .row {
-    margin: 0 -4.5px; } }
+    margin: 0 -4px; } }
 
 .overlay-group {
   position: relative; }
   .overlay-group .overlay-image {
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
-    left: 0; }
+    left: 0;
+    width: 100%;
+    height: 100%; }
   .overlay-group .overlay {
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     right: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(51, 51, 51, 0.5); }
 
 .prd {
@@ -261,9 +231,9 @@ img {
       font-weight: 400; } }
 
 .btn {
-  font-family: "Poppins", sans-serif;
   font-size: 13px;
   font-weight: 700;
+  font-family: "Poppins", sans-serif;
   color: #000;
   border-radius: 33px;
   cursor: pointer; }
@@ -296,10 +266,10 @@ img {
       padding: 7px 20px; } }
 
 .discount {
-  position: absolute;
-  padding: 6px 12px;
   font-size: 12px;
   font-weight: 700;
+  position: absolute;
+  padding: 6px 12px;
   line-height: 1.5em;
   color: #fff;
   background-color: #ff0000;
@@ -307,30 +277,76 @@ img {
 
 @media only screen and (max-width: 575px) {
   .discount {
-    padding: 3px 5px;
     font-size: 8px;
     font-weight: 700;
+    padding: 3px 5px;
     border-radius: 9px; } }
+
+.flex, .fl-row, .fl-row-rev, .fl-column, .fl-center-x, .fl-center-y, .fl-space-between {
+  display: flex; }
+
+.fl-row {
+  flex-direction: row; }
+
+.fl-row-rev {
+  flex-direction: row-reverse; }
+
+.fl-column {
+  flex-direction: column; }
+
+.fl-center-x {
+  justify-content: center; }
+
+.fl-center-y {
+  align-items: center; }
+
+.fl-space-between {
+  justify-content: space-between; }
+
+.fl-1 {
+  flex: 1; }
+
+.fl-2 {
+  flex: 2; }
+
+.container-fluid {
+  max-width: 100%; }
+
+.container {
+  max-width: 1152px;
+  margin: 0 auto; }
+
+.txt-center {
+  text-align: center; }
+
+.d-none {
+  display: none !important; }
+
+@media only screen and (max-width: 575px) {
+  .container {
+    margin: 0 24px; }
+  .d-xs {
+    display: flex !important; }
+  .d-lg {
+    display: none !important; } }
 
 header {
   position: absolute;
-  width: 100%;
   top: 0;
   left: 0;
+  width: 100%;
   z-index: 100;
   padding: 55px 0;
   background: transparent; }
-  header .header-sm {
-    display: none; }
   header .logo-image {
     width: 139px;
     height: 35px; }
   header .nav-main .nav-item {
     margin-right: 96px; }
     header .nav-main .nav-item .nav-link {
-      padding: 4px 8px;
       font-size: 18px;
       font-weight: 700;
+      padding: 4px 8px;
       color: #fbb03b; }
   header .nav-main .nav-item:last-child {
     margin-right: 0; }
@@ -346,8 +362,8 @@ header {
   header {
     display: block;
     position: fixed;
-    background: #ffffff;
-    padding: 20px 0; }
+    padding: 20px 0;
+    background: #fff; }
     header .logo-image {
       width: 128px;
       height: 32px; }
@@ -361,25 +377,25 @@ header {
       align-items: center; }
     header .header-sm {
       display: flex; }
-    header .nav-sub .nav-item .nav-link {
-      padding: 0px; }
-    header .nav-sub .nav-item .nav-icon {
-      width: 20px;
-      height: 20px; }
-    header .header-md {
-      display: none; } }
+    header .nav-sub .nav-item {
+      cursor: pointer; }
+      header .nav-sub .nav-item .nav-link {
+        padding: 0px; }
+      header .nav-sub .nav-item .nav-icon {
+        width: 20px;
+        height: 20px; } }
 
 footer {
   background-color: #fbb03b; }
-  footer .container {
+  footer .section-body {
     padding: 40px 0 52px; }
   footer .section-footer {
-    height: 66px;
+    padding: 24px 0;
     border-top: 1px solid #fff; }
     footer .section-footer p {
-      margin: auto 0;
       font-size: 12px;
       font-weight: 400;
+      margin: auto 0;
       color: #fff; }
 
 .body-left {
@@ -388,9 +404,9 @@ footer {
     width: 138px;
     height: 35px; }
   .body-left .footer-title {
-    margin: 24px 0 56px;
     font-size: 14px;
     font-weight: 300;
+    margin: 24px 0 56px;
     color: #fff; }
 
 .social-item {
@@ -403,9 +419,9 @@ footer {
 .nav-group {
   gap: 90px; }
   .nav-group .nav-item .nav-item-title {
-    margin-bottom: 20px;
     font-size: 16px;
     font-weight: 700;
+    margin-bottom: 20px;
     color: #fff; }
   .nav-group .nav-item li {
     margin-bottom: 16px; }
@@ -415,7 +431,7 @@ footer {
       color: #fff; }
 
 @media only screen and (max-width: 575px) {
-  footer .container {
+  footer .section-body {
     flex-direction: column;
     padding-bottom: 40px; }
   footer .body-left .footer-title {
@@ -426,9 +442,9 @@ footer {
     gap: 24px;
     flex-direction: column; }
     footer .nav-group .nav-item .nav-item-title {
-      margin-bottom: 20px;
       font-size: 16px;
       font-weight: 700;
+      margin-bottom: 20px;
       color: #fff; }
     footer .nav-group .nav-item li {
       margin-bottom: 16px; }
@@ -447,10 +463,10 @@ footer {
   .banner-section .section-body {
     margin: 222px 96px; }
     .banner-section .section-body .section-title {
-      margin-bottom: 24px;
-      max-width: 403px;
       font-size: 72px;
       font-weight: 700;
+      margin-bottom: 24px;
+      max-width: 403px;
       line-height: 1em;
       color: #fff; }
       .banner-section .section-body .section-title .highlight {
@@ -496,14 +512,14 @@ footer {
   .advantage-horizontal .advantage-body {
     max-width: 179px; }
     .advantage-horizontal .advantage-body .advantage-title {
-      margin-bottom: 4px;
       font-size: 14px;
       font-weight: 700;
+      margin-bottom: 4px;
       color: #333; }
     .advantage-horizontal .advantage-body .advantage-description {
-      padding-right: 1px;
       font-size: 12px;
       font-weight: 400;
+      padding-right: 1px;
       color: #a8a8a8; }
 
 .news-section {
@@ -522,10 +538,10 @@ footer {
   .news .news-body {
     height: 100%; }
     .news .news-body .news-title {
-      height: 3em;
-      margin-bottom: 18px;
       font-size: 24px;
       font-weight: 400;
+      height: 3em;
+      margin-bottom: 18px;
       color: #fff; }
 
 .selected-section {
@@ -567,9 +583,9 @@ footer {
     object-fit: fill; }
 
 .advantage-vertical .advantage-body .advantage-title {
-  margin-bottom: 16px;
   font-size: 16px;
-  font-weight: 700; }
+  font-weight: 700;
+  margin-bottom: 16px; }
 
 .advantage-vertical .advantage-body .advantage-description {
   font-size: 14px;
@@ -595,10 +611,10 @@ footer {
     font-weight: 400;
     color: #fff; }
   .newsletter-section .section-body-right input {
-    padding: 14px 24px;
-    width: 350px;
     font-size: 13px;
     font-weight: 400;
+    padding: 14px 24px;
+    width: 350px;
     border-radius: 60px;
     color: #ababab;
     background-color: #fff; }
@@ -615,9 +631,9 @@ footer {
       .banner-section .container .section-body {
         margin: 0; }
         .banner-section .container .section-body .section-title {
-          margin-bottom: 16px;
           font-size: 48px;
-          font-weight: 700; }
+          font-weight: 700;
+          margin-bottom: 16px; }
         .banner-section .container .section-body .section-link .btn-cir {
           position: relative;
           width: 32px;
@@ -644,10 +660,10 @@ footer {
       top: 120px;
       left: 16px; }
     .news .news-body .news-title {
-      margin-bottom: 6px;
-      max-width: 120px;
       font-size: 14px;
-      font-weight: 400; }
+      font-weight: 400;
+      margin-bottom: 6px;
+      max-width: 120px; }
   .selected-section {
     padding: 24px 0; }
     .selected-section .section-header {
@@ -684,9 +700,9 @@ footer {
       flex: 1;
       padding-top: 8px; }
       .advantage-vertical .advantage-body .advantage-title {
-        margin-bottom: 8px;
         font-size: 12px;
-        font-weight: 700; }
+        font-weight: 700;
+        margin-bottom: 8px; }
       .advantage-vertical .advantage-body .advantage-description {
         font-size: 10px;
         font-weight: 400; }
@@ -702,27 +718,26 @@ footer {
     width: 100%;
     height: 210px; }
     .newsletter-section .overlay {
-      padding: 24px 0;
-      background: linear-gradient(270deg, rgba(0, 0, 0, 0.3) 33.28%, rgba(0, 0, 0, 0.7) 94.05%); }
+      padding: 24px 0; }
     .newsletter-section .container {
       flex-direction: column;
       align-items: flex-start; }
     .newsletter-section .section-body-left .section-title {
-      max-width: 200px;
-      margin-bottom: 24px;
       font-size: 14px;
-      font-weight: 400; }
+      font-weight: 400;
+      max-width: 200px;
+      margin-bottom: 24px; }
     .newsletter-section .section-body-right {
       width: 100%; }
       .newsletter-section .section-body-right .section-form {
         display: block; }
       .newsletter-section .section-body-right input {
+        font-size: 12px;
+        font-weight: 400;
         padding: 6px 12px;
         margin-bottom: 16px;
         width: 100%;
         font-family: "Poppins", sans-serif;
-        font-size: 12px;
-        font-weight: 400;
         border-radius: 60px;
         color: #ababab;
         background-color: #fff; }

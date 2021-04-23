@@ -25,55 +25,12 @@ img {
   margin: 0 auto;
 }
 
-.flex {
-  display: flex;
-}
-
-.fl-row {
-  @extend .flex;
-  flex-direction: row;
-}
-
-.fl-row-rev {
-  @extend .flex;
-  flex-direction: row-reverse;
-}
-
-.fl-column {
-  @extend .flex;
-  flex-direction: column;
-}
-
-.fl-center-x {
-  justify-content: center;
-}
-
-.fl-center-y {
-  align-items: center;
-}
-
-.fl-space-between {
-  justify-content: space-between;
-}
-
-.fl-1 {
-  flex: 1;
-}
-
-.fl-2 {
-  flex: 2;
-}
-
 .txt-center {
   text-align: center;
 }
 
-.d-xs {
+.d-none{
   display: none;
-}
-
-.d-lg {
-  display: flex;
 }
 
 @media only screen and (max-width: map-get($screen-size, "xs")) {

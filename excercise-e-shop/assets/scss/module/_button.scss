@@ -1,6 +1,6 @@
 .btn {
-  font-family: "Poppins", sans-serif;
   @include text-style(map-get($font-size, "btn"), $weight-bold);
+  font-family: "Poppins", sans-serif;
   color: map-get($color, "black-a");
   border-radius: 33px;
   cursor: pointer;

@@ -1,14 +1,14 @@
 footer {
   background-color: map-get($color, "primary");
-  .container {
+  .section-body {
     padding: 40px 0 52px;
   }
   .section-footer {
-    height: 66px;
+    padding: 24px 0;
     border-top: 1px solid map-get($color, "white");
     p {
-      margin: auto 0;
       @include text-style(map-get($font-size, "xs"), $weight-regular);
+      margin: auto 0;
       color: map-get($color, "white");
     }
   }
@@ -21,8 +21,8 @@ footer {
     height: 35px;
   }
   .footer-title {
-    margin: 24px 0 56px;
     @include text-style(map-get($font-size, "sm"), $weight-light);
+    margin: 24px 0 56px;
     color: map-get($color, "white");
   }
 }
@@ -40,11 +40,10 @@ footer {
   gap: 90px;
   .nav-item {
     .nav-item-title {
-      margin-bottom: 20px;
       @include text-style(map-get($font-size, "md"), $weight-bold);
+      margin-bottom: 20px;
       color: map-get($color, "white");
     }
-
     li {
       margin-bottom: 16px;
       p {
@@ -57,7 +56,7 @@ footer {
 
 @media only screen and (max-width: map-get($screen-size, "xs")) {
   footer {
-    .container {
+    .section-body {
       flex-direction: column;
       padding-bottom: 40px;
     }
@@ -74,8 +73,8 @@ footer {
       flex-direction: column;
       .nav-item {
         .nav-item-title {
-          margin-bottom: 20px;
           @include text-style(map-get($font-size, "md"), $weight-bold);
+          margin-bottom: 20px;
           color: map-get($color, "white");
         }
         li {

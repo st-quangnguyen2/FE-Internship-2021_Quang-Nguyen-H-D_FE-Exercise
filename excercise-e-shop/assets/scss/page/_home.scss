@@ -15,9 +15,9 @@
   .section-body {
     margin: 222px 96px;
     .section-title {
+      @include text-style(map-get($font-size, "5xl"), $weight-bold);
       margin-bottom: 24px;
       max-width: 403px;
-      @include text-style(map-get($font-size, "5xl"), $weight-bold);
       line-height: 1em;
       color: map-get($color, "white");
       .highlight {
@@ -75,13 +75,13 @@
   .advantage-body {
     max-width: 179px;
     .advantage-title {
-      margin-bottom: 4px;
       @include text-style(map-get($font-size, "sm"), $weight-bold);
+      margin-bottom: 4px;
       color: map-get($color, "black-b");
     }
     .advantage-description {
-      padding-right: 1px;
       @include text-style(map-get($font-size, "xs"), $weight-regular);
+      padding-right: 1px;
       color: map-get($color, "gray-e");
     }
   }
@@ -108,9 +108,9 @@
   .news-body {
     height: 100%;
     .news-title {
+      @include text-style(map-get($font-size, "2xl"), $weight-regular);
       height: 3em;
       margin-bottom: 18px;
-      @include text-style(map-get($font-size, "2xl"), $weight-regular);
       color: map-get($color, "white");
     }
   }
@@ -174,8 +174,8 @@
   }
   .advantage-body {
     .advantage-title {
-      margin-bottom: 16px;
       @include text-style(map-get($font-size, "md"), $weight-bold);
+      margin-bottom: 16px;
     }
     .advantage-description {
       @include text-style(map-get($font-size, "sm"), $weight-regular);
@@ -218,9 +218,9 @@
 
   .section-body-right {
     input {
+      @include text-style(map-get($font-size, "btn"), $weight-regular);
       padding: 14px 24px;
       width: 350px;
-      @include text-style(map-get($font-size, "btn"), $weight-regular);
       border-radius: 60px;
       color: map-get($color, "gray-d");
       background-color: map-get($color, "white");
@@ -242,8 +242,8 @@
       .section-body {
         margin: 0;
         .section-title {
-          margin-bottom: 16px;
           @include text-style(map-get($font-size, "4xl"), $weight-bold);
+          margin-bottom: 16px;
         }
         .section-link {
           .btn-cir {
@@ -288,9 +288,9 @@
     }
     .news-body {
       .news-title {
+        @include text-style(map-get($font-size, "sm"), $weight-regular);
         margin-bottom: 6px;
         max-width: 120px;
-        @include text-style(map-get($font-size, "sm"), $weight-regular);
       }
     }
   }
@@ -349,8 +349,8 @@
       flex: 1;
       padding-top: 8px;
       .advantage-title {
-        margin-bottom: 8px;
         @include text-style(map-get($font-size, "xs"), $weight-bold);
+        margin-bottom: 8px;
       }
       .advantage-description {
         @include text-style(map-get($font-size, "2xs"), $weight-regular);
@@ -378,11 +378,6 @@
     height: 210px;
     .overlay {
       padding: 24px 0;
-      background: linear-gradient(
-        270deg,
-        rgba(0, 0, 0, 0.3) 33.28%,
-        rgba(0, 0, 0, 0.7) 94.05%
-      );
     }
     .container {
       flex-direction: column;
@@ -390,9 +385,9 @@
     }
     .section-body-left {
       .section-title {
+        @include text-style(map-get($font-size, "sm"), $weight-regular);
         max-width: 200px;
         margin-bottom: 24px;
-        @include text-style(map-get($font-size, "sm"), $weight-regular);
       }
     }
     .section-body-right {
@@ -401,11 +396,11 @@
         display: block;
       }
       input {
+        @include text-style(map-get($font-size, "xs"), $weight-regular);
         padding: 6px 12px;
         margin-bottom: 16px;
         width: 100%;
         font-family: "Poppins", sans-serif;
-        @include text-style(map-get($font-size, "xs"), $weight-regular);
         border-radius: 60px;
         color: map-get($color, "gray-d");
         background-color: map-get($color, "white");
