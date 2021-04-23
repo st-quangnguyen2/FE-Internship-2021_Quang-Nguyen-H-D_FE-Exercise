@@ -179,7 +179,7 @@
     }
     .advantage-description {
       @include text-style(map-get($font-size, "sm"), $weight-regular);
-      color: map-get($color, "gray-f");
+      color: map-get($color, "white");
     }
   }
 }
@@ -395,7 +395,6 @@
         @include text-style(map-get($font-size, "sm"), $weight-regular);
       }
     }
-
     .section-body-right {
       width: 100%;
       .section-form {

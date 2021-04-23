@@ -7,6 +7,7 @@
   background-color: map-get($color, "red");
   border-radius: 20px;
 }
+
 @media only screen and(max-width: map-get($screen-size, 'xs')) {
   .discount {
     padding: 3px 5px;

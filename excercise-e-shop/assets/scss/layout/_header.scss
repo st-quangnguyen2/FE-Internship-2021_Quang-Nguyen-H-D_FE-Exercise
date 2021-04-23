@@ -50,7 +50,6 @@ header {
     position: fixed;
     background: #ffffff;
     padding: 20px 0;
-
     .logo-image {
       width: 128px;
       height: 32px;
@@ -60,7 +59,6 @@ header {
       justify-content: center;
       align-items: center;
     }
-
     a {
       display: flex;
       justify-content: center;
@@ -70,7 +68,6 @@ header {
     .header-sm {
       display: flex;
     }
-
     .nav-sub {
       .nav-item {
         .nav-link {
@@ -82,7 +79,6 @@ header {
         }
       }
     }
-
     .header-md {
       display: none;
     }
