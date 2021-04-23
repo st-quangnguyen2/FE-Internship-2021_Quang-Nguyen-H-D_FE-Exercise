@@ -1,5 +1,5 @@
 .btn {
-  @include styleText($font-size-btn, $weight-bold);
+  @include text-style($font-size-btn, $weight-bold);
   color: $color-black-primary;
   border-radius: 33px;
   cursor: pointer;
@@ -15,5 +15,21 @@
   &.btn-secondary {
     padding: 14px 56px;
     background: $color-yellow-primary;
+  }
+}
+
+@media only screen and (max-width: map-get($screen-size, "xs")) {
+  .btn {
+    font-size: 10px;
+    &.btn-primary {
+      padding: 3px 10px;
+    }
+    &.btn-outline-primary {
+      padding: 3px 10px;
+      border: none;
+    }
+    &.btn-secondary {
+      padding: 7px 20px;
+    }
   }
 }

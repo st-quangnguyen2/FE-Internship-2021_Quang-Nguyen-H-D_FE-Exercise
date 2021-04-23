@@ -13,7 +13,7 @@ $weight-light: 300;
 $weight-regular: 400;
 $weight-bold: 700;
 
-$color-sale: #ff0000;
+$color-red: #ff0000;
 $color-yellow-primary: #fbb03b;
 $color-yellow-secondary: #fff3df;
 $color-white: #ffffff;
@@ -24,6 +24,54 @@ $grid-column: 12;
 $grid-gutter: 20;
 
 $screen-size: (
-  md: "",
-  sm: 768px,
+  lg: "",
+  xs: 575px,
+);
+
+$screen-gutter-x: (
+  lg: 20,
+  xs: 9,
+);
+$screen-gutter-y: (
+  lg: 20,
+  xs: 9,
+);
+
+$font-size-screen-sm: (
+  xs: 8px,
+  sm: 10px,
+  md: 12px,
+  lg: 16px,
+  xl: 10px,
+  xxl: 14px,
+  xxxl: 18px,
+  max: 48px,
+);
+
+$color: (
+  red: #ff0000,
+  white: #ffffff,
+  black-primary: #000000,
+  black-secondary: #333333,
+  gray-a: #f7f7f7,
+  gray-c: #cecece,
+  gray-d: #ababab,
+  gray-b: #a8a8a8,
+  yellow-primary: #fbb03b,
+  yellow-secondary: #fff3df,
+);
+
+$font-size: (
+  btn: 13px,
+  3xs: 8px,
+  2xs: 10px,
+  xs: 12px,
+  sm: 14px,
+  md: 16px,
+  lg: 18px,
+  xl: 20px,
+  2xl: 24px,
+  3xl: 32px,
+  4xl: 48px,
+  max: 72px,
 );

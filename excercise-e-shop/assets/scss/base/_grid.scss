@@ -1,0 +1,12 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -#{$grid-gutter/2}px;
+}
+
+@include build-grid(
+  $grid-column,
+  $screen-size,
+  $screen-gutter-x,
+  $screen-gutter-y
+);

@@ -6,36 +6,66 @@ header {
   z-index: 100;
   padding: 55px 0;
   background: transparent;
-}
 
-.logo-image {
-  width: 139px;
-  height: 35px;
-}
+  .header-sm {
+    display: none;
+  }
 
-.nav-main {
-  .nav-item {
-    margin-right: 96px;
-    .nav-link {
-      padding: 4px 8px;
-      @include styleText($font-size-lg, $weight-bold);
-      color: $color-yellow-primary;
+  .logo-image {
+    width: 139px;
+    height: 35px;
+  }
+
+  .nav-main {
+    .nav-item {
+      margin-right: 96px;
+      .nav-link {
+        padding: 4px 8px;
+        @include text-style($font-size-lg, $weight-bold);
+        color: $color-yellow-primary;
+      }
+    }
+    .nav-item:last-child {
+      margin-right: 0;
     }
   }
-  .nav-item:last-child {
-    margin-right: 0;
+
+  .nav-sub {
+    .nav-item {
+      margin-right: 24px;
+      .nav-link {
+        padding: 4px;
+      }
+      .nav-icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 }
 
-.nav-sub {
-  .nav-item {
-    margin-right: 24px;
-    .nav-link {
-      padding: 4px;
+@media only screen and (max-width: map-get($screen-size, "xs" )) {
+  header {
+    display: block;
+    position: fixed;
+    background: #ffffff;
+    padding: 24px 0;
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
-    .nav-icon {
-      width: 24px;
-      height: 24px;
+    .header-sm {
+      display: flex;
+    }
+
+    .header-md {
+      display: none;
     }
   }
 }

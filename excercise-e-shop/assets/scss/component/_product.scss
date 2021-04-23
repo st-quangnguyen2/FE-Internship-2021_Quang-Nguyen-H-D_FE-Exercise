@@ -1,45 +1,68 @@
 .prd {
   position: relative;
+  .discount {
+    top: 30px;
+    left: 27px;
+  }
   .prd-link {
     width: 100%;
     .prd-img {
       width: 100%;
+      height: 385px;
+      object-fit: cover;
     }
   }
   .prd-body {
     margin-top: 16px;
     .prd-name {
-      @include styleText($font-size-md, $weight-light);
+      @include text-style($font-size-md, $weight-light);
       color: $color-black-secondary;
     }
     .prd-price {
-      @include styleText($font-size-xl, $weight-regular);
+      @include text-style($font-size-xl, $weight-regular);
       color: $color-black-secondary;
     }
   }
 
-  &.has-sale {
+  .prd-price.prd-price-discount {
+    position: relative;
+    color: $color-red;
     &::after {
-      content: attr(data-sale);
+      content: attr(data-price);
       position: absolute;
-      padding: 6px 12px;
-      top: 30px;
-      left: 27px;
-      @include styleText($font-size-xs, $weight-bold);
-      color: $color-white;
-      background-color: $color-sale;
-      border-radius: 20px;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      color: #cecece;
     }
-    .prd-price {
-      position: relative;
-      color: $color-sale;
-      &::after {
-        content: attr(data-price);
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-        color: #cecece;
+  }
+}
+
+@media only screen and(max-width: map-get($screen-size, 'xs')) {
+  .prd {
+    .discount {
+      padding: 3px 5px;
+      top: 14px;
+      left: 9px;
+      @include text-style(8px, $weight-bold);
+      line-height: 1.5em;
+      border-radius: 9px;
+    }
+    .prd-link {
+      .prd-img {
+        height: 227px;
+      }
+    }
+    .prd-body {
+      margin-top: 16px;
+      .prd-name {
+        @include text-style(map-get($font-size-screen-sm, "md"), $weight-light);
+      }
+      .prd-price {
+        @include text-style(
+          map-get($font-size-screen-sm, "xl"),
+          $weight-regular
+        );
       }
     }
   }

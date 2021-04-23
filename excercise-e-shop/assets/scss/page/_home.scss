@@ -1,0 +1,444 @@
+// Banner Section
+
+.banner-section {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  z-index: 1;
+  .overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  }
+  .section-body {
+    margin: 222px 96px;
+    .section-title {
+      margin-bottom: 24px;
+      max-width: 403px;
+      @include text-style($font-size-max, $weight-bold);
+      line-height: 1em;
+      color: $color-white;
+      .highlight {
+        color: $color-yellow-primary;
+      }
+    }
+    .section-link {
+      .btn-cir {
+        position: relative;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: $color-yellow-primary;
+        margin-right: 21px;
+        img {
+          width: 17px;
+          height: 14px;
+        }
+      }
+      span {
+        @include text-style($font-size-xxl, $weight-bold);
+        text-decoration: underline;
+        color: $color-white;
+      }
+    }
+  }
+  .section-footer {
+    position: absolute;
+    padding: 38px 0 26px;
+    width: 100%;
+    bottom: 0;
+    right: calc(50% - 576px + 196px);
+    background: $color-white;
+    border-radius: 0px 70px 0px 0px;
+    .advantage-group {
+      margin-right: 100px;
+      gap: 50px;
+    }
+  }
+}
+
+.advantage-horizontal {
+  gap: 16px;
+  .advantage-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 6px;
+    background: $color-yellow-secondary;
+    border-radius: 10px;
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  .advantage-body {
+    max-width: 179px;
+    .advantage-title {
+      margin-bottom: 4px;
+      @include text-style($font-size-sm, $weight-bold);
+      color: $color-black-secondary;
+    }
+    .advantage-description {
+      padding-right: 1px;
+      @include text-style($font-size-xs, $weight-regular);
+      color: #a8a8a8;
+    }
+  }
+}
+// News Section
+
+.news-section {
+  padding: 48px 0;
+  .news-group {
+    .news-wrap {
+      height: 360px;
+    }
+  }
+}
+
+.news {
+  position: relative;
+  padding: 167px 40px 53px;
+  .discount {
+    @include text-style($font-size-xs, $weight-bold);
+    top: 130px;
+    left: 40px;
+  }
+  .news-body {
+    height: 100%;
+    .news-title {
+      height: 3em;
+      margin-bottom: 18px;
+      @include text-style($font-size-xxl, $weight-regular);
+      color: $color-white;
+    }
+  }
+}
+
+// Selected Section
+
+.selected-section {
+  padding: 40px 0 40px;
+  .section-header {
+    margin: 20px 0 40px;
+    .section-title {
+      @include text-style($font-size-xxxl, $weight-light);
+    }
+  }
+  .section-body {
+    position: relative;
+    .section-link {
+      position: absolute;
+      top: -87px;
+      right: 0;
+    }
+  }
+}
+
+// Section Advantage
+
+.advantage-section {
+  padding: 40px 0;
+  background: #f7f7f7;
+  .section-header {
+    margin-bottom: 40px;
+    .section-title {
+      @include text-style($font-size-xxxl, $weight-light);
+    }
+  }
+  .section-body {
+    .advantage-group {
+      gap: 60px;
+      .advantage:hover {
+        .advantage-title {
+          color: $color-yellow-primary;
+        }
+      }
+    }
+  }
+}
+
+.advantage-vertical {
+  .advantage-icon {
+    margin-bottom: 48px;
+    width: 68px;
+    height: 68px;
+    background: $color-white;
+    border-radius: 10px;
+    img {
+      width: 32px;
+      height: 32px;
+      object-fit: fill;
+    }
+  }
+  .advantage-body {
+    .advantage-title {
+      margin-bottom: 16px;
+      @include text-style($font-size-md, $weight-bold);
+    }
+    .advantage-description {
+      @include text-style($font-size-sm, $weight-regular);
+    }
+  }
+}
+
+// Today Section
+
+.today-section {
+  padding: 40px 0;
+  .section-header {
+    margin-bottom: 40px;
+    .section-title {
+      @include text-style($font-size-xxxl, $weight-light);
+    }
+  }
+}
+
+// Newsletter Section
+
+.newsletter-section {
+  width: 100%;
+  height: 240px;
+  .overlay {
+    padding: 85px 0;
+    background: linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 0.3) 33.28%,
+      rgba(0, 0, 0, 0.7) 94.05%
+    );
+  }
+  .section-body-left {
+    .section-title {
+      @include text-style($font-size-xxl, $weight-regular);
+      color: $color-white;
+    }
+  }
+
+  .section-body-right {
+    input {
+      padding: 14px 24px;
+      width: 350px;
+      @include text-style($font-size-btn, $weight-regular);
+      border-radius: 60px;
+      color: #ababab;
+      background-color: $color-white;
+      &::placeholder {
+        color: #ababab;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: map-get($screen-size, "xs" )) {
+  // Banner Section
+  .banner-section {
+    height: 740px;
+    .container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      .section-body {
+        margin: 0;
+        .section-title {
+          margin-bottom: 16px;
+          @include text-style(
+            map-get($font-size-screen-sm, "max"),
+            $weight-bold
+          );
+        }
+        .section-link {
+          .btn-cir {
+            position: relative;
+            width: 32px;
+            height: 32px;
+            margin-right: 16px;
+            img {
+              width: 15px;
+              height: 12px;
+            }
+          }
+          span {
+            @include text-style(
+              map-get($font-size-screen-sm, "xxl"),
+              $weight-bold
+            );
+          }
+        }
+      }
+    }
+    .section-footer {
+      display: none;
+    }
+  }
+
+  // News Section
+
+  .news-section {
+    padding: 14px 0;
+    .news-group {
+      .news-wrap {
+        height: 224px;
+      }
+    }
+  }
+
+  .news {
+    position: relative;
+    padding: 140px 16px 53px;
+    .discount {
+      @include text-style(8px, $weight-bold);
+      top: 120px;
+      left: 16px;
+    }
+    .news-body {
+      .news-title {
+        margin-bottom: 6px;
+        max-width: 120px;
+        @include text-style(
+          map-get($font-size-screen-sm, "xxl"),
+          $weight-regular
+        );
+      }
+    }
+  }
+
+  // Selected Section
+
+  .selected-section {
+    padding: 24px 0;
+    .section-header {
+      margin: 0 0 16px;
+      .section-title {
+        @include text-style(
+          map-get($font-size-screen-sm, "xxxl"),
+          $weight-light
+        );
+      }
+    }
+    .section-body {
+      .section-link {
+        top: -39px;
+        right: 0;
+      }
+    }
+  }
+
+  // Section Advantage
+
+  .advantage-section {
+    padding: 40px 0;
+    background: #f7f7f7;
+    .section-header {
+      margin-bottom: 40px;
+      .section-title {
+        @include text-style(
+          map-get($font-size-screen-sm, "xxxl"),
+          $weight-light
+        );
+      }
+    }
+    .section-body {
+      .advantage-group {
+        flex-direction: column;
+        gap: 60px;
+      }
+    }
+  }
+
+  .advantage-vertical {
+    display: flex;
+    .advantage-icon {
+      margin: 0 16px 0 0;
+      width: 68px;
+      height: 68px;
+      background: $color-white;
+      border-radius: 10px;
+      img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+    .advantage-body {
+      flex: 1;
+      padding-top: 8px;
+      .advantage-name {
+        margin-bottom: 8px;
+        @include text-style(map-get($font-size-screen-sm, "md"), $weight-bold);
+      }
+      .advantage-description {
+        @include text-style(
+          map-get($font-size-screen-sm, "sm"),
+          $weight-regular
+        );
+      }
+    }
+  }
+
+  // Today Section
+
+  .today-section {
+    padding: 48px 0;
+    .section-header {
+      margin-bottom: 16px;
+      .section-title {
+        @include text-style(
+          map-get($font-size-screen-sm, "xxxl"),
+          $weight-light
+        );
+        text-align: left;
+      }
+    }
+  }
+
+  // Newsletter Section
+
+  .newsletter-section {
+    width: 100%;
+    height: 210px;
+    .overlay {
+      padding: 24px 0;
+      background: linear-gradient(
+        270deg,
+        rgba(0, 0, 0, 0.3) 33.28%,
+        rgba(0, 0, 0, 0.7) 94.05%
+      );
+    }
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .section-body-left {
+      .section-title {
+        max-width: 200px;
+        margin-bottom: 24px;
+        @include text-style(
+          map-get($font-size-screen-sm, "xxl"),
+          $weight-regular
+        );
+      }
+    }
+
+    .section-body-right {
+      width: 100%;
+      .section-form {
+        display: block;
+      }
+      input {
+        padding: 6px 12px;
+        margin-bottom: 16px;
+        width: 100%;
+        @include text-style(
+          map-get($font-size-screen-sm, "md"),
+          $weight-regular
+        );
+        border-radius: 60px;
+        color: #ababab;
+        background-color: $color-white;
+        &::placeholder {
+          color: #ababab;
+        }
+      }
+    }
+  }
+}

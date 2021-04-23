@@ -1,0 +1,16 @@
+.discount {
+  position: absolute;
+  padding: 6px 12px;
+  @include text-style($font-size-xs, $weight-bold);
+  line-height: 1.5em;
+  color: $color-white;
+  background-color: $color-red;
+  border-radius: 20px;
+}
+@media only screen and(max-width: map-get($screen-size, 'xs')) {
+  .discount {
+    padding: 3px 5px;
+    @include text-style(8px, $weight-bold);
+    border-radius: 9px;
+  }
+}

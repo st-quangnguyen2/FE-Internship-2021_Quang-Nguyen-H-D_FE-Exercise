@@ -1,14 +1,14 @@
 footer {
   background-color: $color-yellow-primary;
-  .container-fluid {
+  .container {
     padding: 40px 0 52px;
-    border-bottom: 1px solid $color-white;
   }
   .section-footer {
     height: 66px;
+    border-top: 1px solid $color-white;
     p {
       margin: auto 0;
-      @include styleText($font-size-xs, $weight-regular);
+      @include text-style($font-size-xs, $weight-regular);
       color: $color-white;
     }
   }
@@ -22,20 +22,17 @@ footer {
   }
   .footer-title {
     margin: 24px 0 56px;
-    @include styleText($font-size-sm, $weight-regular);
+    @include text-style($font-size-sm, $weight-light);
     color: $color-white;
   }
 }
 
 .social-item {
   margin-right: 32px;
-  .social-link {
+  .social-icon {
     width: 18px;
     height: 18px;
-    .social-icon {
-      width: 18px;
-      height: 18px;
-    }
+    object-fit: fill;
   }
 }
 
@@ -44,15 +41,50 @@ footer {
   .nav-item {
     .nav-item-title {
       margin-bottom: 20px;
-      @include styleText($font-size-md, $weight-bold);
+      @include text-style($font-size-md, $weight-bold);
       color: $color-white;
     }
 
     li {
       margin-bottom: 16px;
       p {
-        @include styleText($font-size-xs, $weight-regular);
+        @include text-style($font-size-xs, $weight-regular);
         color: $color-white;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: map-get($screen-size, "xs")) {
+  footer {
+    .container {
+      flex-direction: column;
+      padding-bottom: 40px;
+    }
+    .body-left {
+      .footer-title {
+        margin: 24px 0 48px;
+      }
+    }
+    .footer-social {
+      display: none;
+    }
+    .nav-group {
+      gap: 24px;
+      flex-direction: column;
+      .nav-item {
+        .nav-item-title {
+          margin-bottom: 20px;
+          @include text-style($font-size-md, $weight-bold);
+          color: $color-white;
+        }
+        li {
+          margin-bottom: 16px;
+          p {
+            @include text-style($font-size-xs, $weight-regular);
+            color: $color-white;
+          }
+        }
       }
     }
   }

@@ -11,6 +11,9 @@ html {
 body {
   position: relative;
 }
+img {
+  object-fit: cover;
+}
 
 .container-fluid {
   max-width: 100%;
@@ -49,4 +52,27 @@ body {
 
 .fl-2 {
   flex: 2;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.d-sm {
+  display: none;
+}
+.d-md {
+  display: flex;
+}
+
+@media only screen and (max-width: map-get($screen-size, "xs")) {
+  .container {
+    margin: 0 24px;
+  }
+  .d-sm {
+    display: flex;
+  }
+  .d-md {
+    display: none;
+  }
 }
