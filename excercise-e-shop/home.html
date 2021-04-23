@@ -9,7 +9,45 @@
   </head>
   <body>
     <header>
-      <div class="container flex fl-center-y fl-space-between">
+      <div class="container flex fl-center-y fl-space-between d-xs">
+        <a href="#">
+          <img
+            src="./assets/images/main/logo-black.svg"
+            alt="e-shop-logo"
+            class="logo-image"
+          />
+        </a>
+        <div class="nav-sub">
+          <ul class="nav-list flex">
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <img
+                  src="./assets/images/icon/cart-black.svg"
+                  alt="cart"
+                  class="nav-icon"
+                />
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <img
+                  src="./assets/images/icon/personal-black.svg"
+                  alt="personal"
+                  class="nav-icon"
+                />
+              </a>
+            </li>
+            <li class="nav-item">
+              <img
+                src="./assets/images/icon/ham.svg"
+                alt="personal"
+                class="nav-icon"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container flex fl-center-y fl-space-between d-lg-block d-lg">
         <a href="#">
           <img
             src="./assets/images/main/logo.svg"
@@ -58,13 +96,18 @@
       </div>
     </header>
     <main>
-      <section class="section-banner overlap-group">
+      <section class="banner-section overlay-group">
         <img
           src="./assets/images/main/banner.png"
           alt="This is banner"
-          class="banner-image overlap-image"
+          class="banner-image overlay-image d-md"
         />
-        <div class="overlap">
+        <img
+          src="./assets/images/main/banner-sm.png"
+          alt="This is banner"
+          class="banner-image overlay-image d-sm"
+        />
+        <div class="overlay">
           <div class="container">
             <div class="section-body">
               <h1 class="section-title">
@@ -83,49 +126,49 @@
               </div>
             </div>
           </div>
-          <div class="section-footer flex fl-row-rev">
-            <ul class="list-group flex">
-              <li class="list-item">
-                <div class="campaign flex">
-                  <div class="campaign-icon flex fl-center-x fl-center-y">
+          <div class="section-footer fl-row-rev">
+            <ul class="advantage-group flex">
+              <li class="advantage-item">
+                <div class="advantage advantage-horizontal flex">
+                  <div class="advantage-icon flex fl-center-x fl-center-y">
                     <img
                       src="./assets/images/icon/shipping.svg"
                       alt="Free Shipping"
                     />
                   </div>
-                  <div class="campaign-body">
-                    <p class="campaign-name">Free Shipping</p>
-                    <p class="campaign-description">On purchases over $199</p>
+                  <div class="advantage-body">
+                    <h4 class="advantage-title">Free Shipping</h4>
+                    <p class="advantage-description">On purchases over $199</p>
                   </div>
                 </div>
               </li>
-              <li class="list-item">
-                <div class="campaign flex">
-                  <div class="campaign-icon flex fl-center-x fl-center-y">
+              <li class="advantage-item">
+                <div class="advantage advantage-horizontal flex">
+                  <div class="advantage-icon flex fl-center-x fl-center-y">
                     <img
                       src="./assets/images/icon/satisfied.svg"
                       alt="99% Satisfied Customers"
                     />
                   </div>
-                  <div class="campaign-body">
-                    <p class="campaign-name">99% Satisfied Customers</p>
-                    <p class="campaign-description">
+                  <div class="advantage-body">
+                    <h4 class="advantage-title">99% Satisfied Customers</h4>
+                    <p class="advantage-description">
                       Our clients' opinions speak for themselves
                     </p>
                   </div>
                 </div>
               </li>
-              <li class="list-item">
-                <div class="campaign flex">
-                  <div class="campaign-icon flex fl-center-x fl-center-y">
+              <li class="advantage-item">
+                <div class="advantage advantage-horizontal flex">
+                  <div class="advantage-icon flex fl-center-x fl-center-y">
                     <img
                       src="./assets/images/icon/guarantee.svg"
                       alt="Originality Guaranteed"
                     />
                   </div>
-                  <div class="campaign-body">
-                    <p class="campaign-name">Originality Guaranteed</p>
-                    <p class="campaign-description">
+                  <div class="advantage-body">
+                    <h4 class="advantage-title">Originality Guaranteed</h4>
+                    <p class="advantage-description">
                       30 days warranty for each product from our store
                     </p>
                   </div>
@@ -135,57 +178,58 @@
           </div>
         </div>
       </section>
-      <section class="section-news">
+      <section class="news-section">
         <div class="container">
           <ul class="news-group row">
-            <li class="news-item col-md-6 col-sm-12">
-              <div class="overlap-group news-wrap">
+            <li class="news-item col-6 col-xs-12">
+              <div class="overlay-group news-wrap">
                 <img
                   src="./assets/images/sample/news-1.png"
                   alt="news-1"
-                  class="overlap-image"
+                  class="overlay-image"
                 />
-                <div class="news overlap">
-                  <div class="news-body flex fl-column fl-space-between">
-                    <p class="news-name">New arrivalsare now in!</p>
+                <div class="news overlay">
+                  <div class="news-body">
+                    <p class="news-title">New arrivalsare now in!</p>
                     <div>
-                      <a href="#" class="news-link btn btn-primary"
-                        >SHOW COLLECTION</a
-                      >
+                      <a href="#" class="news-link btn btn-primary">
+                        SHOW COLLECTION
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
             </li>
-            <li class="news-item col-md-3 col-sm-6">
-              <div class="overlap-group news-wrap">
+            <li class="news-item col-3 col-xs-6">
+              <div class="overlay-group news-wrap">
                 <img
                   src="./assets/images/sample/news-2.png"
                   alt="news-2"
-                  class="overlap-image"
+                  class="overlay-image"
                 />
-                <div class="news overlap">
-                  <div class="news-body flex fl-column fl-space-between">
-                    <p class="news-name">Basic t-shirts $29,99</p>
+                <div class="news overlay">
+                  <div class="news-body">
+                    <p class="news-title">Basic t-shirts $29,99</p>
                     <div>
                       <a href="#" class="news-link btn btn-primary"
-                        >MORE DETAILS</a
-                      >
+                        >MORE DETAILS
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
             </li>
-            <li class="news-item col-md-3 col-sm-6 overlap-group">
-              <div class="overlap-group news-wrap">
+            <li class="news-item col-3 col-xs-6 overlay-group">
+              <div class="overlay-group news-wrap">
                 <img
                   src="./assets/images/sample/news-3.png"
                   alt="news-3"
-                  class="overlap-image"
+                  class="overlay-image"
                 />
-                <div class="news overlap has-sale" data-sale="-50%">
-                  <div class="news-body flex fl-column fl-space-between">
-                    <p class="news-name">Sale this summer</p>
+                <div class="news overlay">
+                  <span class="discount">-50%</span>
+                  <div class="news-body">
+                    <p class="news-title">Sale this summer</p>
                     <div>
                       <a href="#" class="news-link btn btn-primary">VIEW ALL</a>
                     </div>
@@ -196,16 +240,19 @@
           </ul>
         </div>
       </section>
-      <section class="section-selected">
+      <section class="selected-section">
         <div class="container">
           <div class="section-header flex fl-center-y fl-space-between">
-            <p class="section-title">Selected just for you</p>
-            <a href="#" class="btn btn-outline-primary">SHOW MORE</a>
+            <h3 class="section-title">Selected just for you</h3>
           </div>
           <div class="section-body">
-            <ul class="list-group row">
-              <li class="list-item col-md-3 col-sm-6">
-                <div class="prd has-sale" data-sale="-30%">
+            <a href="#" class="btn btn-outline-primary section-link">
+              SHOW MORE
+            </a>
+            <ul class="selected-group row">
+              <li class="selected-item col-3 col-xs-6">
+                <div class="prd">
+                  <span class="discount">-30%</span>
                   <a href="#" class="prd-link">
                     <img
                       src="./assets/images/sample/product-1.png"
@@ -217,11 +264,16 @@
                     <a href="#" class="prd-link">
                       <p class="prd-name">T-Shirt Summer Vibes</p>
                     </a>
-                    <p class="prd-price" data-price="$119.99">$89.99</p>
+                    <p
+                      class="prd-price prd-price-discount"
+                      data-price="$119.99"
+                    >
+                      $89.99
+                    </p>
                   </div>
                 </div>
               </li>
-              <li class="list-item col-md-3 col-sm-6">
+              <li class="selected-item col-3 col-xs-6">
                 <div class="prd">
                   <a href="#" class="prd-link">
                     <img
@@ -238,7 +290,7 @@
                   </div>
                 </div>
               </li>
-              <li class="list-item col-md-3 col-sm-6">
+              <li class="selected-item col-3 col-xs-6">
                 <div class="prd">
                   <a href="#" class="prd-link">
                     <img
@@ -255,7 +307,7 @@
                   </div>
                 </div>
               </li>
-              <li class="list-item col-md-3 col-sm-6">
+              <li class="selected-item col-3 col-xs-6">
                 <div class="prd">
                   <a href="#" class="prd-link">
                     <img
@@ -276,15 +328,15 @@
           </div>
         </div>
       </section>
-      <section class="section-advantage">
+      <section class="advantage-section">
         <div class="container">
           <div class="section-header">
-            <div class="section-title">Why should you choose us?</div>
+            <h3 class="section-title txt-center">Why should you choose us?</h3>
           </div>
           <div class="section-body">
-            <ul class="list-group flex">
-              <li class="list-item fl-1">
-                <div class="advantage">
+            <ul class="advantage-group flex">
+              <li class="advantage-item fl-1">
+                <div class="advantage advantage-vertical">
                   <div class="advantage-icon flex fl-center-x fl-center-y">
                     <img
                       src="./assets/images/icon/shipping-black.svg"
@@ -292,7 +344,7 @@
                     />
                   </div>
                   <div class="advantage-body">
-                    <p class="advantage-name">Free Shipping</p>
+                    <h4 class="advantage-title">Free Shipping</h4>
                     <p class="advantage-description">
                       All purchases over $199 are eligible forfree shipping via
                       USPS First Class Mail.
@@ -300,8 +352,8 @@
                   </div>
                 </div>
               </li>
-              <li class="list-item fl-1">
-                <div class="advantage">
+              <li class="advantage-item fl-1">
+                <div class="advantage advantage-vertical">
                   <div class="advantage-icon flex fl-center-x fl-center-y">
                     <img
                       src="./assets/images/icon/payment.svg"
@@ -309,7 +361,7 @@
                     />
                   </div>
                   <div class="advantage-body">
-                    <p class="advantage-name">Easy Payments</p>
+                    <h4 class="advantage-title">Easy Payments</h4>
                     <p class="advantage-description">
                       All payments are processed instantlyover a secure payment
                       protocol.
@@ -317,8 +369,8 @@
                   </div>
                 </div>
               </li>
-              <li class="list-item fl-1">
-                <div class="advantage">
+              <li class="advantage-item fl-1">
+                <div class="advantage advantage-vertical">
                   <div class="advantage-icon flex fl-center-x fl-center-y">
                     <img
                       src="./assets/images/icon/guarantee-black.svg"
@@ -326,7 +378,7 @@
                     />
                   </div>
                   <div class="advantage-body">
-                    <p class="advantage-name">Money-Back Guarantee</p>
+                    <h4 class="advantage-title">Money-Back Guarantee</h4>
                     <p class="advantage-description">
                       If an item arrived damaged or you'vechanged your mind, you
                       can send itback for a full refund.
@@ -334,8 +386,8 @@
                   </div>
                 </div>
               </li>
-              <li class="list-item fl-1">
-                <div class="advantage">
+              <li class="advantage-item fl-1">
+                <div class="advantage advantage-vertical">
                   <div class="advantage-icon flex fl-center-x fl-center-y">
                     <img
                       src="./assets/images/icon/quality.svg"
@@ -343,7 +395,7 @@
                     />
                   </div>
                   <div class="advantage-body">
-                    <p class="advantage-name">Finest Quality</p>
+                    <h4 class="advantage-title">Finest Quality</h4>
                     <p class="advantage-description">
                       Designed to last, each of our products hasbeen crafted
                       with the finest materials.
@@ -355,15 +407,16 @@
           </div>
         </div>
       </section>
-      <section class="section-today">
+      <section class="today-section">
         <div class="container">
           <div class="section-header">
-            <div class="section-title">Products in today</div>
+            <h3 class="section-title txt-center">Products in today</h3>
           </div>
           <div class="section-body">
-            <ul class="list-group row">
-              <li class="list-item col-md-3 col-sm-6">
-                <div class="prd has-sale" data-sale="-30%">
+            <ul class="today-group row">
+              <li class="today-item col-3 col-xs-6">
+                <div class="prd">
+                  <span class="discount">-30%</span>
                   <a href="#" class="prd-link">
                     <img
                       src="./assets/images/sample/product-1.png"
@@ -372,14 +425,19 @@
                     />
                   </a>
                   <div class="prd-body">
-                    <a href="#">
+                    <a href="#" class="prd-link">
                       <p class="prd-name">T-Shirt Summer Vibes</p>
                     </a>
-                    <p class="prd-price" data-price="$119.99">$89.99</p>
+                    <p
+                      class="prd-price prd-price-discount"
+                      data-price="$119.99"
+                    >
+                      $89.99
+                    </p>
                   </div>
                 </div>
               </li>
-              <li class="list-item col-md-3 col-sm-6">
+              <li class="today-item col-3 col-xs-6">
                 <div class="prd">
                   <a href="#" class="prd-link">
                     <img
@@ -389,14 +447,14 @@
                     />
                   </a>
                   <div class="prd-body">
-                    <a href="#">
+                    <a href="#" class="prd-link">
                       <p class="prd-name">Loose Knit 3/4 Sleeve</p>
                     </a>
                     <p class="prd-price">$119.99</p>
                   </div>
                 </div>
               </li>
-              <li class="list-item col-md-3 col-sm-6">
+              <li class="today-item col-3 col-xs-6">
                 <div class="prd">
                   <a href="#" class="prd-link">
                     <img
@@ -406,14 +464,14 @@
                     />
                   </a>
                   <div class="prd-body">
-                    <a href="#">
+                    <a href="#" class="prd-link">
                       <p class="prd-name">Basic Slim Fit T-Shirt</p>
                     </a>
                     <p class="prd-price">$79.99</p>
                   </div>
                 </div>
               </li>
-              <li class="list-item col-md-3 col-sm-6">
+              <li class="today-item col-3 col-xs-6">
                 <div class="prd">
                   <a href="#" class="prd-link">
                     <img
@@ -423,7 +481,7 @@
                     />
                   </a>
                   <div class="prd-body">
-                    <a href="#">
+                    <a href="#" class="prd-link">
                       <p class="prd-name">Loose Textured T-Shirt</p>
                     </a>
                     <p class="prd-price">$119.99</p>
@@ -434,26 +492,31 @@
           </div>
         </div>
       </section>
-      <section class="section-newsletter overlap-group">
+      <section class="newsletter-section overlay-group">
         <img
           src="./assets/images/main/newsletter.png"
           alt="newsletter"
-          class="newsletter-image overlap-image"
+          class="newsletter-image overlay-image d-lg"
         />
-        <div class="overlap">
-          <div class="container flex fl-center-y">
-            <div class="section-header fl-1">
-              <p class="section-title">
+        <img
+          src="./assets/images/main/newsletter-sm.png"
+          alt="newsletter"
+          class="newsletter-image overlay-image d-xs"
+        />
+        <div class="overlay">
+          <div class="container section-body flex fl-center-y">
+            <div class="section-body-left fl-1">
+              <h3 class="section-title">
                 Subscribe to our newsletter andreceive exclusive offers every
                 week
-              </p>
+              </h3>
             </div>
-            <div class="section-body fl-1">
-              <form action="" class="newsletter-form flex fl-space-between">
+            <div class="section-body-right fl-1">
+              <form action="" class="section-form flex fl-space-between">
                 <input
                   type="text"
-                  name=""
-                  id=""
+                  name="email"
+                  id="input-email"
                   placeholder="Enter your email"
                 />
                 <button type="submit" class="btn btn-secondary">
@@ -466,143 +529,141 @@
       </section>
     </main>
     <footer>
-      <div class="container-fluid">
-        <div class="container section-body flex fl-space-between">
-          <div class="body-left">
-            <img
-              src="./assets/images/main/logo.svg"
-              alt="E-Shop"
-              class="footer-logo"
-            />
-            <p class="footer-title">
-              House My Brand designs clothing for the young, the old &everyone
-              in between – but most importantly, for the fashionable
-            </p>
-            <div class="footer-social">
-              <ul class="social-group flex">
-                <li class="social-item">
-                  <a href="#" class="social-link flex fl-center-x fl-center-y">
-                    <img
-                      src="./assets/images/icon/facebook.svg"
-                      alt="facebook"
-                      class="social-icon"
-                    />
-                  </a>
-                </li>
-                <li class="social-item">
-                  <a href="#" class="social-link">
-                    <img
-                      src="./assets/images/icon/twitter.svg"
-                      alt="twitter"
-                      class="social-icon"
-                    />
-                  </a>
-                </li>
-                <li class="social-item">
-                  <a href="#" class="social-link">
-                    <img
-                      src="./assets/images/icon/linkedin.svg"
-                      alt="linkedin"
-                      class="social-icon"
-                    />
-                  </a>
-                </li>
-                <li class="social-item">
-                  <a href="#" class="social-link">
-                    <img
-                      src="./assets/images/icon/linkedin.svg"
-                      alt="linkedin"
-                      class="social-icon"
-                    />
-                  </a>
-                </li>
-                <li class="social-item">
-                  <a href="#" class="social-link">
-                    <img
-                      src="./assets/images/icon/youtube.svg"
-                      alt="youtube"
-                      class="social-icon"
-                    />
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="body-right">
-            <ul class="flex nav-group">
-              <li class="nav-item">
-                <p class="nav-item-title">Shopping online</p>
-                <ul class="shipping-group">
-                  <li class="shipping-item">
-                    <a href="#">
-                      <p>Order Status</p>
-                    </a>
-                  </li>
-                  <li class="shipping-item">
-                    <a href="#">
-                      <p>Shipping and Delivery</p>
-                    </a>
-                  </li>
-                  <li class="shipping-item">
-                    <a href="#">
-                      <p>Returns</p>
-                    </a>
-                  </li>
-                  <li class="shipping-item">
-                    <a href="#">
-                      <p>Payment Options</p>
-                    </a>
-                  </li>
-                  <li class="shipping-item">
-                    <a href="#">
-                      <p>Contact Us</p>
-                    </a>
-                  </li>
-                </ul>
+      <div class="container section-body flex fl-space-between">
+        <div class="body-left">
+          <img
+            src="./assets/images/main/logo.svg"
+            alt="E-Shop"
+            class="footer-logo"
+          />
+          <p class="footer-title">
+            House My Brand designs clothing for the young, the old &everyone in
+            between – but most importantly, for the fashionable
+          </p>
+          <div class="footer-social">
+            <ul class="social-group flex">
+              <li class="social-item">
+                <a href="#" class="social-link flex fl-center-x fl-center-y">
+                  <img
+                    src="./assets/images/icon/facebook.svg"
+                    alt="facebook"
+                    class="social-icon"
+                  />
+                </a>
               </li>
-              <li class="nav-item">
-                <p class="nav-item-title">Information</p>
-                <ul class="information-group">
-                  <li class="information-item">
-                    <a href="#" class="information-link">
-                      <p class="information-title">Gift Cards</p>
-                    </a>
-                  </li>
-                  <li class="information-item">
-                    <a href="#" class="information-link">
-                      <p class="information-title">Find a store</p>
-                    </a>
-                  </li>
-                  <li class="information-item">
-                    <a href="#" class="information-link">
-                      <p class="information-title">Newsletter</p>
-                    </a>
-                  </li>
-                  <li class="information-item">
-                    <a href="#" class="information-link">
-                      <p class="information-title">Become a member</p>
-                    </a>
-                  </li>
-                  <li class="information-item">
-                    <a href="#" class="information-link">
-                      <p class="information-title">Site feedback</p>
-                    </a>
-                  </li>
-                </ul>
+              <li class="social-item">
+                <a href="#" class="social-link">
+                  <img
+                    src="./assets/images/icon/twitter.svg"
+                    alt="twitter"
+                    class="social-icon"
+                  />
+                </a>
               </li>
-              <li class="nav-item">
-                <p class="nav-item-title">Contact</p>
-                <ul class="contact-group">
-                  <li class="contact-item">
-                    <p>store@uikit.com</p>
-                  </li>
-                  <li class="contact-item">
-                    <p>Hotline: +1 131 138 138</p>
-                  </li>
-                </ul>
+              <li class="social-item">
+                <a href="#" class="social-link">
+                  <img
+                    src="./assets/images/icon/linkedin.svg"
+                    alt="linkedin"
+                    class="social-icon"
+                  />
+                </a>
+              </li>
+              <li class="social-item">
+                <a href="#" class="social-link">
+                  <img
+                    src="./assets/images/icon/instagram.svg"
+                    alt="instagram"
+                    class="social-icon"
+                  />
+                </a>
+              </li>
+              <li class="social-item">
+                <a href="#" class="social-link">
+                  <img
+                    src="./assets/images/icon/youtube.svg"
+                    alt="youtube"
+                    class="social-icon"
+                  />
+                </a>
               </li>
             </ul>
           </div>
+        </div>
+        <div class="body-right">
+          <ul class="flex nav-group">
+            <li class="nav-item">
+              <p class="nav-item-title">Shopping online</p>
+              <ul class="shipping-group">
+                <li class="shipping-item">
+                  <a href="#">
+                    <p>Order Status</p>
+                  </a>
+                </li>
+                <li class="shipping-item">
+                  <a href="#">
+                    <p>Shipping and Delivery</p>
+                  </a>
+                </li>
+                <li class="shipping-item">
+                  <a href="#">
+                    <p>Returns</p>
+                  </a>
+                </li>
+                <li class="shipping-item">
+                  <a href="#">
+                    <p>Payment Options</p>
+                  </a>
+                </li>
+                <li class="shipping-item">
+                  <a href="#">
+                    <p>Contact Us</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <p class="nav-item-title">Information</p>
+              <ul class="information-group">
+                <li class="information-item">
+                  <a href="#" class="information-link">
+                    <p class="information-title">Gift Cards</p>
+                  </a>
+                </li>
+                <li class="information-item">
+                  <a href="#" class="information-link">
+                    <p class="information-title">Find a store</p>
+                  </a>
+                </li>
+                <li class="information-item">
+                  <a href="#" class="information-link">
+                    <p class="information-title">Newsletter</p>
+                  </a>
+                </li>
+                <li class="information-item">
+                  <a href="#" class="information-link">
+                    <p class="information-title">Become a member</p>
+                  </a>
+                </li>
+                <li class="information-item">
+                  <a href="#" class="information-link">
+                    <p class="information-title">Site feedback</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <p class="nav-item-title">Contact</p>
+              <ul class="contact-group">
+                <li class="contact-item">
+                  <p>store@uikit.com</p>
+                </li>
+                <li class="contact-item">
+                  <p>Hotline: +1 131 138 138</p>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="section-footer flex fl-center-x fl-center-y">

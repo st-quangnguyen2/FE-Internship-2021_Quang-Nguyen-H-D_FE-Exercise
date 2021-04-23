@@ -261,6 +261,7 @@ img {
       font-weight: 400; } }
 
 .btn {
+  font-family: "Poppins", sans-serif;
   font-size: 13px;
   font-weight: 700;
   color: #000;
@@ -573,7 +574,7 @@ footer {
 .advantage-vertical .advantage-body .advantage-description {
   font-size: 14px;
   font-weight: 400;
-  color: #fff; }
+  color: #808080; }
 
 .today-section {
   padding: 40px 0; }
@@ -719,6 +720,7 @@ footer {
         padding: 6px 12px;
         margin-bottom: 16px;
         width: 100%;
+        font-family: "Poppins", sans-serif;
         font-size: 12px;
         font-weight: 400;
         border-radius: 60px;

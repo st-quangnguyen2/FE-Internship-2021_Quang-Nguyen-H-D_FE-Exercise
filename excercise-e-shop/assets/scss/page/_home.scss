@@ -179,7 +179,7 @@
     }
     .advantage-description {
       @include text-style(map-get($font-size, "sm"), $weight-regular);
-      color: map-get($color, "white");
+      color: map-get($color, "gray-f");
     }
   }
 }
@@ -404,6 +404,7 @@
         padding: 6px 12px;
         margin-bottom: 16px;
         width: 100%;
+        font-family: "Poppins", sans-serif;
         @include text-style(map-get($font-size, "xs"), $weight-regular);
         border-radius: 60px;
         color: map-get($color, "gray-d");
