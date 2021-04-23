@@ -11,6 +11,7 @@ html {
 body {
   position: relative;
 }
+
 img {
   object-fit: cover;
 }
@@ -26,24 +27,33 @@ img {
 
 .flex {
   display: flex;
-  &.fl-row {
-    flex-direction: row;
-  }
-  &.fl-row-rev {
-    flex-direction: row-reverse;
-  }
-  &.fl-column {
-    flex-direction: column;
-  }
-  &.fl-center-x {
-    justify-content: center;
-  }
-  &.fl-center-y {
-    align-items: center;
-  }
-  &.fl-space-between {
-    justify-content: space-between;
-  }
+}
+
+.fl-row {
+  @extend .flex;
+  flex-direction: row;
+}
+
+.fl-row-rev {
+  @extend .flex;
+  flex-direction: row-reverse;
+}
+
+.fl-column {
+  @extend .flex;
+  flex-direction: column;
+}
+
+.fl-center-x {
+  justify-content: center;
+}
+
+.fl-center-y {
+  align-items: center;
+}
+
+.fl-space-between {
+  justify-content: space-between;
 }
 
 .fl-1 {
@@ -58,10 +68,11 @@ img {
   text-align: center;
 }
 
-.d-sm {
+.d-xs {
   display: none;
 }
-.d-md {
+
+.d-lg {
   display: flex;
 }
 
@@ -69,10 +80,12 @@ img {
   .container {
     margin: 0 24px;
   }
-  .d-sm {
+
+  .d-xs {
     display: flex;
   }
-  .d-md {
+
+  .d-lg {
     display: none;
   }
 }

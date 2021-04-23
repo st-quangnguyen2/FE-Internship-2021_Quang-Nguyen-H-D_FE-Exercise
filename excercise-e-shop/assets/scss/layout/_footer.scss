@@ -1,15 +1,15 @@
 footer {
-  background-color: $color-yellow-primary;
+  background-color: map-get($color, "primary");
   .container {
     padding: 40px 0 52px;
   }
   .section-footer {
     height: 66px;
-    border-top: 1px solid $color-white;
+    border-top: 1px solid map-get($color, "white");
     p {
       margin: auto 0;
-      @include text-style($font-size-xs, $weight-regular);
-      color: $color-white;
+      @include text-style(map-get($font-size, "xs"), $weight-regular);
+      color: map-get($color, "white");
     }
   }
 }
@@ -22,8 +22,8 @@ footer {
   }
   .footer-title {
     margin: 24px 0 56px;
-    @include text-style($font-size-sm, $weight-light);
-    color: $color-white;
+    @include text-style(map-get($font-size, "sm"), $weight-light);
+    color: map-get($color, "white");
   }
 }
 
@@ -41,15 +41,15 @@ footer {
   .nav-item {
     .nav-item-title {
       margin-bottom: 20px;
-      @include text-style($font-size-md, $weight-bold);
-      color: $color-white;
+      @include text-style(map-get($font-size, "md"), $weight-bold);
+      color: map-get($color, "white");
     }
 
     li {
       margin-bottom: 16px;
       p {
-        @include text-style($font-size-xs, $weight-regular);
-        color: $color-white;
+        @include text-style(map-get($font-size, "xs"), $weight-regular);
+        color: map-get($color, "white");
       }
     }
   }
@@ -75,14 +75,14 @@ footer {
       .nav-item {
         .nav-item-title {
           margin-bottom: 20px;
-          @include text-style($font-size-md, $weight-bold);
-          color: $color-white;
+          @include text-style(map-get($font-size, "md"), $weight-bold);
+          color: map-get($color, "white");
         }
         li {
           margin-bottom: 16px;
           p {
-            @include text-style($font-size-xs, $weight-regular);
-            color: $color-white;
+            @include text-style(map-get($font-size, "xs"), $weight-regular);
+            color: map-get($color, "white");
           }
         }
       }

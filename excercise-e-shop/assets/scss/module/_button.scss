@@ -1,20 +1,28 @@
 .btn {
-  @include text-style($font-size-btn, $weight-bold);
-  color: $color-black-primary;
+  @include text-style(map-get($font-size, "btn"), $weight-bold);
+  color: map-get($color, "black-a");
   border-radius: 33px;
   cursor: pointer;
   &.btn-primary {
     padding: 14px 18px;
-    background: $color-white;
+    background: map-get($color, "white");
+    &:hover {
+      color: map-get($color, "white");
+      background: map-get($color, "black-a");
+    }
   }
   &.btn-outline-primary {
     padding: 14px 30px;
-    background: $color-white;
+    background: map-get($color, "white");
     border: 1px solid #c4c4c4;
+    &:hover {
+      color: map-get($color, "white");
+      background: map-get($color, "black-a");
+    }
   }
   &.btn-secondary {
     padding: 14px 56px;
-    background: $color-yellow-primary;
+    background: map-get($color, "primary");
   }
 }
 

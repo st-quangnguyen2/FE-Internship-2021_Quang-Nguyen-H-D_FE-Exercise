@@ -32,7 +32,6 @@ h5,
 h6 {
   font-size: 1rem; }
 
-/*font-weight*/
 html {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
@@ -54,20 +53,26 @@ img {
   max-width: 1152px;
   margin: 0 auto; }
 
-.flex {
+.flex, .fl-row, .fl-row-rev, .fl-column {
   display: flex; }
-  .flex.fl-row {
-    flex-direction: row; }
-  .flex.fl-row-rev {
-    flex-direction: row-reverse; }
-  .flex.fl-column {
-    flex-direction: column; }
-  .flex.fl-center-x {
-    justify-content: center; }
-  .flex.fl-center-y {
-    align-items: center; }
-  .flex.fl-space-between {
-    justify-content: space-between; }
+
+.fl-row {
+  flex-direction: row; }
+
+.fl-row-rev {
+  flex-direction: row-reverse; }
+
+.fl-column {
+  flex-direction: column; }
+
+.fl-center-x {
+  justify-content: center; }
+
+.fl-center-y {
+  align-items: center; }
+
+.fl-space-between {
+  justify-content: space-between; }
 
 .fl-1 {
   flex: 1; }
@@ -78,18 +83,18 @@ img {
 .txt-center {
   text-align: center; }
 
-.d-sm {
+.d-xs {
   display: none; }
 
-.d-md {
+.d-lg {
   display: flex; }
 
 @media only screen and (max-width: 575px) {
   .container {
     margin: 0 24px; }
-  .d-sm {
+  .d-xs {
     display: flex; }
-  .d-md {
+  .d-lg {
     display: none; } }
 
 .row {
@@ -183,6 +188,10 @@ img {
     width: 100%;
     padding: 4.5px 4.5px; } }
 
+@media only screen and (max-width: 575px) {
+  .row {
+    margin: 0 -4.5px; } }
+
 .overlay-group {
   position: relative; }
   .overlay-group .overlay-image {
@@ -215,11 +224,11 @@ img {
     .prd .prd-body .prd-name {
       font-size: 16px;
       font-weight: 300;
-      color: #333333; }
+      color: #333; }
     .prd .prd-body .prd-price {
       font-size: 20px;
       font-weight: 400;
-      color: #333333; }
+      color: #333; }
   .prd .prd-price.prd-price-discount {
     position: relative;
     color: #ff0000; }
@@ -254,16 +263,22 @@ img {
 .btn {
   font-size: 13px;
   font-weight: 700;
-  color: #000000;
+  color: #000;
   border-radius: 33px;
   cursor: pointer; }
   .btn.btn-primary {
     padding: 14px 18px;
-    background: #ffffff; }
+    background: #fff; }
+    .btn.btn-primary:hover {
+      color: #fff;
+      background: #000; }
   .btn.btn-outline-primary {
     padding: 14px 30px;
-    background: #ffffff;
+    background: #fff;
     border: 1px solid #c4c4c4; }
+    .btn.btn-outline-primary:hover {
+      color: #fff;
+      background: #000; }
   .btn.btn-secondary {
     padding: 14px 56px;
     background: #fbb03b; }
@@ -285,7 +300,7 @@ img {
   font-size: 12px;
   font-weight: 700;
   line-height: 1.5em;
-  color: #ffffff;
+  color: #fff;
   background-color: #ff0000;
   border-radius: 20px; }
 
@@ -331,17 +346,25 @@ header {
     display: block;
     position: fixed;
     background: #ffffff;
-    padding: 24px 0; }
+    padding: 20px 0; }
+    header .logo-image {
+      width: 128px;
+      height: 32px; }
     header li {
       display: flex;
       justify-content: center;
       align-items: center; }
-      header li a {
-        display: flex;
-        justify-content: center;
-        align-items: center; }
+    header a {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
     header .header-sm {
       display: flex; }
+    header .nav-sub .nav-item .nav-link {
+      padding: 0px; }
+    header .nav-sub .nav-item .nav-icon {
+      width: 20px;
+      height: 20px; }
     header .header-md {
       display: none; } }
 
@@ -351,12 +374,12 @@ footer {
     padding: 40px 0 52px; }
   footer .section-footer {
     height: 66px;
-    border-top: 1px solid #ffffff; }
+    border-top: 1px solid #fff; }
     footer .section-footer p {
       margin: auto 0;
       font-size: 12px;
       font-weight: 400;
-      color: #ffffff; }
+      color: #fff; }
 
 .body-left {
   max-width: 375px; }
@@ -367,7 +390,7 @@ footer {
     margin: 24px 0 56px;
     font-size: 14px;
     font-weight: 300;
-    color: #ffffff; }
+    color: #fff; }
 
 .social-item {
   margin-right: 32px; }
@@ -382,13 +405,13 @@ footer {
     margin-bottom: 20px;
     font-size: 16px;
     font-weight: 700;
-    color: #ffffff; }
+    color: #fff; }
   .nav-group .nav-item li {
     margin-bottom: 16px; }
     .nav-group .nav-item li p {
       font-size: 12px;
       font-weight: 400;
-      color: #ffffff; }
+      color: #fff; }
 
 @media only screen and (max-width: 575px) {
   footer .container {
@@ -405,13 +428,13 @@ footer {
       margin-bottom: 20px;
       font-size: 16px;
       font-weight: 700;
-      color: #ffffff; }
+      color: #fff; }
     footer .nav-group .nav-item li {
       margin-bottom: 16px; }
       footer .nav-group .nav-item li p {
         font-size: 12px;
         font-weight: 400;
-        color: #ffffff; } }
+        color: #fff; } }
 
 .banner-section {
   position: relative;
@@ -428,7 +451,7 @@ footer {
       font-size: 72px;
       font-weight: 700;
       line-height: 1em;
-      color: #ffffff; }
+      color: #fff; }
       .banner-section .section-body .section-title .highlight {
         color: #fbb03b; }
     .banner-section .section-body .section-link .btn-cir {
@@ -445,14 +468,14 @@ footer {
       font-size: 24px;
       font-weight: 700;
       text-decoration: underline;
-      color: #ffffff; }
+      color: #fff; }
   .banner-section .section-footer {
     position: absolute;
     padding: 38px 0 26px;
     width: 100%;
     bottom: 0;
     right: calc(50% - 576px + 196px);
-    background: #ffffff;
+    background: #fff;
     border-radius: 0px 70px 0px 0px; }
     .banner-section .section-footer .advantage-group {
       margin-right: 100px;
@@ -475,7 +498,7 @@ footer {
       margin-bottom: 4px;
       font-size: 14px;
       font-weight: 700;
-      color: #333333; }
+      color: #333; }
     .advantage-horizontal .advantage-body .advantage-description {
       padding-right: 1px;
       font-size: 12px;
@@ -502,7 +525,7 @@ footer {
       margin-bottom: 18px;
       font-size: 24px;
       font-weight: 400;
-      color: #ffffff; }
+      color: #fff; }
 
 .selected-section {
   padding: 40px 0 40px; }
@@ -525,7 +548,7 @@ footer {
     margin-bottom: 40px; }
     .advantage-section .section-header .section-title {
       font-size: 32px;
-      font-weight: 300; }
+      font-weight: 400; }
   .advantage-section .section-body .advantage-group {
     gap: 60px; }
     .advantage-section .section-body .advantage-group .advantage:hover .advantage-title {
@@ -535,7 +558,7 @@ footer {
   margin-bottom: 48px;
   width: 68px;
   height: 68px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 10px; }
   .advantage-vertical .advantage-icon img {
     width: 32px;
@@ -549,7 +572,8 @@ footer {
 
 .advantage-vertical .advantage-body .advantage-description {
   font-size: 14px;
-  font-weight: 400; }
+  font-weight: 400;
+  color: #808080; }
 
 .today-section {
   padding: 40px 0; }
@@ -568,7 +592,7 @@ footer {
   .newsletter-section .section-body-left .section-title {
     font-size: 24px;
     font-weight: 400;
-    color: #ffffff; }
+    color: #fff; }
   .newsletter-section .section-body-right input {
     padding: 14px 24px;
     width: 350px;
@@ -576,7 +600,7 @@ footer {
     font-weight: 400;
     border-radius: 60px;
     color: #ababab;
-    background-color: #ffffff; }
+    background-color: #fff; }
     .newsletter-section .section-body-right input::placeholder {
       color: #ababab; }
 
@@ -650,7 +674,7 @@ footer {
       margin: 0 16px 0 0;
       width: 68px;
       height: 68px;
-      background: #ffffff;
+      background: #fff;
       border-radius: 10px; }
       .advantage-vertical .advantage-icon img {
         width: 32px;
@@ -658,7 +682,7 @@ footer {
     .advantage-vertical .advantage-body {
       flex: 1;
       padding-top: 8px; }
-      .advantage-vertical .advantage-body .advantage-name {
+      .advantage-vertical .advantage-body .advantage-title {
         margin-bottom: 8px;
         font-size: 12px;
         font-weight: 700; }
@@ -699,6 +723,6 @@ footer {
         font-weight: 400;
         border-radius: 60px;
         color: #ababab;
-        background-color: #ffffff; }
+        background-color: #fff; }
         .newsletter-section .section-body-right input::placeholder {
           color: #ababab; } }

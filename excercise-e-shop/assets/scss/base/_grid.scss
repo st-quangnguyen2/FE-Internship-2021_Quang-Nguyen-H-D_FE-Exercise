@@ -10,3 +10,9 @@
   $screen-gutter-x,
   $screen-gutter-y
 );
+
+@media only screen and (max-width: map-get($screen-size, "xs" )) {
+  .row {
+    margin: 0 -#{map-get($screen-gutter-x, "xs") / 2}px;
+  }
+}

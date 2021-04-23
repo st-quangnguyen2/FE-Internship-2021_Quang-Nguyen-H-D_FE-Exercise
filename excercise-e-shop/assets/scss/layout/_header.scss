@@ -21,8 +21,8 @@ header {
       margin-right: 96px;
       .nav-link {
         padding: 4px 8px;
-        @include text-style($font-size-lg, $weight-bold);
-        color: $color-yellow-primary;
+        @include text-style(map-get($font-size, "lg"), $weight-bold);
+        color: map-get($color, "primary");
       }
     }
     .nav-item:last-child {
@@ -49,19 +49,38 @@ header {
     display: block;
     position: fixed;
     background: #ffffff;
-    padding: 24px 0;
+    padding: 20px 0;
+
+    .logo-image {
+      width: 128px;
+      height: 32px;
+    }
     li {
       display: flex;
       justify-content: center;
       align-items: center;
-      a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
     }
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .header-sm {
       display: flex;
+    }
+
+    .nav-sub {
+      .nav-item {
+        .nav-link {
+          padding: 0px;
+        }
+        .nav-icon {
+          width: 20px;
+          height: 20px;
+        }
+      }
     }
 
     .header-md {

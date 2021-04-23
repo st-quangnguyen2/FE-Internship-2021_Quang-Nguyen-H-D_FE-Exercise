@@ -15,25 +15,25 @@
   .prd-body {
     margin-top: 16px;
     .prd-name {
-      @include text-style($font-size-md, $weight-light);
-      color: $color-black-secondary;
+      @include text-style(map-get($font-size, "md"), $weight-light);
+      color: map-get($color, "black-b");
     }
     .prd-price {
-      @include text-style($font-size-xl, $weight-regular);
-      color: $color-black-secondary;
+      @include text-style(map-get($font-size, "xl"), $weight-regular);
+      color: map-get($color, "black-b");
     }
   }
 
   .prd-price.prd-price-discount {
     position: relative;
-    color: $color-red;
+    color: map-get($color, "red");
     &::after {
       content: attr(data-price);
       position: absolute;
       top: 50%;
       right: 0;
       transform: translateY(-50%);
-      color: #cecece;
+      color: map-get($color, "gray-b");
     }
   }
 }
@@ -56,13 +56,10 @@
     .prd-body {
       margin-top: 16px;
       .prd-name {
-        @include text-style(map-get($font-size-screen-sm, "md"), $weight-light);
+        @include text-style(map-get($font-size, "xs"), $weight-light);
       }
       .prd-price {
-        @include text-style(
-          map-get($font-size-screen-sm, "xl"),
-          $weight-regular
-        );
+        @include text-style(map-get($font-size, "2xs"), $weight-regular);
       }
     }
   }
