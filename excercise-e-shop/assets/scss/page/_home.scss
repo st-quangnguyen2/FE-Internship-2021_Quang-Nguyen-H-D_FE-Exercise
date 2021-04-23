@@ -5,7 +5,8 @@
   width: 100%;
   height: 800px;
   z-index: 1;
-  .overlay {
+  background-image: url("../images/main/banner.png");
+  &::after{
     background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0.8) 0%,
@@ -89,10 +90,19 @@
 // News Section
 
 .news-section {
-  padding: 48px 0;
+  padding: 38px 0 20px;
   .news-group {
     .news-wrap {
       height: 360px;
+      &-1{
+        background-image: url("../images/sample/news-1.png");
+      }
+      &-2{
+        background-image: url("../images/sample/news-2.png");
+      }
+      &-3{
+        background-image: url("../images/sample/news-3.png");
+      }
     }
   }
 }
@@ -201,13 +211,13 @@
 .newsletter-section {
   width: 100%;
   height: 240px;
+  background-image: url("../images/main/newsletter.png");
+  &::after{
+    background: linear-gradient(90deg, #000000 33.28%, rgba(0, 0, 0, 0) 94.05%);
+    opacity: 0.7;
+  }
   .overlay {
     padding: 85px 0;
-    background: linear-gradient(
-      270deg,
-      rgba(0, 0, 0, 0.3) 33.28%,
-      rgba(0, 0, 0, 0.7) 94.05%
-    );
   }
   .section-body-left {
     .section-title {
@@ -215,7 +225,6 @@
       color: map-get($color, "white");
     }
   }
-
   .section-body-right {
     input {
       @include text-style(map-get($font-size, "btn"), $weight-regular);
@@ -235,6 +244,7 @@
   // Banner Section
   .banner-section {
     height: 740px;
+    background-image: url("../images/main/banner-sm.png");
     .container {
       height: 100%;
       display: flex;
@@ -270,7 +280,7 @@
   // News Section
 
   .news-section {
-    padding: 14px 0;
+    padding: 20px 0;
     .news-group {
       .news-wrap {
         height: 224px;
@@ -298,9 +308,9 @@
   // Selected Section
 
   .selected-section {
-    padding: 24px 0;
+    padding: 0 0 48px;
     .section-header {
-      margin: 0 0 16px;
+      margin-bottom: 16px;
       .section-title {
         @include text-style(map-get($font-size, "lg"), $weight-light);
       }
@@ -335,7 +345,7 @@
   .advantage-vertical {
     display: flex;
     .advantage-icon {
-      margin: 0 16px 0 0;
+      margin-right: 16px;
       width: 68px;
       height: 68px;
       background: map-get($color, "white");
@@ -376,6 +386,7 @@
   .newsletter-section {
     width: 100%;
     height: 210px;
+    background-image: url("../images/main/newsletter-sm.png");
     .overlay {
       padding: 24px 0;
     }

@@ -163,20 +163,26 @@ img {
     margin: 0 -4px; } }
 
 .overlay-group {
-  position: relative; }
-  .overlay-group .overlay-image {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .overlay-group::after {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2; }
   .overlay-group .overlay {
     position: absolute;
     top: 0;
     right: 0;
     width: 100%;
     height: 100%;
-    background: rgba(51, 51, 51, 0.5); }
+    z-index: 3; }
 
 .prd {
   position: relative; }
@@ -361,7 +367,7 @@ header {
 @media only screen and (max-width: 575px) {
   header {
     display: block;
-    position: fixed;
+    position: sticky;
     padding: 20px 0;
     background: #fff; }
     header .logo-image {
@@ -457,8 +463,9 @@ footer {
   position: relative;
   width: 100%;
   height: 800px;
-  z-index: 1; }
-  .banner-section .overlay {
+  z-index: 1;
+  background-image: url("../images/main/banner.png"); }
+  .banner-section::after {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 100%); }
   .banner-section .section-body {
     margin: 222px 96px; }
@@ -523,9 +530,15 @@ footer {
       color: #a8a8a8; }
 
 .news-section {
-  padding: 48px 0; }
+  padding: 38px 0 20px; }
   .news-section .news-group .news-wrap {
     height: 360px; }
+    .news-section .news-group .news-wrap-1 {
+      background-image: url("../images/sample/news-1.png"); }
+    .news-section .news-group .news-wrap-2 {
+      background-image: url("../images/sample/news-2.png"); }
+    .news-section .news-group .news-wrap-3 {
+      background-image: url("../images/sample/news-3.png"); }
 
 .news {
   position: relative;
@@ -602,10 +615,13 @@ footer {
 
 .newsletter-section {
   width: 100%;
-  height: 240px; }
+  height: 240px;
+  background-image: url("../images/main/newsletter.png"); }
+  .newsletter-section::after {
+    background: linear-gradient(90deg, #000000 33.28%, rgba(0, 0, 0, 0) 94.05%);
+    opacity: 0.7; }
   .newsletter-section .overlay {
-    padding: 85px 0;
-    background: linear-gradient(270deg, rgba(0, 0, 0, 0.3) 33.28%, rgba(0, 0, 0, 0.7) 94.05%); }
+    padding: 85px 0; }
   .newsletter-section .section-body-left .section-title {
     font-size: 24px;
     font-weight: 400;
@@ -623,7 +639,8 @@ footer {
 
 @media only screen and (max-width: 575px) {
   .banner-section {
-    height: 740px; }
+    height: 740px;
+    background-image: url("../images/main/banner-sm.png"); }
     .banner-section .container {
       height: 100%;
       display: flex;
@@ -648,7 +665,7 @@ footer {
     .banner-section .section-footer {
       display: none; }
   .news-section {
-    padding: 14px 0; }
+    padding: 20px 0; }
     .news-section .news-group .news-wrap {
       height: 224px; }
   .news {
@@ -665,9 +682,9 @@ footer {
       margin-bottom: 6px;
       max-width: 120px; }
   .selected-section {
-    padding: 24px 0; }
+    padding: 0 0 48px; }
     .selected-section .section-header {
-      margin: 0 0 16px; }
+      margin-bottom: 16px; }
       .selected-section .section-header .section-title {
         font-size: 18px;
         font-weight: 300; }
@@ -688,7 +705,7 @@ footer {
   .advantage-vertical {
     display: flex; }
     .advantage-vertical .advantage-icon {
-      margin: 0 16px 0 0;
+      margin-right: 16px;
       width: 68px;
       height: 68px;
       background: #fff;
@@ -716,7 +733,8 @@ footer {
         text-align: left; }
   .newsletter-section {
     width: 100%;
-    height: 210px; }
+    height: 210px;
+    background-image: url("../images/main/newsletter-sm.png"); }
     .newsletter-section .overlay {
       padding: 24px 0; }
     .newsletter-section .container {

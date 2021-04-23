@@ -40,7 +40,7 @@ header {
 @media only screen and (max-width: map-get($screen-size, "xs" )) {
   header {
     display: block;
-    position: fixed;
+    position: sticky;
     padding: 20px 0;
     background: map-get($color, "white");
     .logo-image {
