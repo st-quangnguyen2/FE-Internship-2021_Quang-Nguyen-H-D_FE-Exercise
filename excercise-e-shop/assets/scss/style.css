@@ -498,7 +498,7 @@ footer {
     padding: 2.375rem 0rem 1.625rem 0rem;
     width: 100%;
     bottom: 0;
-    right: calc(50% - to-rem(576) + to-rem(196));
+    right: calc(50% - 36rem + 12.25rem);
     background: #fff;
     border-top-right-radius: 4.375rem; }
     .banner-section .section-footer .advantage-group {
@@ -541,7 +541,7 @@ footer {
       background-image: url("../images/sample/news-3.png"); }
 
 .news {
-  167: 2.5rem 3.3125rem 2.5rem 0rem;
+  padding: 10.4375rem 2.5rem 3.3125rem 2.5rem;
   position: relative; }
   .news .discount {
     font-size: 0.75rem;

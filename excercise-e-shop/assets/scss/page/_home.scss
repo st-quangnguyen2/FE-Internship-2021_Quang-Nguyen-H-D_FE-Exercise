@@ -50,7 +50,7 @@
     @include to-rem-prop(padding, 38, 0, 26, 0);
     width: 100%;
     bottom: 0;
-    right: calc(50% - to-rem(576) + to-rem(196));
+    right: calc(50% - #{to-rem(576)} + #{to-rem(196)});
     background: map-get($color, "white");
     border-top-right-radius: to-rem(70);
     .advantage-group {
@@ -108,7 +108,7 @@
 }
 
 .news {
-  @include to-rem-prop(167, 40, 53, 40);
+  @include to-rem-prop(padding, 167, 40, 53, 40);
   position: relative;
   .discount {
     @include text-style(map-get($font-size, "xs"), $weight-bold);
