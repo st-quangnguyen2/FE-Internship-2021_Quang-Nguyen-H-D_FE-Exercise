@@ -1,5 +1,13 @@
+@function to-rem($px) {
+  @return #{$px/$size-base}rem; 
+}
+
+@mixin to-rem-prop($property, $top: 0, $right: 0, $bottom:0, $left: 0) {
+  #{$property}: to-rem($top) to-rem($right) to-rem($bottom) to-rem($left);
+}
+
 @mixin text-style($font-size, $font-weight) {
-  font-size: $font-size;
+  font-size: to-rem($font-size);
   font-weight: $font-weight;
 }
 
@@ -19,18 +27,18 @@
       @if ($break-point == "") {
         .col-#{$i} {
           width: percentage($i / $column);
-          padding: #{map-get($gutter-y, $size) /
-            2}px
-            #{map-get($gutter-x, $size) /
-            2}px;
+          padding: to-rem(map-get($gutter-y, $size) /
+            2)
+            to-rem(map-get($gutter-x, $size) /
+            2);
         }
       } @else {
         .col-#{$size}-#{$i} {
           width: percentage($i / $column);
-          padding: #{map-get($gutter-y, $size) /
-            2}px
-            #{map-get($gutter-x, $size) /
-            2}px;
+          padding: to-rem(map-get($gutter-y, $size) /
+            2)
+            to-rem(map-get($gutter-x, $size) /
+            2);
         }
       }
     }

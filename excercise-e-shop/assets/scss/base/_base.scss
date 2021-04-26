@@ -1,6 +1,6 @@
 html {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: #{$size-base}px;
   font-style: normal;
 }
 
@@ -21,7 +21,7 @@ img {
 }
 
 .container {
-  max-width: 1152px;
+  max-width: to-rem(1152);
   margin: 0 auto;
 }
 
@@ -35,7 +35,7 @@ img {
 
 @media only screen and (max-width: map-get($screen-size, "xs")) {
   .container {
-    margin: 0 24px;
+    margin: 0 to-rem(24);
   }
 
   .d-xs {

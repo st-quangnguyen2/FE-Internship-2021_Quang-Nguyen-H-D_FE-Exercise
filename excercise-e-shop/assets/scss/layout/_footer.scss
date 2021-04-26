@@ -1,10 +1,10 @@
 footer {
   background-color: map-get($color, "primary");
   .section-body {
-    padding: 40px 0 52px;
+    @include to-rem-prop(padding, 40, 0, 52, 0);
   }
   .section-footer {
-    padding: 24px 0;
+    padding: to-rem(24) 0;
     border-top: 1px solid map-get($color, "white");
     p {
       @include text-style(map-get($font-size, "xs"), $weight-regular);
@@ -15,37 +15,37 @@ footer {
 }
 
 .body-left {
-  max-width: 375px;
+  max-width: to-rem(375);
   .footer-logo {
-    width: 138px;
-    height: 35px;
+    width: to-rem(138);
+    height: to-rem(35);
   }
   .footer-title {
     @include text-style(map-get($font-size, "sm"), $weight-light);
-    margin: 24px 0 56px;
+    @include to-rem-prop(margin, 24, 0, 56, 0);
     color: map-get($color, "white");
   }
 }
 
 .social-item {
-  margin-right: 32px;
+  margin-right: to-rem(32);
   .social-icon {
-    width: 18px;
-    height: 18px;
+    width: to-rem(18);
+    height: to-rem(18);
     object-fit: fill;
   }
 }
 
 .nav-group {
-  gap: 90px;
+  gap: to-rem(90);
   .nav-item {
     .nav-item-title {
       @include text-style(map-get($font-size, "md"), $weight-bold);
-      margin-bottom: 20px;
+      margin-bottom: to-rem(20);
       color: map-get($color, "white");
     }
     li {
-      margin-bottom: 16px;
+      margin-bottom: to-rem(16);
       p {
         @include text-style(map-get($font-size, "xs"), $weight-regular);
         color: map-get($color, "white");
@@ -58,27 +58,27 @@ footer {
   footer {
     .section-body {
       flex-direction: column;
-      padding-bottom: 40px;
+      padding-bottom: to-rem(40);
     }
     .body-left {
       .footer-title {
-        margin: 24px 0 48px;
+        @include to-rem-prop(margin, 24, 0, 48, 0);
       }
     }
     .footer-social {
       display: none;
     }
     .nav-group {
-      gap: 24px;
+      gap: to-rem(24);
       flex-direction: column;
       .nav-item {
         .nav-item-title {
           @include text-style(map-get($font-size, "md"), $weight-bold);
-          margin-bottom: 20px;
+          margin-bottom: to-rem(20);
           color: map-get($color, "white");
         }
         li {
-          margin-bottom: 16px;
+          margin-bottom: to-rem(16);
           p {
             @include text-style(map-get($font-size, "xs"), $weight-regular);
             color: map-get($color, "white");

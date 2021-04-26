@@ -4,18 +4,18 @@ header {
   left: 0;
   width: 100%;
   z-index: 100;
-  padding: 55px 0;
+  padding: to-rem(55) 0;
   background: transparent;
   .logo-image {
-    width: 139px;
-    height: 35px;
+    width: to-rem(139);
+    height: to-rem(35);
   }
   .nav-main {
     .nav-item {
-      margin-right: 96px;
+      margin-right: to-rem(96);
       .nav-link {
         @include text-style(map-get($font-size, "lg"), $weight-bold);
-        padding: 4px 8px;
+        padding: to-rem(4) to-rem(8);
         color: map-get($color, "primary");
       }
     }
@@ -25,13 +25,13 @@ header {
   }
   .nav-sub {
     .nav-item {
-      margin-right: 24px;
+      margin-right: to-rem(24);
       .nav-link {
-        padding: 4px;
+        padding: to-rem(4);
       }
       .nav-icon {
-        width: 24px;
-        height: 24px;
+        width: to-rem(24);
+        height: to-rem(24);
       }
     }
   }
@@ -41,11 +41,11 @@ header {
   header {
     display: block;
     position: sticky;
-    padding: 20px 0;
+    padding: to-rem(20) 0;
     background: map-get($color, "white");
     .logo-image {
-      width: 128px;
-      height: 32px;
+      width: to-rem(128);
+      height: to-rem(32);
     }
     li {
       display: flex;
@@ -65,11 +65,11 @@ header {
       .nav-item {
         cursor: pointer;
         .nav-link {
-          padding: 0px;
+          padding: 0;
         }
         .nav-icon {
-          width: 20px;
-          height: 20px;
+          width: to-rem(20);
+          height: to-rem(20);
         }
       }
     }

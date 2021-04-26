@@ -1,7 +1,7 @@
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -#{$grid-gutter/2}px;
+  margin: 0 -#{to-rem($grid-gutter/2)};
 }
 
 @include build-grid(
@@ -13,6 +13,6 @@
 
 @media only screen and (max-width: map-get($screen-size, "xs" )) {
   .row {
-    margin: 0 -#{map-get($screen-gutter-x, "xs") / 2}px;
+    margin: 0 -#{to-rem(map-get($screen-gutter-x, "xs") / 2)};
   }
 }
