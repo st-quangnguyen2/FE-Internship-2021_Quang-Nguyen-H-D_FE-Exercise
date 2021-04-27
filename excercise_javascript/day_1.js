@@ -56,7 +56,7 @@ function findAllDivNumber(strDigits, num = 3){
   let res = [];
   for(let i = 0; i < 10; i++){
     let str = strDigits.replace('*', i);
-    if(+str % num === 0){
+    if (+str % num === 0) {
       res.push(str);
     }
   }
