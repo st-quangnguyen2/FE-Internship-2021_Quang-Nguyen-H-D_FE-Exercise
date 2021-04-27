@@ -8,13 +8,13 @@
 
 Bất đồng bộ: là thực hiện các công việc một cách không tuần tự.
 
-![This is async](/assets/images/async.png "This is async image.")
+![This is async](/excercise_javascript/understanding_sync_async/assets/images/async.png "This is async image.")
 
 Với cách xử lý bất đồng bộ, khi A bắt đầu thực hiện, chương trình tiếp tục thực hiện B mà không đợi A kết thúc.
 
 ### Javascript hoạt động như thế nào ?
 
-![This is event loop](/assets/images/event-loop.gif "This is event loop gif")
+![This is event loop](/excercise_javascript/understanding_sync_async/assets/images/event-loop.gif "This is event loop gif")
 
 ```javascript
   console.log('Start');
