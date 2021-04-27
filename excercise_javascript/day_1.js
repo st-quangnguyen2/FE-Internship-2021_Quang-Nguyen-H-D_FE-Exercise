@@ -52,10 +52,10 @@ Output: ['12345678900',
  '12345678909']
 */
 
-function findAllDivNumber(strDigits, num = 3){
-  let res = [];
-  for(let i = 0; i < 10; i++){
-    let str = strDigits.replace('*', i);
+function findAllDivNumber(strDigits, num){
+  var res = [];
+  for(var i = 0; i < 10; i++){
+    var str = strDigits.replace('*', i);
     if (+str % num === 0) {
       res.push(str);
     }
@@ -63,8 +63,8 @@ function findAllDivNumber(strDigits, num = 3){
   return res;
 }
 
-console.log(findAllDivNumber('1*9'));
-console.log(findAllDivNumber('1234567890*'));
+console.log(findAllDivNumber('1*9', 3));
+console.log(findAllDivNumber('1234567890*', 3));
 
 /*
 4. A masked number is a string that consists of digits and one asterisk (*) that should be replaced by exactly one digit. Given a masked number find all the possible options to replace the asterisk with a digit to produce an integer divisible by 6.
