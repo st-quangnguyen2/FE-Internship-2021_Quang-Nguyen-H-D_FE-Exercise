@@ -7,7 +7,7 @@ Input: a = 5, b = 5
 Output: 30
 */
 
-function sum(valA, valB){
+function sum(valA, valB) {
   const TIMES = 3;
   return valA === valB ? (valA + valB) * TIMES : valA + valB;
 }
@@ -28,7 +28,7 @@ Input: a = 22
 Output: 9
 */
 
-function absDiff(val){
+function absDiff(val) {
   const FIXED_NUMBER = 19;
   const TIMES = 3;
   return val > FIXED_NUMBER ? (val - FIXED_NUMBER) * TIMES : FIXED_NUMBER - val;
@@ -52,9 +52,9 @@ Output: ['12345678900',
  '12345678909']
 */
 
-function findAllDivNumber(strDigits, num){
+function findAllDivNumber(strDigits, num) {
   var res = [];
-  for(var i = 0; i < 10; i++){
+  for(var i = 0; i < 10; i++) {
     var str = strDigits.replace('*', i);
     if (+str % num === 0) {
       res.push(str);
