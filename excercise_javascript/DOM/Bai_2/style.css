@@ -1,0 +1,67 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-family: Roboto; }
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: "#ffffff"; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  display: inline-block; }
+
+.list-group {
+  display: flex; }
+
+.list-item {
+  padding: 10px; }
+
+.txt-center {
+  text-align: center; }
+
+.btn {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 4px; }
+  .btn.btn-primary {
+    background: #157ffb;
+    color: #ffffff;
+    border: 1px solid #157ffb; }
+  .btn.btn-outline {
+    color: #157ffb;
+    background: #ffffff;
+    border: 1px solid #157ffb; }
+
+.plan {
+  width: 450px;
+  background: "#ededed";
+  border-radius: 4px;
+  box-shadow: 0px 0px 3px 1px rgba(105, 105, 105, 0.3); }
+  .plan .plan-header {
+    background: #f7f7f7;
+    padding: 10px 0; }
+    .plan .plan-header .plan-title {
+      font-size: 32px; }
+  .plan .plan-body {
+    padding: 20px; }
+    .plan .plan-body .plan-price {
+      padding: 8px 0;
+      font-size: 24px; }
+    .plan .plan-body p {
+      padding: 5px;
+      font-size: 16px; }
+    .plan .plan-body .plan-link {
+      margin-top: 20px; }
