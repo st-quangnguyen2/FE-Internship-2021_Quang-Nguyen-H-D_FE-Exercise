@@ -215,6 +215,16 @@ img {
       right: 0;
       transform: translateY(-50%);
       color: #cecece; }
+  .prd .prd-action {
+    display: none;
+    position: absolute;
+    top: 18.75rem;
+    left: 50%;
+    transform: translateX(-50%); }
+    .prd .prd-action:hover {
+      display: inline-block; }
+  .prd .prd-img-group:hover ~ .prd-action {
+    display: inline-block; }
 
 @media only screen and (max-width: 575px) {
   .prd .discount {
@@ -234,7 +244,9 @@ img {
       font-weight: 300; }
     .prd .prd-body .prd-price {
       font-size: 0.625rem;
-      font-weight: 400; } }
+      font-weight: 400; }
+  .prd .prd-action {
+    top: 11.25rem; } }
 
 .btn {
   font-size: 0.8125rem;
@@ -701,7 +713,7 @@ footer {
         font-weight: 300; }
     .advantage-section .section-body .advantage-group {
       flex-direction: column;
-      gap: 3.75rem; }
+      gap: 0rem; }
   .advantage-vertical {
     display: flex; }
     .advantage-vertical .advantage-icon {

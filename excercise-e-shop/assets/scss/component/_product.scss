@@ -35,6 +35,21 @@
       color: map-get($color, "gray-b");
     }
   }
+  .prd-action {
+    display: none;
+    position: absolute;
+    top: to-rem(300);
+    left: 50%;
+    transform: translateX(-50%);
+    &:hover {
+      display: inline-block;
+    }
+  }
+  .prd-img-group:hover {
+    ~ .prd-action{
+      display: inline-block;
+    }
+  }
 }
 
 @media only screen and(max-width: map-get($screen-size, 'xs')) {
@@ -60,6 +75,9 @@
       .prd-price {
         @include text-style(map-get($font-size, "2xs"), $weight-regular);
       }
+    }
+    .prd-action{
+      top: to-rem(180);
     }
   }
 }
