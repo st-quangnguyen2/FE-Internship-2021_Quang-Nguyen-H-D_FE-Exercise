@@ -1,0 +1,17 @@
+.discount {
+  @include text-style(map-get($font-size, "xs"), $weight-bold);
+  position: absolute;
+  padding: to-rem(6) to-rem(12);
+  line-height: 1.5em;
+  color: map-get($color, "white");
+  background-color: map-get($color, "red");
+  border-radius: to-rem(20);
+}
+
+@media only screen and(max-width: map-get($screen-size, 'xs')) {
+  .discount {
+    @include text-style(map-get($font-size, "3xs"), $weight-bold);
+    padding: to-rem(3) to-rem(5);
+    border-radius: to-rem(9);
+  }
+}

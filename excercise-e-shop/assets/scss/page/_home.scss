@@ -1,0 +1,424 @@
+// Banner Section
+
+.banner-section {
+  position: relative;
+  width: 100%;
+  height: to-rem(800);
+  z-index: 1;
+  background-image: url("../images/main/banner.png");
+  &::after{
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  }
+  .section-body {
+    margin: to-rem(222) to-rem(96);
+    .section-title {
+      @include text-style(map-get($font-size, "5xl"), $weight-bold);
+      margin-bottom: to-rem(24);
+      max-width: to-rem(403);
+      line-height: 1em;
+      color: map-get($color, "white");
+      .highlight {
+        color: map-get($color, "primary");
+      }
+    }
+    .section-link {
+      .btn-cir {
+        position: relative;
+        width: to-rem(36);
+        height: to-rem(36);
+        border-radius: 50%;
+        background-color: map-get($color, "primary");
+        margin-right: to-rem(21);
+        img {
+          width: to-rem(17);
+          height: to-rem(14);
+        }
+      }
+      span {
+        @include text-style(map-get($font-size, "2xl"), $weight-bold);
+        text-decoration: underline;
+        color: map-get($color, "white");
+      }
+    }
+  }
+  .section-footer {
+    position: absolute;
+    @include to-rem-prop(padding, 38, 0, 26, 0);
+    width: 100%;
+    bottom: 0;
+    right: calc(50% - #{to-rem(576)} + #{to-rem(196)});
+    background: map-get($color, "white");
+    border-top-right-radius: to-rem(70);
+    .advantage-group {
+      margin-right: to-rem(100);
+      gap: to-rem(50);
+    }
+  }
+}
+
+.advantage-horizontal {
+  gap: to-rem(16);
+  .advantage-icon {
+    width: to-rem(36);
+    height: to-rem(36);
+    margin-bottom: to-rem(6);
+    background: map-get($color, "yellow");
+    border-radius: to-rem(10);
+    img {
+      width: to-rem(16);
+      height: to-rem(16);
+    }
+  }
+  .advantage-body {
+    max-width: to-rem(179);
+    .advantage-title {
+      @include text-style(map-get($font-size, "sm"), $weight-bold);
+      margin-bottom: to-rem(4);
+      color: map-get($color, "black-b");
+    }
+    .advantage-description {
+      @include text-style(map-get($font-size, "xs"), $weight-regular);
+      padding-right: to-rem(1);
+      color: map-get($color, "gray-e");
+    }
+  }
+}
+// News Section
+
+.news-section {
+  @include to-rem-prop(padding, 38, 0, 20, 0);
+  .news-group {
+    .news-wrap {
+      height: to-rem(360);
+      &-1{
+        background-image: url("../images/sample/news-1.png");
+      }
+      &-2{
+        background-image: url("../images/sample/news-2.png");
+      }
+      &-3{
+        background-image: url("../images/sample/news-3.png");
+      }
+    }
+  }
+}
+
+.news {
+  @include to-rem-prop(padding, 167, 40, 53, 40);
+  position: relative;
+  .discount {
+    @include text-style(map-get($font-size, "xs"), $weight-bold);
+    top: to-rem(130);
+    left: to-rem(40);
+  }
+  .news-body {
+    height: 100%;
+    .news-title {
+      @include text-style(map-get($font-size, "2xl"), $weight-regular);
+      height: 3em;
+      margin-bottom: to-rem(18);
+      color: map-get($color, "white");
+    }
+  }
+}
+
+// Selected Section
+
+.selected-section {
+  @include to-rem-prop(padding, 40, 0, 40, 0);
+  .section-header {
+    @include to-rem-prop(margin, 20, 0, 40, 0);
+    .section-title {
+      @include text-style(map-get($font-size, "3xl"), $weight-light);
+    }
+  }
+  .section-body {
+    position: relative;
+    .section-link {
+      position: absolute;
+      top: to-rem(-87);
+      right: 0;
+    }
+  }
+}
+
+// Section Advantage
+
+.advantage-section {
+  padding: to-rem(40) 0;
+  background: map-get($color, "gray-a");
+  .section-header {
+    margin-bottom: to-rem(40);
+    .section-title {
+      @include text-style(map-get($font-size, "3xl"), $weight-regular);
+    }
+  }
+  .section-body {
+    .advantage-group {
+      gap: to-rem(60);
+      .advantage:hover {
+        .advantage-title {
+          color: map-get($color, "primary");
+        }
+      }
+    }
+  }
+}
+
+.advantage-vertical {
+  .advantage-icon {
+    margin-bottom: to-rem(48);
+    width: to-rem(68);
+    height: to-rem(68);
+    background: map-get($color, "white");
+    border-radius: to-rem(10);
+    img {
+      width: to-rem(32);
+      height: to-rem(32);
+      object-fit: fill;
+    }
+  }
+  .advantage-body {
+    .advantage-title {
+      @include text-style(map-get($font-size, "md"), $weight-bold);
+      margin-bottom: to-rem(16);
+    }
+    .advantage-description {
+      @include text-style(map-get($font-size, "sm"), $weight-regular);
+      color: map-get($color, "gray-f");
+    }
+  }
+}
+
+// Today Section
+
+.today-section {
+  padding: to-rem(40) 0;
+  .section-header {
+    margin-bottom: to-rem(40);
+    .section-title {
+      @include text-style(map-get($font-size, "3xl"), $weight-light);
+    }
+  }
+}
+
+// Newsletter Section
+
+.newsletter-section {
+  width: 100%;
+  height: to-rem(240);
+  background-image: url("../images/main/newsletter.png");
+  &::after{
+    background: linear-gradient(90deg, #000000 33.28%, rgba(0, 0, 0, 0) 94.05%);
+    opacity: 0.7;
+  }
+  .overlay {
+    padding: to-rem(85) 0;
+  }
+  .section-body-left {
+    .section-title {
+      @include text-style(map-get($font-size, "2xl"), $weight-regular);
+      color: map-get($color, "white");
+    }
+  }
+  .section-body-right {
+    input {
+      @include text-style(map-get($font-size, "btn"), $weight-regular);
+      padding: to-rem(14) to-rem(24);
+      width: to-rem(350);
+      border-radius: to-rem(60);
+      color: map-get($color, "gray-d");
+      background-color: map-get($color, "white");
+      &::placeholder {
+        color: map-get($color, "gray-d");
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: map-get($screen-size, "xs" )) {
+  // Banner Section
+  .banner-section {
+    height: to-rem(740);
+    background-image: url("../images/main/banner-sm.png");
+    .container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      .section-body {
+        margin: 0;
+        .section-title {
+          @include text-style(map-get($font-size, "4xl"), $weight-bold);
+          margin-bottom: to-rem(16);
+        }
+        .section-link {
+          .btn-cir {
+            position: relative;
+            width: to-rem(32);
+            height: to-rem(32);
+            margin-right: to-rem(16);
+            img {
+              width: to-rem(15);
+              height: to-rem(12);
+            }
+          }
+          span {
+            @include text-style(map-get($font-size, "sm"), $weight-bold);
+          }
+        }
+      }
+    }
+    .section-footer {
+      display: none;
+    }
+  }
+
+  // News Section
+
+  .news-section {
+    padding: to-rem(20) 0;
+    .news-group {
+      .news-wrap {
+        height: to-rem(224);
+      }
+    }
+  }
+
+  .news {
+    position: relative;
+    @include to-rem-prop(padding, 140, 16, 53, 16);
+    .discount {
+      @include text-style(map-get($font-size, "3xs"), $weight-bold);
+      top: to-rem(120);
+      left: to-rem(16);
+    }
+    .news-body {
+      .news-title {
+        @include text-style(map-get($font-size, "sm"), $weight-regular);
+        margin-bottom: to-rem(6);
+        max-width: to-rem(120);
+      }
+    }
+  }
+
+  // Selected Section
+
+  .selected-section {
+    @include to-rem-prop(padding, 0, 0, 48, 0);
+    .section-header {
+      margin-bottom: to-rem(16);
+      .section-title {
+        @include text-style(map-get($font-size, "lg"), $weight-light);
+      }
+    }
+    .section-body {
+      .section-link {
+        top: to-rem(-39);
+        right: 0;
+      }
+    }
+  }
+
+  // Section Advantage
+
+  .advantage-section {
+    padding: to-rem(40) 0;
+    background: map-get($color, "gray-a");
+    .section-header {
+      margin-bottom: to-rem(40);
+      .section-title {
+        @include text-style(map-get($font-size, "lg"), $weight-light);
+      }
+    }
+    .section-body {
+      .advantage-group {
+        flex-direction: column;
+        gap: to-rem(60);
+      }
+    }
+  }
+
+  .advantage-vertical {
+    display: flex;
+    .advantage-icon {
+      margin-right: to-rem(16);
+      width: to-rem(68);
+      height: to-rem(68);
+      background: map-get($color, "white");
+      border-radius: to-rem(10);
+      img {
+        width: to-rem(32);
+        height: to-rem(32);
+      }
+    }
+    .advantage-body {
+      flex: 1;
+      padding-top: to-rem(8);
+      .advantage-title {
+        @include text-style(map-get($font-size, "xs"), $weight-bold);
+        margin-bottom: to-rem(8);
+      }
+      .advantage-description {
+        @include text-style(map-get($font-size, "2xs"), $weight-regular);
+      }
+    }
+  }
+
+  // Today Section
+
+  .today-section {
+    padding: to-rem(48) 0;
+    .section-header {
+      margin-bottom: to-rem(16);
+      .section-title {
+        @include text-style(map-get($font-size, "lg"), $weight-light);
+        text-align: left;
+      }
+    }
+  }
+
+  // Newsletter Section
+
+  .newsletter-section {
+    width: 100%;
+    height: to-rem(210);
+    background-image: url("../images/main/newsletter-sm.png");
+    .overlay {
+      padding: to-rem(24) 0;
+    }
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .section-body-left {
+      .section-title {
+        @include text-style(map-get($font-size, "sm"), $weight-regular);
+        max-width: to-rem(200);
+        margin-bottom: to-rem(24);
+      }
+    }
+    .section-body-right {
+      width: 100%;
+      .section-form {
+        display: block;
+      }
+      input {
+        @include text-style(map-get($font-size, "xs"), $weight-regular);
+        padding: to-rem(6) to-rem(12);
+        margin-bottom: to-rem(16);
+        width: 100%;
+        font-family: "Poppins", sans-serif;
+        border-radius: to-rem(60);
+        color: map-get($color, "gray-d");
+        background-color: map-get($color, "white");
+        &::placeholder {
+          color: map-get($color, "gray-d");
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.btn {
+  @include text-style(map-get($font-size, "btn"), $weight-bold);
+  font-family: "Poppins", sans-serif;
+  color: map-get($color, "black-a");
+  border-radius: to-rem(33);
+  cursor: pointer;
+  &.btn-primary {
+    padding: to-rem(14) to-rem(18);
+    background: map-get($color, "white");
+    &:hover {
+      color: map-get($color, "white");
+      background: map-get($color, "black-a");
+    }
+  }
+  &.btn-outline-primary {
+    padding: to-rem(14) to-rem(30);
+    background: map-get($color, "white");
+    border: 1px solid #c4c4c4;
+    &:hover {
+      color: map-get($color, "white");
+      background: map-get($color, "black-a");
+    }
+  }
+  &.btn-secondary {
+    padding: to-rem(14) to-rem(56);
+    background: map-get($color, "primary");
+  }
+}
+
+@media only screen and (max-width: map-get($screen-size, "xs")) {
+  .btn {
+    font-size: to-rem(10);
+    &.btn-primary {
+      padding: to-rem(3) to-rem(10);
+    }
+    &.btn-outline-primary {
+      padding: to-rem(3) to-rem(10);
+      border: none;
+    }
+    &.btn-secondary {
+      padding: to-rem(7) to-rem(20);
+    }
+  }
+}

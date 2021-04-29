@@ -1,0 +1,52 @@
+$weight-light: 300;
+$weight-regular: 400;
+$weight-bold: 700;
+
+$grid-column: 12;
+$grid-gutter: 20;
+
+$screen-size: (
+  lg: "",
+  xs: 575px
+);
+
+$screen-gutter-x: (
+  lg: 20,
+  xs: 8
+);
+$screen-gutter-y: (
+  lg: 20,
+  xs: 8
+);
+
+$color: (
+  "red": #ff0000,
+  "white": #fff,
+  "black-a": #000,
+  "black-b": #333,
+  "gray-a": #f7f7f7,
+  "gray-b": #cecece,
+  "gray-c": #c4c4c4,
+  "gray-d": #ababab,
+  "gray-e": #a8a8a8,
+  "gray-f": #808080,
+  "primary": #fbb03b,
+  "yellow": #fff3df
+);
+
+$font-size: (
+  "btn": 13,
+  "3xs": 8,
+  "2xs": 10,
+  "xs": 12,
+  "sm": 14,
+  "md": 16,
+  "lg": 18,
+  "xl": 20,
+  "2xl": 24,
+  "3xl": 32,
+  "4xl": 48,
+  "5xl": 72
+);
+
+$size-base: 16;

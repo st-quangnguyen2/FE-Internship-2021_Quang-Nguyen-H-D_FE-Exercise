@@ -1,0 +1,18 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -#{to-rem($grid-gutter/2)};
+}
+
+@include build-grid(
+  $grid-column,
+  $screen-size,
+  $screen-gutter-x,
+  $screen-gutter-y
+);
+
+@media only screen and (max-width: map-get($screen-size, "xs" )) {
+  .row {
+    margin: 0 -#{to-rem(map-get($screen-gutter-x, "xs") / 2)};
+  }
+}
