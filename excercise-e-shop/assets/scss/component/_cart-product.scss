@@ -1,0 +1,48 @@
+.cart-product {
+  .cart-product-img-container {
+    margin-right: to-rem(20);
+    .cart-product-img {
+      width: to-rem(120);
+      height: to-rem(150);
+      object-fit: cover;
+    }
+  }
+  .cart-product-body {
+    .cart-product-body-left {
+      .cart-product-name {
+        @include text-style(map-get($font-size, "lg"), $weight-light);
+        color: map-get($color, "black-a");
+        &:hover {
+          color: map-get($color, "primary");
+        }
+      }
+    }
+    .cart-product-body-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      .cart-product-price {
+        @include text-style(map-get($font-size, "2xl"), $weight-bold);
+        text-align: right;
+        margin-bottom: to-rem(16);
+      }
+      .cart-product-amount-group {
+        margin-bottom: to-rem(16);
+        button {
+          @include text-style(map-get($font-size, "md"), $weight-regular);
+          font-family: "Poppins", sans-serif;
+          padding: to-rem(6) to-rem(16);
+          border: 1px solid #c4c4c4;
+        }
+        input {
+          @include text-style(map-get($font-size, "md"), $weight-regular);
+          font-family: "Poppins", sans-serif;
+          width: to-rem(48);
+          padding: to-rem(6);
+          text-align: center;
+          border: 1px solid #c4c4c4;
+        }
+      }
+    }
+  }
+} 
