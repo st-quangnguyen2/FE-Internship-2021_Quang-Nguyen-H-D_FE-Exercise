@@ -25,6 +25,14 @@
     padding: to-rem(14) to-rem(56);
     background: map-get($color, "primary");
   }
+  &.btn-flat-primary{
+    padding: to-rem(8) to-rem(16);
+    background: transparent;
+    font-weight: $weight-regular;
+    &:hover{
+      color: map-get($color, "primary");
+    }
+  }
 }
 
 @media only screen and (max-width: map-get($screen-size, "xs")) {
