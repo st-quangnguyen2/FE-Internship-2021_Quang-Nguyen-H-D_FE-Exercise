@@ -35,6 +35,16 @@ header {
       }
     }
   }
+  .cart-link {
+    position: relative;
+    .cart-quantity {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%);
+      color: map-get($color, 'primary');
+    }
+  }
 }
 
 @media only screen and (max-width: map-get($screen-size, "xs" )) {

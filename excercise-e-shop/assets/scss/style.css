@@ -421,6 +421,14 @@ header {
     header .nav-sub .nav-item .nav-icon {
       width: 1.5rem;
       height: 1.5rem; }
+  header .cart-link {
+    position: relative; }
+    header .cart-link .cart-quantity {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%);
+      color: #fbb03b; }
 
 @media only screen and (max-width: 575px) {
   header {
