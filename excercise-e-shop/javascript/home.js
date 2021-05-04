@@ -49,53 +49,50 @@ var products = [
 var cart = getCart();
 
 //fill data selected group
-document.querySelector('.selected-group').innerHTML = `
-  ${products.map(function (product) {
-    return `
-    <li class="selected-item col-3 col-xs-6">
-      ${convertProductToHtml(product)}
-    </li>
-    `
-  }).join('')}
-`;
+document.querySelector('.selected-group').innerHTML =  products.map(function (product) {
+    return '' +
+      '<li class="selected-item col-3 col-xs-6">' + 
+        convertProductToHtml(product) + 
+      '</li>'
+  }).join('')
+;
 
 document.querySelector('.today-group').innerHTML = `
   ${products.map(function (product) {
-    return `
-    <li class="today-item col-3 col-xs-6">
-      ${convertProductToHtml(product)}
-    </li>
-    `
+    return '' +
+      '<li class="today-item col-3 col-xs-6">' + 
+        convertProductToHtml(product) +
+      '</li>';
+    
   }).join('')}
 `;
 
 function convertProductToHtml(product) {
-  return `
-    <div class="prd">
-      ${product.discount ? `<span class="discount">-${product.discount}%</span>` : ''}
-      <a href="#" class="prd-link prd-img-group">
-        <img
-          src="${product.image}"
-          alt="product image"
-          class="prd-img"
-        />
-      </a>
-      <div class="prd-body">
-        <a href="#" class="prd-link">
-          <p class="prd-name">${product.name}</p>
-        </a>
-        <p
-          class="prd-price ${product.discount ? 'prd-price-discount' : ''}"
-          data-price="$${(product.price * 100 / (100 - product.discount)).toFixed(2)}"
-        >
-          $${product.price.toFixed(2)}
-        </p>
-      </div>
-      <div class="prd-action">
-        <button class="btn btn-primary" onclick='addProductToCart(${product.id})'>Add to cart</button>
-      </div>
-    </div>
-  `
+  return '' +
+    '<div class="prd">'
+      + (product.discount ? '<span class="discount">-' + product.discount + '%</span>' : '') +
+      '<a href="#" class="prd-link prd-img-group">' + 
+        '<img ' + 
+          'src="' + product.image + '"' +
+          'alt="product image"' +
+          'class="prd-img"' +
+        '>' +
+      '</a>' +
+      '<div class="prd-body">' +
+        '<a href="#" class="prd-link">' +
+          '<p class="prd-name">' + product.name + '</p>' +
+        '</a>' +
+        '<p ' +
+          'class="prd-price ' + (product.discount ? 'prd-price-discount"' : '"') +
+          'data-price="$' + (product.price * 100 / (100 - product.discount)).toFixed(2) + '"' +
+        '>' + 
+          '$' + product.price.toFixed(2) +
+        '</p>' +
+      '</div>' +
+      '<div class="prd-action">' +
+        '<button class="btn btn-primary" onclick="addProductToCart(' + product.id + ')">Add to cart</button>' +
+      '</div>' +
+    '</div>';
 }
 
 function getProductById(id) {
@@ -124,6 +121,3 @@ function addProductToCart(id) {
   setCart(cart);
   setCartQuantity();
 }
-
-
-

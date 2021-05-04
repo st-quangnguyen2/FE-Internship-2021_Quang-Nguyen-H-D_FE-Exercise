@@ -31,10 +31,14 @@
         .total-price-txt{
           @include text-style(map-get($font-size, "2xl"), $weight-bold);
           margin-bottom: to-rem(16);
+          border-bottom: 0.5px solid map-get($color, "gray-e");
         }
         .total-price {
           @include text-style(map-get($font-size, "3xl"), $weight-regular);
           text-align: right;
+          &::before{
+            content: "\0024";
+          }
         }
       }
       button {
