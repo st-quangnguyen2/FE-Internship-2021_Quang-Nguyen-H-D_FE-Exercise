@@ -98,7 +98,7 @@ function convertProductToHtml(product) {
 function addProductToCart(id) {
   var findId = findIndex(cart, id);
   if (findId === -1) {
-    var product = getElementById( products, id);
+    var product = getElementById(products, id);
     product.quantity = 1;
     cart.push(product);
   } 
@@ -111,7 +111,7 @@ function addProductToCart(id) {
 
 function getElementById(arr, id) {
   for(var i = 0; i < arr.length; i++){
-    if(arr[i].id === id){
+    if(arr[i].id === id) {
       return arr[i];
     }
   }
