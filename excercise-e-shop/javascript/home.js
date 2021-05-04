@@ -1,12 +1,5 @@
 console.log("This is home page");
 
-setCartQuantity();
-function setCartQuantity() {
-  document.querySelector('.cart-quantity').innerHTML = getCart().reduce(function (totalQuantity, cartItem) {
-    return totalQuantity + cartItem.quantity;
-  }, 0);
-}
-
 function getCart() {
   return localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
 }
@@ -14,6 +7,14 @@ function getCart() {
 function setCart(cart) {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
+
+function setCartQuantity() {
+  document.querySelector('.cart-quantity').innerHTML = getCart().reduce(function (totalQuantity, cartItem) {
+    return totalQuantity + cartItem.quantity;
+  }, 0);
+}
+
+setCartQuantity();
 
 var products = [
   {
@@ -46,8 +47,6 @@ var products = [
   }
 ]
 
-var cart = getCart();
-
 //fill data selected group
 document.querySelector('.selected-group').innerHTML =  products.map(function (product) {
     return '' +
@@ -57,15 +56,16 @@ document.querySelector('.selected-group').innerHTML =  products.map(function (pr
   }).join('')
 ;
 
-document.querySelector('.today-group').innerHTML = `
-  ${products.map(function (product) {
-    return '' +
-      '<li class="today-item col-3 col-xs-6">' + 
-        convertProductToHtml(product) +
-      '</li>';
-    
-  }).join('')}
-`;
+document.querySelector('.today-group').innerHTML =  products.map(function (product) {
+  return '' +
+    '<li class="today-item col-3 col-xs-6">' + 
+      convertProductToHtml(product) + 
+    '</li>'
+}).join('')
+;
+
+var cart = getCart();
+
 
 function convertProductToHtml(product) {
   return '' +
@@ -95,23 +95,10 @@ function convertProductToHtml(product) {
     '</div>';
 }
 
-function getProductById(id) {
-  return products.find(function (product) {
-    return product.id === id;
-  });
-}
-
-function cartHasProduct(id) {
-  return cart.findIndex(function (cartItem) {
-    return cartItem.id === id;
-  });
-}
-
 function addProductToCart(id) {
-  console.log(id);
-  var findId = cartHasProduct(id);
+  var findId = findIndex(cart, id);
   if (findId === -1) {
-    var product = getProductById(id);
+    var product = getElementById( products, id);
     product.quantity = 1;
     cart.push(product);
   } 
@@ -120,4 +107,19 @@ function addProductToCart(id) {
   }
   setCart(cart);
   setCartQuantity();
+}
+
+function getElementById(arr, id) {
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i].id === id){
+      return arr[i];
+    }
+  }
+  return null;
+}
+
+function findIndex(arr, id) {
+  return arr.map(function (element) {
+    return element.id;
+  }).indexOf(id);
 }

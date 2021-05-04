@@ -4,22 +4,24 @@ var header = document.querySelector('header');
 header.style.background = "#444444";
 header.style.position = "static";
 
-var cart = getCart();
-
 setCartQuantity();
+
 function setCartQuantity() {
   document.querySelector('.cart-quantity').innerHTML = getCart().reduce(function (totalQuantity, cartItem) {
     return totalQuantity + cartItem.quantity;
   }, 0);
 }
 
-function getCart() {
-  return localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
-}
 
 function setCart(cart) {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
+
+function getCart() {
+  return localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+}
+
+var cart = getCart();
 
 function renderCartItem() {
   document.querySelector('.cart-product-group').innerHTML = cart.length ? cart.map(convertCartItemToHTML).join('') + clearAll : 'Hiện không có sản phẩm nào trong giỏ hàng';
@@ -69,9 +71,7 @@ function quantityInputChange(target, id, quantity) {
 }
 
 function updateCartItemQuantity(id, quantity) {
-  var findId = cart.findIndex(function (cartItem) {
-    return cartItem.id === id;
-  });
+  var findId = findIndex(cart, id);
   if (quantity < 1) {
     quantity = 1;
   }
@@ -91,12 +91,6 @@ function removeCartItem(id) {
   render();
 }
 
-function removeAll() {
-  cart = [];
-  setCart(cart);
-  render();
-}
-
 function renderTotalPrice() {
   document.querySelector('.total-price').innerHTML = cart.reduce(function (total, cartItem) {
     return total + (cartItem.price * cartItem.quantity);
@@ -109,4 +103,17 @@ function render(){
   setCartQuantity();
 }
 
+function removeAll() {
+  cart = [];
+  setCart(cart);
+  render();
+}
+
+function findIndex(arr, id) {
+  return arr.map(function (element) {
+    return element.id;
+  }).indexOf(id);
+}
+
 render();
+
