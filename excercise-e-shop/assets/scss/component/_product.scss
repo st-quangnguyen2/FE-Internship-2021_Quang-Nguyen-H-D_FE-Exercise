@@ -55,7 +55,7 @@
 @media only screen and(max-width: map-get($screen-size, 'xs')) {
   .prd {
     .discount {
-      padding: to-rem(3) to-rem(5);
+      @include pxRem(padding, 3 5);
       top: to-rem(14);
       left: to-rem(19);
       @include text-style(map-get($font-size, "3xs"), $weight-bold);

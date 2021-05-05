@@ -46,17 +46,17 @@
         margin-bottom: to-rem(16);
         button {
           @include text-style(map-get($font-size, "md"), $weight-regular);
+          @include pxRem(padding, 6 16);
+          @include pxRem(border, 1 solid map-get($color, 'gray-c'));
           font-family: "Poppins", sans-serif;
-          padding: to-rem(6) to-rem(16);
-          border: 1px solid #c4c4c4;
         }
         input {
           @include text-style(map-get($font-size, "md"), $weight-regular);
+          @include pxRem(border, 1 solid map-get($color, 'gray-c'));
           font-family: "Poppins", sans-serif;
           width: to-rem(48);
           padding: to-rem(6);
           text-align: center;
-          border: 1px solid #c4c4c4;
         }
       }
     }

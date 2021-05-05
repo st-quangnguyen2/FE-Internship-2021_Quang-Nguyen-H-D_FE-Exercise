@@ -1,8 +1,52 @@
-@function to-rem($px) {
-  @return #{$px/$size-base}rem; 
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
 }
 
-@mixin to-rem-prop($property, $top: 0, $right: 0, $bottom:0, $left: 0) {
+@function convertRootPxToEm($value) {
+  // check for null:
+  @if($value == null) {
+    @return $value;
+  }
+  // assume em:
+  @if (unitless($value) or unit($value) == em) {
+    @return 0em + $value;
+  }
+  @else {
+    @return 0em + strip-units($value) / 16;
+  }
+}
+
+@function convertPxToRem($px) {
+  @return 0rem + strip-units($px) / $size-base;
+}
+
+@mixin pxRem($property, $values) {
+  // Create an empty list as output buffers:
+  $rem-values: ();
+  // Ensure $values is a list.
+  @if type-of($values) != 'list' {
+    $values: join((), $values);
+  }
+  // Loop through the $values list:
+  @each $value in $values {
+    @if type-of($value) == number and (unitless($value) or unit($value) == px) {
+      $rem-values: join($rem-values, convertPxToRem($value));
+    }
+    @else {
+      $rem-values: join($rem-values, $value);
+    }
+  }
+  #{$property}: $rem-values;
+}
+
+@function to-rem($px) {
+  @if ($px == null) {
+    @return null; 
+  }
+  @return #{$px/$size-base}rem;
+}
+
+@mixin to-rem-prop($property, $top: 0, $right: 0, $bottom: 0, $left: 0) {
   #{$property}: to-rem($top) to-rem($right) to-rem($bottom) to-rem($left);
 }
 

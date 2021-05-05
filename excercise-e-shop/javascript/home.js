@@ -9,6 +9,7 @@ function getCart() {
 
 /**
  * Update cart in localStorage.
+ * @param {array} cart The cart will be updated.
  */
 function setCart(cart) {
   localStorage.setItem('cart', JSON.stringify(cart));

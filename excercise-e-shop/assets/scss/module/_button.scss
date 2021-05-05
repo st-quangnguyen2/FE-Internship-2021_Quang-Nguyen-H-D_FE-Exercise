@@ -5,7 +5,7 @@
   border-radius: to-rem(33);
   cursor: pointer;
   &.btn-primary {
-    padding: to-rem(14) to-rem(18);
+    @include pxRem(padding, 14 18);
     background: map-get($color, "white");
     &:hover {
       color: map-get($color, "white");
@@ -13,7 +13,7 @@
     }
   }
   &.btn-outline-primary {
-    padding: to-rem(14) to-rem(30);
+    @include pxRem(padding, 14 30);
     background: map-get($color, "white");
     border: 1px solid #c4c4c4;
     &:hover {
@@ -22,11 +22,11 @@
     }
   }
   &.btn-secondary {
-    padding: to-rem(14) to-rem(56);
+    @include pxRem(padding, 14 46);
     background: map-get($color, "primary");
   }
   &.btn-flat-primary{
-    padding: to-rem(8) to-rem(16);
+    @include pxRem(padding, 8 16);
     background: transparent;
     font-weight: $weight-regular;
     &:hover{

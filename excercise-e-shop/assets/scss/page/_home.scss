@@ -14,7 +14,7 @@
     );
   }
   .section-body {
-    margin: to-rem(222) to-rem(96);
+    @include pxRem(margin, 222 96);
     .section-title {
       @include text-style(map-get($font-size, "5xl"), $weight-bold);
       margin-bottom: to-rem(24);
@@ -46,8 +46,8 @@
     }
   }
   .section-footer {
+    @include to-rem-prop(padding, 38, 0, 26);
     position: absolute;
-    @include to-rem-prop(padding, 38, 0, 26, 0);
     width: 100%;
     bottom: 0;
     right: calc(50% - #{to-rem(576)} + #{to-rem(196)});
@@ -90,7 +90,7 @@
 // News Section
 
 .news-section {
-  @include to-rem-prop(padding, 38, 0, 20, 0);
+  @include pxRem(padding, 38 0 20);
   .news-group {
     .news-wrap {
       height: to-rem(360);
@@ -108,7 +108,7 @@
 }
 
 .news {
-  @include to-rem-prop(padding, 167, 40, 53, 40);
+  @include pxRem(padding, 167 40 53);
   position: relative;
   .discount {
     @include text-style(map-get($font-size, "xs"), $weight-bold);
@@ -129,9 +129,9 @@
 // Selected Section
 
 .selected-section {
-  @include to-rem-prop(padding, 40, 0, 40, 0);
+  @include pxRem(padding, 40 0);
   .section-header {
-    @include to-rem-prop(margin, 20, 0, 40, 0);
+    @include pxRem(margin, 20 0 40);
     .section-title {
       @include text-style(map-get($font-size, "3xl"), $weight-light);
     }
@@ -197,7 +197,7 @@
 // Today Section
 
 .today-section {
-  padding: to-rem(40) 0;
+  @include pxRem(padding, 40 0);
   .section-header {
     margin-bottom: to-rem(40);
     .section-title {
@@ -228,7 +228,7 @@
   .section-body-right {
     input {
       @include text-style(map-get($font-size, "btn"), $weight-regular);
-      padding: to-rem(14) to-rem(24);
+      @include pxRem(padding, 14 24);
       width: to-rem(350);
       border-radius: to-rem(60);
       color: map-get($color, "gray-d");
@@ -290,7 +290,7 @@
 
   .news {
     position: relative;
-    @include to-rem-prop(padding, 140, 16, 53, 16);
+    @include pxRem(padding, 140 16 53);
     .discount {
       @include text-style(map-get($font-size, "3xs"), $weight-bold);
       top: to-rem(120);
@@ -308,7 +308,7 @@
   // Selected Section
 
   .selected-section {
-    @include to-rem-prop(padding, 0, 0, 48, 0);
+    @include pxRem(padding-bottom, 48);
     .section-header {
       margin-bottom: to-rem(16);
       .section-title {
@@ -326,7 +326,7 @@
   // Section Advantage
 
   .advantage-section {
-    padding: to-rem(40) 0;
+    @include pxRem(padding, 40 0);
     background: map-get($color, "gray-a");
     .section-header {
       margin-bottom: to-rem(40);
@@ -371,7 +371,7 @@
   // Today Section
 
   .today-section {
-    padding: to-rem(48) 0;
+    @include pxRem(padding, 48 0);
     .section-header {
       margin-bottom: to-rem(16);
       .section-title {
@@ -408,7 +408,7 @@
       }
       input {
         @include text-style(map-get($font-size, "xs"), $weight-regular);
-        padding: to-rem(6) to-rem(12);
+        @include pxRem(padding, 6 12);
         margin-bottom: to-rem(16);
         width: 100%;
         font-family: "Poppins", sans-serif;
