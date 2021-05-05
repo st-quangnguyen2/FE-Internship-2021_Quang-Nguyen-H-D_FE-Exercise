@@ -1,4 +1,4 @@
-console.log("This is cart page");
+console.log('This is cart page');
 
 var header = document.querySelector('header');
 header.style.background = "#444444";

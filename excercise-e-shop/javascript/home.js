@@ -1,4 +1,4 @@
-console.log("This is home page");
+console.log('This is home page');
 
 /**
  * Return cart in localStorage.
