@@ -1,9 +1,8 @@
 .cart-product {
   .cart-product-img-container {
-    margin-right: to-rem(20);
+    @include pxRem(margin-right, 20);
     .cart-product-img {
-      width: to-rem(120);
-      // height: to-rem(150);
+      @include pxRem(width, 120);
       object-fit: cover;
     }
   }
@@ -36,14 +35,14 @@
       align-items: flex-end;
       .cart-product-total-price {
         @include text-style(map-get($font-size, "2xl"), $weight-bold);
+        @include pxRem(margin-bottom, 16);
         text-align: right;
-        margin-bottom: to-rem(16);
         &::before{
           content: "\0024";
         }
       }
       .cart-product-amount-group {
-        margin-bottom: to-rem(16);
+        @include pxRem(margin-bottom, 16);
         button {
           @include text-style(map-get($font-size, "md"), $weight-regular);
           @include pxRem(padding, 6 16);
@@ -51,11 +50,11 @@
           font-family: "Poppins", sans-serif;
         }
         input {
+          @include pxRem(width, 48);
+          @include pxRem(padding, 6);
           @include text-style(map-get($font-size, "md"), $weight-regular);
           @include pxRem(border, 1 solid map-get($color, 'gray-c'));
           font-family: "Poppins", sans-serif;
-          width: to-rem(48);
-          padding: to-rem(6);
           text-align: center;
         }
       }
