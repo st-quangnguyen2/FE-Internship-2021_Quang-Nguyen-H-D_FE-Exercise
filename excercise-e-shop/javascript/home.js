@@ -1,31 +1,3 @@
-console.log('This is home page');
-
-/**
- * Return cart in localStorage.
- */
-function getCart() {
-  return localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
-}
-
-/**
- * Update cart in localStorage.
- * @param {array} cart The cart will be updated.
- */
-function setCart(cart) {
-  localStorage.setItem('cart', JSON.stringify(cart));
-}
-
-/**
- * Compute quantity of products in cart. Then display it at header.
- */
-function setCartQuantity() {
-  document.querySelector('.cart-quantity').innerHTML = getCart().reduce(function (totalQuantity, cartItem) {
-    return totalQuantity + cartItem.quantity;
-  }, 0);
-}
-
-setCartQuantity();
-
 var products = [
   {
     id: 1,
@@ -57,19 +29,29 @@ var products = [
   }
 ]
 
-//fill data selected group
-document.querySelector('.selected-group').innerHTML =  products.map(function (product) {
-  return convertProductToHtml(product, 'selected');
-  }).join('')
-;
+/**
+ * Return cart in localStorage.
+ */
+function getCart() {
+  return localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+}
 
-//fill data today group
-document.querySelector('.today-group').innerHTML =  products.map(function (product) {
-  return convertProductToHtml(product, 'today')
-}).join('')
-;
+/**
+ * Update cart in localStorage.
+ * @param {array} cart The cart will be updated.
+ */
+function setCart(cart) {
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
 
-var cart = getCart();
+/**
+ * Compute quantity of products in cart. Then display it at header.
+ */
+function setCartQuantity() {
+  document.querySelector('.cart-quantity').innerHTML = getCart().reduce(function (totalQuantity, cartItem) {
+    return totalQuantity + cartItem.quantity;
+  }, 0);
+}
 
 /**
  * Returns a string as a result after transform product object.
@@ -108,25 +90,6 @@ function convertProductToHtml(product, section) {
     '</li>';
 }
 
-/**
- * Add a product into cart. If the product already existed in cart just only update quantity of it. Else add product into cart and set quantity equal 1.
- * Then rerender quantity of products in cart at header.
- *
- * @param {number || string} id The id of a cartItem.
- */
-function addProductToCart(id) {
-  var findId = findIndex(cart, id);
-  if (findId === -1) {
-    var product = getElementById(products, id);
-    product.quantity = 1;
-    cart.push(product);
-  } 
-  else {
-    cart[findId].quantity += 1;
-  }
-  setCart(cart);
-  setCartQuantity();
-}
 
 /**
  * Returns an element has id equal passed id in an array.
@@ -156,3 +119,38 @@ function findIndex(arr, id) {
     return element.id;
   }).indexOf(id);
 }
+
+/**
+ * Add a product into cart. If the product already existed in cart just only update quantity of it. Else add product into cart and set quantity equal 1.
+ * Then rerender quantity of products in cart at header.
+ *
+ * @param {number || string} id The id of a cartItem.
+ */
+function addProductToCart(id) {
+  var findId = findIndex(cart, id);
+  if (findId === -1) {
+    var product = getElementById(products, id);
+    product.quantity = 1;
+    cart.push(product);
+  } 
+  else {
+    cart[findId].quantity += 1;
+  }
+  setCart(cart);
+  setCartQuantity();
+}
+
+var cart = getCart();
+setCartQuantity();
+
+// Fill data selected group
+document.querySelector('.selected-group').innerHTML =  products.map(function (product) {
+  return convertProductToHtml(product, 'selected');
+  }).join('')
+;
+
+// Fill data today group
+document.querySelector('.today-group').innerHTML =  products.map(function (product) {
+  return convertProductToHtml(product, 'today')
+}).join('')
+;
