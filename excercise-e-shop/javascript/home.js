@@ -146,11 +146,9 @@ setCartQuantity();
 // Fill data selected group
 document.querySelector('.selected-group').innerHTML =  products.map(function (product) {
   return convertProductToHtml(product, 'selected');
-  }).join('')
-;
+  }).join('');
 
 // Fill data today group
 document.querySelector('.today-group').innerHTML =  products.map(function (product) {
   return convertProductToHtml(product, 'today')
-}).join('')
-;
+}).join('');
