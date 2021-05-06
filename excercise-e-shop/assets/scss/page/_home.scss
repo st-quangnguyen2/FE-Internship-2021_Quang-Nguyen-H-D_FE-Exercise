@@ -1,9 +1,9 @@
 // Banner Section
 
 .banner-section {
-  position: relative;
+  @include pxRem(height, 800);
   width: 100%;
-  height: to-rem(800);
+  position: relative;
   z-index: 1;
   background-image: url("../images/main/banner.png");
   &::after{
@@ -17,8 +17,8 @@
     @include pxRem(margin, 222 96);
     .section-title {
       @include text-style(map-get($font-size, "5xl"), $weight-bold);
-      margin-bottom: to-rem(24);
-      max-width: to-rem(403);
+      @include pxRem(margin-bottom, 24);
+      @include pxRem(max-width, 403);
       line-height: 1em;
       color: map-get($color, "white");
       .highlight {
@@ -27,15 +27,15 @@
     }
     .section-link {
       .btn-cir {
+        @include pxRem(width, 36);
+        @include pxRem(height, 36);
         position: relative;
-        width: to-rem(36);
-        height: to-rem(36);
         border-radius: 50%;
         background-color: map-get($color, "primary");
-        margin-right: to-rem(21);
+        @include pxRem(margin-right, 21);
         img {
-          width: to-rem(17);
-          height: to-rem(14);
+          @include pxRem(width, 17);
+          @include pxRem(height, 14);
         }
       }
       span {
@@ -46,43 +46,43 @@
     }
   }
   .section-footer {
-    @include to-rem-prop(padding, 38, 0, 26);
+    @include pxRem(padding, 38 0 26);
+    @include pxRem(bottom, 0);
+    @include pxRem(border-top-right-radius, 70);
     position: absolute;
     width: 100%;
-    bottom: 0;
     right: calc(50% - #{to-rem(576)} + #{to-rem(196)});
     background: map-get($color, "white");
-    border-top-right-radius: to-rem(70);
     .advantage-group {
-      margin-right: to-rem(100);
-      gap: to-rem(50);
+      @include pxRem(margin-right, 100);
+      @include pxRem(gap, 50);
     }
   }
 }
 
 .advantage-horizontal {
-  gap: to-rem(16);
+  @include pxRem(gap, 16);
   .advantage-icon {
-    width: to-rem(36);
-    height: to-rem(36);
-    margin-bottom: to-rem(6);
+    @include pxRem(width, 36);
+    @include pxRem(height, 36);
+    @include pxRem(margin-bottom, 6);
+    @include pxRem(border-radius, 10);
     background: map-get($color, "yellow");
-    border-radius: to-rem(10);
     img {
-      width: to-rem(16);
-      height: to-rem(16);
+      @include pxRem(width, 16);
+    @include pxRem(height, 16);
     }
   }
   .advantage-body {
-    max-width: to-rem(179);
+    @include pxRem(max-width, 179);
     .advantage-title {
       @include text-style(map-get($font-size, "sm"), $weight-bold);
-      margin-bottom: to-rem(4);
+      @include pxRem(margin-bottom, 4);
       color: map-get($color, "black-b");
     }
     .advantage-description {
       @include text-style(map-get($font-size, "xs"), $weight-regular);
-      padding-right: to-rem(1);
+      @include pxRem(padding-right, 1);
       color: map-get($color, "gray-e");
     }
   }
@@ -93,7 +93,7 @@
   @include pxRem(padding, 38 0 20);
   .news-group {
     .news-wrap {
-      height: to-rem(360);
+      @include pxRem(height, 360);
       &-1{
         background-image: url("../images/sample/news-1.png");
       }
@@ -112,15 +112,15 @@
   position: relative;
   .discount {
     @include text-style(map-get($font-size, "xs"), $weight-bold);
-    top: to-rem(130);
-    left: to-rem(40);
+    @include pxRem(top, 130);
+    @include pxRem(left, 40);
   }
   .news-body {
     height: 100%;
     .news-title {
       @include text-style(map-get($font-size, "2xl"), $weight-regular);
+      @include pxRem(margin-bottom, 18);
       height: 3em;
-      margin-bottom: to-rem(18);
       color: map-get($color, "white");
     }
   }
@@ -139,9 +139,9 @@
   .section-body {
     position: relative;
     .section-link {
-      position: absolute;
-      top: to-rem(-87);
+      @include pxRem(top, -87);
       right: 0;
+      position: absolute;
     }
   }
 }
@@ -149,17 +149,17 @@
 // Section Advantage
 
 .advantage-section {
-  padding: to-rem(40) 0;
+  @include pxRem(padding, 40 0);
   background: map-get($color, "gray-a");
   .section-header {
-    margin-bottom: to-rem(40);
+    @include pxRem(margin-bottom, 40);
     .section-title {
       @include text-style(map-get($font-size, "3xl"), $weight-regular);
     }
   }
   .section-body {
     .advantage-group {
-      gap: to-rem(60);
+      @include pxRem(gap, 60);
       .advantage:hover {
         .advantage-title {
           color: map-get($color, "primary");
@@ -171,21 +171,21 @@
 
 .advantage-vertical {
   .advantage-icon {
-    margin-bottom: to-rem(48);
-    width: to-rem(68);
-    height: to-rem(68);
+    @include pxRem(margin-bottom, 48);
+    @include pxRem(width, 68);
+    @include pxRem(height, 68);
+    @include pxRem(border-radius, 10);
     background: map-get($color, "white");
-    border-radius: to-rem(10);
     img {
-      width: to-rem(32);
-      height: to-rem(32);
+      @include pxRem(width, 32);
+      @include pxRem(height, 32);
       object-fit: fill;
     }
   }
   .advantage-body {
     .advantage-title {
       @include text-style(map-get($font-size, "md"), $weight-bold);
-      margin-bottom: to-rem(16);
+      @include pxRem(margin-bottom, 16);
     }
     .advantage-description {
       @include text-style(map-get($font-size, "sm"), $weight-regular);
@@ -199,7 +199,7 @@
 .today-section {
   @include pxRem(padding, 40 0);
   .section-header {
-    margin-bottom: to-rem(40);
+    @include pxRem(margin-bottom, 40);
     .section-title {
       @include text-style(map-get($font-size, "3xl"), $weight-light);
     }
@@ -209,15 +209,15 @@
 // Newsletter Section
 
 .newsletter-section {
+  @include pxRem(height, 240);
   width: 100%;
-  height: to-rem(240);
   background-image: url("../images/main/newsletter.png");
   &::after{
     background: linear-gradient(90deg, #000000 33.28%, rgba(0, 0, 0, 0) 94.05%);
     opacity: 0.7;
   }
   .overlay {
-    padding: to-rem(85) 0;
+    @include pxRem(padding, 85 0);
   }
   .section-body-left {
     .section-title {
@@ -229,8 +229,8 @@
     input {
       @include text-style(map-get($font-size, "btn"), $weight-regular);
       @include pxRem(padding, 14 24);
-      width: to-rem(350);
-      border-radius: to-rem(60);
+      @include pxRem(width, 350);
+      @include pxRem(border-radius, 60);
       color: map-get($color, "gray-d");
       background-color: map-get($color, "white");
       &::placeholder {
@@ -243,7 +243,7 @@
 @media only screen and (max-width: map-get($screen-size, "xs" )) {
   // Banner Section
   .banner-section {
-    height: to-rem(740);
+    @include pxRem(height, 740);
     background-image: url("../images/main/banner-sm.png");
     .container {
       height: 100%;
@@ -253,17 +253,17 @@
         margin: 0;
         .section-title {
           @include text-style(map-get($font-size, "4xl"), $weight-bold);
-          margin-bottom: to-rem(16);
+          @include pxRem(margin-bottom, 16);
         }
         .section-link {
           .btn-cir {
+            @include pxRem(width, 32);
+            @include pxRem(height, 32);
+            @include pxRem(margin-right, 16);
             position: relative;
-            width: to-rem(32);
-            height: to-rem(32);
-            margin-right: to-rem(16);
             img {
-              width: to-rem(15);
-              height: to-rem(12);
+              @include pxRem(width, 15);
+              @include pxRem(height, 12);
             }
           }
           span {
@@ -280,10 +280,10 @@
   // News Section
 
   .news-section {
-    padding: to-rem(20) 0;
+    @include pxRem(padding, 20 0);
     .news-group {
       .news-wrap {
-        height: to-rem(224);
+        @include pxRem(height, 224);
       }
     }
   }
@@ -293,14 +293,14 @@
     @include pxRem(padding, 140 16 53);
     .discount {
       @include text-style(map-get($font-size, "3xs"), $weight-bold);
-      top: to-rem(120);
-      left: to-rem(16);
+      @include pxRem(top, 120);
+      @include pxRem(left, 16);
     }
     .news-body {
       .news-title {
         @include text-style(map-get($font-size, "sm"), $weight-regular);
-        margin-bottom: to-rem(6);
-        max-width: to-rem(120);
+        @include pxRem(margin-bottom, 6);
+        @include pxRem(max-width, 120);
       }
     }
   }
@@ -310,14 +310,14 @@
   .selected-section {
     @include pxRem(padding-bottom, 48);
     .section-header {
-      margin-bottom: to-rem(16);
+      @include pxRem(margin-bottom, 16);
       .section-title {
         @include text-style(map-get($font-size, "lg"), $weight-light);
       }
     }
     .section-body {
       .section-link {
-        top: to-rem(-39);
+        @include pxRem(top, -39);
         right: 0;
       }
     }
@@ -329,7 +329,7 @@
     @include pxRem(padding, 40 0);
     background: map-get($color, "gray-a");
     .section-header {
-      margin-bottom: to-rem(40);
+      @include pxRem(margin-bottom, 40);
       .section-title {
         @include text-style(map-get($font-size, "lg"), $weight-light);
       }
@@ -337,7 +337,7 @@
     .section-body {
       .advantage-group {
         flex-direction: column;
-        gap: to-rem(0);
+        gap: 0;
       }
     }
   }
@@ -345,22 +345,22 @@
   .advantage-vertical {
     display: flex;
     .advantage-icon {
-      margin-right: to-rem(16);
-      width: to-rem(68);
-      height: to-rem(68);
+      @include pxRem(margin-right, 16);
+      @include pxRem(width, 68);
+      @include pxRem(height, 68);
       background: map-get($color, "white");
-      border-radius: to-rem(10);
+      @include pxRem(border-radius, 10);
       img {
-        width: to-rem(32);
-        height: to-rem(32);
+        @include pxRem(width, 32);
+        @include pxRem(height, 32);
       }
     }
     .advantage-body {
       flex: 1;
-      padding-top: to-rem(8);
+      @include pxRem(padding-top, 8);
       .advantage-title {
         @include text-style(map-get($font-size, "xs"), $weight-bold);
-        margin-bottom: to-rem(8);
+        @include pxRem(margin-bottom, 8);
       }
       .advantage-description {
         @include text-style(map-get($font-size, "2xs"), $weight-regular);
@@ -373,7 +373,7 @@
   .today-section {
     @include pxRem(padding, 48 0);
     .section-header {
-      margin-bottom: to-rem(16);
+      @include pxRem(margin-bottom, 16);
       .section-title {
         @include text-style(map-get($font-size, "lg"), $weight-light);
         text-align: left;
@@ -385,10 +385,10 @@
 
   .newsletter-section {
     width: 100%;
-    height: to-rem(210);
+    @include pxRem(height, 210);
     background-image: url("../images/main/newsletter-sm.png");
     .overlay {
-      padding: to-rem(24) 0;
+      @include pxRem(padding, 24 0);
     }
     .container {
       flex-direction: column;
@@ -397,8 +397,8 @@
     .section-body-left {
       .section-title {
         @include text-style(map-get($font-size, "sm"), $weight-regular);
-        max-width: to-rem(200);
-        margin-bottom: to-rem(24);
+        @include pxRem(max-width, 200);
+        @include pxRem(margin-bottom, 24);
       }
     }
     .section-body-right {
@@ -409,10 +409,10 @@
       input {
         @include text-style(map-get($font-size, "xs"), $weight-regular);
         @include pxRem(padding, 6 12);
-        margin-bottom: to-rem(16);
+        @include pxRem(margin-bottom, 16);
+        @include pxRem(border-radius, 60);
         width: 100%;
         font-family: "Poppins", sans-serif;
-        border-radius: to-rem(60);
         color: map-get($color, "gray-d");
         background-color: map-get($color, "white");
         &::placeholder {
