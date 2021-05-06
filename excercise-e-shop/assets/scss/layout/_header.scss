@@ -1,38 +1,48 @@
 header {
+  @include pxRem(padding, 55 0);
+  @include pxRem(top, 0);
+  @include pxRem(left, 0);
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   z-index: 100;
-  padding: to-rem(55) 0;
   background: transparent;
   .logo-image {
-    width: to-rem(139);
-    height: to-rem(35);
+    @include pxRem(width, 139);
+    @include pxRem(height, 35);
   }
   .nav-main {
     .nav-item {
-      margin-right: to-rem(96);
+      @include pxRem(margin-right, 96);
       .nav-link {
         @include text-style(map-get($font-size, "lg"), $weight-bold);
-        padding: to-rem(4) to-rem(8);
+        @include pxRem(padding, 4 8);
         color: map-get($color, "primary");
       }
     }
     .nav-item:last-child {
-      margin-right: 0;
+      @include pxRem(margin-right, 0);
     }
   }
   .nav-sub {
     .nav-item {
-      margin-right: to-rem(24);
+      @include pxRem(margin-right, 24);
       .nav-link {
-        padding: to-rem(4);
+        @include pxRem(padding, 4);
       }
       .nav-icon {
-        width: to-rem(24);
-        height: to-rem(24);
+        @include pxRem(width, 24);
+        @include pxRem(height, 24);
       }
+    }
+  }
+  .cart-link {
+    position: relative;
+    .cart-quantity {
+      @include pxRem(top, 0);
+      @include pxRem(right, 0);
+      position: absolute;
+      transform: translate(50%, -50%);
+      color: map-get($color, 'primary');
     }
   }
 }
@@ -41,11 +51,11 @@ header {
   header {
     display: block;
     position: sticky;
-    padding: to-rem(20) 0;
+    @include pxRem(padding, 20 0);
     background: map-get($color, "white");
     .logo-image {
-      width: to-rem(128);
-      height: to-rem(32);
+      @include pxRem(width, 128);
+      @include pxRem(height, 32);
     }
     li {
       display: flex;
@@ -68,8 +78,8 @@ header {
           padding: 0;
         }
         .nav-icon {
-          width: to-rem(20);
-          height: to-rem(20);
+          @include pxRem(width, 20);
+          @include pxRem(height, 20);
         }
       }
     }
