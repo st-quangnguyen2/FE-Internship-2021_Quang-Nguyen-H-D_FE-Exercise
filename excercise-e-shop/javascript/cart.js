@@ -76,11 +76,11 @@ function renderCartItem() {
 }
 
 /**
- * When quantity input onchange update quantity of item in cart has id equal passed idpdate.
+ * When quantity input onchange update quantity of item in cart has id equal passed id .
  *
- * @param {array} arr The array.
+ * @param {HTMLElement} target The array.
  * @param {number || string} id The id .
- * @return {number} index of element.
+ * @param {number} quantity The quantity of item before input change .
  */
 function quantityInputChange(target, id, quantity) {
   var newQuantity = +target.value || quantity;
