@@ -1003,31 +1003,44 @@ footer {
           color: #ababab; } }
 
 .cart-section {
+  min-height: 600px;
   min-height: 37.5rem;
+  padding: 24px;
   padding: 1.5rem;
   background: #f7f7f7; }
   .cart-section .section-header .section-title {
     font-size: 2rem;
     font-weight: 300; }
   .cart-section .section-body .section-body-left .cart-product-group {
+    padding: 20px;
     padding: 1.25rem;
-    background: #fff;
-    border-radius: 0.25rem; }
+    border-radius: 4px;
+    border-radius: 0.25rem;
+    background: #fff; }
     .cart-section .section-body .section-body-left .cart-product-group .cart-product-item {
+      padding: 20px;
       padding: 1.25rem;
+      margin-bottom: 20px;
       margin-bottom: 1.25rem;
       box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+      box-shadow: 0rem 0rem 0.25rem rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
       border-radius: 0.25rem; }
   .cart-section .section-body .section-body-right .cart-total-price {
+    margin-bottom: 24px;
     margin-bottom: 1.5rem;
+    padding: 20px;
     padding: 1.25rem;
-    background: #fff;
-    border-radius: 0.25rem; }
+    border-radius: 4px;
+    border-radius: 0.25rem;
+    background: #fff; }
     .cart-section .section-body .section-body-right .cart-total-price .total-price-txt {
       font-size: 1.5rem;
       font-weight: 700;
+      margin-bottom: 16px;
       margin-bottom: 1rem;
-      border-bottom: 0.5px solid #a8a8a8; }
+      border-bottom: 0.5px solid #a8a8a8;
+      border-bottom: 0.03125rem solid #a8a8a8; }
     .cart-section .section-body .section-body-right .cart-total-price .total-price {
       font-size: 2rem;
       font-weight: 400;
@@ -1037,6 +1050,7 @@ footer {
   .cart-section .section-body .section-body-right button {
     font-size: 1.125rem;
     font-weight: 700;
+    border-radius: 4px;
+    border-radius: 0.25rem;
     display: block;
-    width: 100%;
-    border-radius: 4px; }
+    width: 100%; }
