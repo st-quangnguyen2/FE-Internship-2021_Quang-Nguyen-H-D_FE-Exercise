@@ -1,7 +1,7 @@
 // Cart Section
 .cart-section {
-  min-height: to-rem(600);
-  padding: to-rem(24);
+  @include pxRem(min-height, 600);
+  @include pxRem(padding, 24);
   background: map-get($color, "gray-a");
   .section-header {
     .section-title {
@@ -11,37 +11,41 @@
   .section-body {
     .section-body-left {
       .cart-product-group {
-        padding: to-rem(20);
+        @include pxRem(padding, 20);
+        @include pxRem(border-radius, 4);
         background: map-get($color, "white");
-        border-radius: to-rem(4);
         .cart-product-item {
-          padding: to-rem(20);
-          margin-bottom: to-rem(20);
-          box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
-          border-radius: to-rem(4);
+          @include pxRem(padding, 20);
+          @include pxRem(margin-bottom, 20);
+          @include pxRem(box-shadow, 0 0 4 rgba(0, 0, 0, 0.2));
+          @include pxRem(border-radius, 4);
         }
       }
     }
     .section-body-right {
       .cart-total-price {
-        margin-bottom: to-rem(24);
-        padding: to-rem(20);
+        @include pxRem(margin-bottom, 24);
+        @include pxRem(padding, 20);
+        @include pxRem(border-radius, 4);
         background: map-get($color, "white");
-        border-radius: to-rem(4);
         .total-price-txt{
           @include text-style(map-get($font-size, "2xl"), $weight-bold);
-          margin-bottom: to-rem(16);
+          @include pxRem(margin-bottom, 16);
+          @include pxRem(border-bottom, 0.5 solid map-get($color, "gray-e"));
         }
         .total-price {
           @include text-style(map-get($font-size, "3xl"), $weight-regular);
           text-align: right;
+          &::before{
+            content: "\0024";
+          }
         }
       }
       button {
         @include text-style(map-get($font-size, "lg"), $weight-bold);
+        @include pxRem(border-radius, 4);
         display: block;
         width: 100%;
-        border-radius: 4px;
       }
     }
   }

@@ -1,11 +1,11 @@
 .btn {
   @include text-style(map-get($font-size, "btn"), $weight-bold);
+  @include pxRem(border-radius, 33);
   font-family: "Poppins", sans-serif;
   color: map-get($color, "black-a");
-  border-radius: to-rem(33);
   cursor: pointer;
   &.btn-primary {
-    padding: to-rem(14) to-rem(18);
+    @include pxRem(padding, 14 18);
     background: map-get($color, "white");
     &:hover {
       color: map-get($color, "white");
@@ -13,20 +13,20 @@
     }
   }
   &.btn-outline-primary {
-    padding: to-rem(14) to-rem(30);
+    @include pxRem(padding, 14 30);
     background: map-get($color, "white");
-    border: 1px solid #c4c4c4;
+    @include pxRem(border, 1 solid #c4c4c4);
     &:hover {
       color: map-get($color, "white");
       background: map-get($color, "black-a");
     }
   }
   &.btn-secondary {
-    padding: to-rem(14) to-rem(56);
+    @include pxRem(padding, 14 46);
     background: map-get($color, "primary");
   }
   &.btn-flat-primary{
-    padding: to-rem(8) to-rem(16);
+    @include pxRem(padding, 8 16);
     background: transparent;
     font-weight: $weight-regular;
     &:hover{
@@ -37,16 +37,16 @@
 
 @media only screen and (max-width: map-get($screen-size, "xs")) {
   .btn {
-    font-size: to-rem(10);
+    @include pxRem(font-size, 10);
     &.btn-primary {
-      padding: to-rem(3) to-rem(10);
+      @include pxRem(padding, 3 10);
     }
     &.btn-outline-primary {
-      padding: to-rem(3) to-rem(10);
+      @include pxRem(padding, 3 10);
       border: none;
     }
     &.btn-secondary {
-      padding: to-rem(7) to-rem(20);
+      @include pxRem(padding, 7 20);
     }
   }
 }
