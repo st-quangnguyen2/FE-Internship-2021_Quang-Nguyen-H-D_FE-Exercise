@@ -1,19 +1,19 @@
 .prd {
   position: relative;
   .discount {
-    top: to-rem(30);
-    left: to-rem(27);
+    @include pxRem(top, 30);
+    @include pxRem(left, 27);
   }
   .prd-link {
     width: 100%;
     .prd-img {
       width: 100%;
-      height: to-rem(385);
+      @include pxRem(height, 385);
       object-fit: cover;
     }
   }
   .prd-body {
-    margin-top: to-rem(16);
+    @include pxRem(margin-top, 16);
     .prd-name {
       @include text-style(map-get($font-size, "md"), $weight-light);
       color: map-get($color, "black-b");
@@ -27,12 +27,27 @@
     position: relative;
     color: map-get($color, "red");
     &::after {
+      @include pxRem(right, 0);
       content: attr(data-price);
       position: absolute;
       top: 50%;
-      right: 0;
       transform: translateY(-50%);
       color: map-get($color, "gray-b");
+    }
+  }
+  .prd-action {
+    display: none;
+    position: absolute;
+    @include pxRem(top, 300);
+    left: 50%;
+    transform: translateX(-50%);
+    &:hover {
+      display: inline-block;
+    }
+  }
+  .prd-img-group:hover {
+    ~ .prd-action{
+      display: inline-block;
     }
   }
 }
@@ -40,26 +55,29 @@
 @media only screen and(max-width: map-get($screen-size, 'xs')) {
   .prd {
     .discount {
-      padding: to-rem(3) to-rem(5);
-      top: to-rem(14);
-      left: to-rem(19);
+      @include pxRem(padding, 3 5);
+      @include pxRem(top, 14);
+      @include pxRem(left, 19);
       @include text-style(map-get($font-size, "3xs"), $weight-bold);
+      @include pxRem(border-radius, 9);
       line-height: 1.5em;
-      border-radius: to-rem(9);
     }
     .prd-link {
       .prd-img {
-        height: to-rem(227);
+        @include pxRem(height, 227);
       }
     }
     .prd-body {
-      margin-top: to-rem(16);
+      @include pxRem(margin-top, 16);
       .prd-name {
         @include text-style(map-get($font-size, "xs"), $weight-light);
       }
       .prd-price {
         @include text-style(map-get($font-size, "2xs"), $weight-regular);
       }
+    }
+    .prd-action{
+      @include pxRem(top, 180);
     }
   }
 }
