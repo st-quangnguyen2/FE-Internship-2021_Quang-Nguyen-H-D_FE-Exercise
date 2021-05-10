@@ -1,4 +1,5 @@
 import {setCart, getCart, setCartQuantity, findIndex} from './common.js';
+import {LEN_MONEY} from './constants.js';
 
 let header = document.querySelector('header');
 header.style.background = "#444444";
@@ -40,9 +41,7 @@ function quantityInputChange(target, id, quantity) {
  * @param {number || string} id The id of a cartItem.
  */
  function removeCartItem(id) {
-  cart = cart.filter(cartItem => {
-    return cartItem.id !== id;
-  });
+  cart = cart.filter(cartItem =>  cartItem.id !== id);
   render();
 }
 
@@ -74,11 +73,11 @@ function convertCartItemToHTML(cartItem) {
             <a href="#" class="cart-product-link">
               <h4 class="cart-product-name">${cartItem.name}</h4>
               </a>
-              <p class="cart-product-price">${cartItem.price.toFixed(2)}</p>
-            ${cartItem.discount ? `<p class="cart-product-price-discount">${(cartItem.price * (100 + cartItem.discount) / 100).toFixed(2)}</p>` : ''}
+              <p class="cart-product-price">${cartItem.price.toFixed(LEN_MONEY)}</p>
+              ${cartItem.discount ? `<p class="cart-product-price-discount">${(cartItem.price * (100 + cartItem.discount) / 100).toFixed(LEN_MONEY)}</p>` : ''}
             </div>
           <div class="cart-product-body-right">
-          <p class="cart-product-total-price">${(cartItem.price * cartItem.quantity).toFixed(2)}</p>
+          <p class="cart-product-total-price">${(cartItem.price * cartItem.quantity).toFixed(LEN_MONEY)}</p>
             <div class="cart-product-amount-group flex">
               <button class="amount-btn amount-decrease" data-id="${cartItem.id}" data-quantity="${cartItem.quantity - 1}">-</button>
               <input class="amount-inp" value="${cartItem.quantity}" type="number" data-id="${cartItem.id}" data-quantity="${cartItem.quantity}"> 
@@ -112,10 +111,12 @@ function addEventForBtn() {
 function addEventForInp() {
   let inps = document.getElementsByClassName('amount-inp');
   for (let inp of inps) {
-    let id = +inp.getAttribute('data-id');
-    let quantity = +inp.getAttribute('data-quantity');
-    let newQuantity = +inp.value || quantity;
-    inp.addEventListener('change', () =>  updateCartItemQuantity(id, newQuantity));
+    inp.addEventListener('change', () => {
+      let id = +inp.getAttribute('data-id');
+      let quantity = +inp.getAttribute('data-quantity');
+      let newQuantity = +inp.value || quantity;
+      updateCartItemQuantity(id, newQuantity);
+    }) ;
   }
 }
 

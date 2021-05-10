@@ -1,4 +1,5 @@
 import {setCart, getCart, setCartQuantity, findIndex, getElementById} from './common.js';
+import {LEN_MONEY} from './constants.js';
 
 let products = [
   {
@@ -56,9 +57,9 @@ function convertProductToHtml(product, section) {
           </a>
           <p
             class="prd-price ${product.discount ? 'prd-price-discount' : ''}"
-            data-price="$${(product.price * 100 / (100 - product.discount)).toFixed(2)}"
+            data-price="$${(product.price * 100 / (100 - product.discount)).toFixed(LEN_MONEY)}"
           >
-            $${product.price.toFixed(2)}
+            $${product.price.toFixed(LEN_MONEY)}
           </p>
         </div>
         <div class="prd-action">
