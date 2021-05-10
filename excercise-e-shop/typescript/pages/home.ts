@@ -1,7 +1,10 @@
-import {setCart, getCart, setCartQuantity, findIndex, getElementById} from './common.js';
-import {LEN_MONEY} from './constants.js';
+import IProduct from '../interfaces/IProduct.js';
+import ICartItem from '../interfaces/ICartItem.js';
+import {setCart, getCart, setCartQuantity, findIndex, getElementById} from '../common/index.js';
+import {LEN_MONEY} from '../constants/index.js';
 
-let products = [
+
+let products: Array<IProduct> = [
   {
     id: 1,
     name: 'T-Shirt Summer Vibes',
@@ -35,11 +38,11 @@ let products = [
 /**
  * Returns a string as a result after transform product object.
  * 
- * @param {object} product The product.
+ * @param {IProduct} product The product.
  * @param {string} section The section contains products.
  * @return {string} HTML Node as a string.
  */
-function convertProductToHtml(product, section) {
+function convertProductToHtml(product: IProduct, section: string): string {
   return `
     <li class="list-item col-3 col-xs-6"> 
       <div class="prd ${section}">
@@ -73,10 +76,10 @@ function convertProductToHtml(product, section) {
 /**
  * Add event Add to cart for button has class btn-add-to-cart
  */
-function addEventAddToCartForBtn() {
-  let butts = document.getElementsByClassName('btn-add-to-cart');
+function addEventAddToCartForBtn():void {
+  let butts: any = document.getElementsByClassName('btn-add-to-cart');
   for (let butt of butts) {
-    let id = +butt.getAttribute('data-id'); // Get ud of product from custom attribute has name data-id
+    let id: number = +butt.getAttribute('data-id'); // Get ud of product from custom attribute has name data-id
     butt.addEventListener('click', () => addProductToCart(id));
   }
 }
@@ -87,12 +90,12 @@ function addEventAddToCartForBtn() {
  *
  * @param {number || string} id The id of a cartItem.
  */
-function addProductToCart(id) {
-  let findId = findIndex(cart, id);
+function addProductToCart(id: number | string) {
+  let findId: number = findIndex(cart, id);
   if (findId === -1) {
-    let product = getElementById(products, id);
-    product.quantity = 1;
-    cart.push(product);
+    let product: IProduct = getElementById(products, id);
+    let cartItem: ICartItem = {...product, quantity: 1};
+    cart.push(cartItem);
   } 
   else {
     cart[findId].quantity += 1;
@@ -103,16 +106,24 @@ function addProductToCart(id) {
 
 function render() {
   // Fill data selected group
-  document.querySelector('.selected-group').innerHTML =  products.map(function (product) {
-    return convertProductToHtml(product, 'selected');
-  }).join('');
+  let selectedGroup: any = document.querySelector('.selected-group');
+  if(selectedGroup) {
+    selectedGroup.innerHTML =  products.map(function (product) {
+      return convertProductToHtml(product, 'selected');
+    }).join('');
+  }
   // Fill data today group
-  document.querySelector('.today-group').innerHTML =  products.map(function (product) {
-    return convertProductToHtml(product, 'today');
-  }).join('');
-  addEventAddToCartForBtn();
+  let todayGroup: any = document.querySelector('.today-group');
+  if(todayGroup) {
+    todayGroup.innerHTML =  products.map(function (product) {
+      return convertProductToHtml(product, 'today');
+    }).join('');
+  }
+  if(selectedGroup || todayGroup) {
+    addEventAddToCartForBtn();
+  }
   setCartQuantity();
 }
 
 render();
-let cart = getCart();
+let cart:Array<ICartItem> = getCart();

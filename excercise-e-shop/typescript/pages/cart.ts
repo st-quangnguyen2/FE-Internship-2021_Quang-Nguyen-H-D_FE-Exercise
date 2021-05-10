@@ -1,9 +1,12 @@
-import {setCart, getCart, setCartQuantity, findIndex} from './common.js';
-import {LEN_MONEY} from './constants.js';
+import ICartItem from '../interfaces/ICartItem.js';
+import {setCart, getCart, setCartQuantity, findIndex, getElementById} from '../common/index.js';
+import {LEN_MONEY} from '../constants/index.js';
 
-let header = document.querySelector('header');
-header.style.background = "#444444";
-header.style.position = "static";
+let header: any = document.querySelector('header');
+if(header) {
+  header.style.background = "#444444";
+  header.style.position = "static";
+}
 
 /**
  * Update quantity of a cartItem in cart. Then update cart and rerender components related.
@@ -11,8 +14,8 @@ header.style.position = "static";
  * @param {number || string} id The id of a cartItem.
  * @param {number } quantity The quantity of cartItem will be updated.
  */
-function updateCartItemQuantity(id, quantity) {
-  let findId = findIndex(cart, id);
+function updateCartItemQuantity(id: number, quantity: number) {
+  let findId: number = findIndex(cart, id);
   if (quantity < 1) {
     quantity = 1;
   }
@@ -24,23 +27,11 @@ function updateCartItemQuantity(id, quantity) {
 }
 
 /**
- * When quantity input onchange update quantity of item in cart has id equal passed id .
- *
- * @param {HTMLElement} target The array.
- * @param {number || string} id The id .
- * @param {number} quantity The quantity of item before input change .
- */
-function quantityInputChange(target, id, quantity) {
-  let newQuantity = +target.value || quantity;
-  updateCartItemQuantity(id, newQuantity);
-}
-
-/**
  * Remove a cartItem in cart. Then update cart and rerender components related.
  *
  * @param {number || string} id The id of a cartItem.
  */
- function removeCartItem(id) {
+ function removeCartItem(id: number | string) {
   cart = cart.filter(cartItem =>  cartItem.id !== id);
   render();
 }
@@ -48,7 +39,7 @@ function quantityInputChange(target, id, quantity) {
 /**
  * Remove all items in cart. Then update cart in localStorage and rerender components related.
  */
- function removeAll() {
+ function removeAll(): void {
   cart = [];
   render();
 }
@@ -56,10 +47,10 @@ function quantityInputChange(target, id, quantity) {
 /**
  * Returns a string as a result after transform cartItem object.
  * 
- * @param {object} cartItem The item in cart.
+ * @param {ICartItem} cartItem The item in cart.
  * @return {string} HTML Node as a string.
  */
-function convertCartItemToHTML(cartItem) {
+function convertCartItemToHTML(cartItem: ICartItem): string {
   return `
     <li class="list-item cart-product-item">
       <div class="cart-product fl-row fl-1">
@@ -96,11 +87,11 @@ function convertCartItemToHTML(cartItem) {
 /**
  * Add event decrease or increase quantity of cart item for buttons have class amount-btn
  */
-function addEventForBtn() {
-  let butts = document.getElementsByClassName('amount-btn');
+function addEventForBtn(): void {
+  let butts: any = document.getElementsByClassName('amount-btn');
   for (let butt of butts){
-    let id = +butt.getAttribute('data-id');
-    let quantity = +butt.getAttribute('data-quantity');
+    let id: number = +butt.getAttribute('data-id');
+    let quantity: number = +butt.getAttribute('data-quantity');
     butt.addEventListener('click', () => updateCartItemQuantity(id, quantity));
   }
 }
@@ -109,12 +100,12 @@ function addEventForBtn() {
  * Add event change quantity of cart item for inputs have class amount-inp
  */
 function addEventForInp() {
-  let inps = document.getElementsByClassName('amount-inp');
+  let inps: any = document.getElementsByClassName('amount-inp');
   for (let inp of inps) {
     inp.addEventListener('change', () => {
-      let id = +inp.getAttribute('data-id');
-      let quantity = +inp.getAttribute('data-quantity');
-      let newQuantity = +inp.value || quantity;
+      let id: number = +inp.getAttribute('data-id');
+      let quantity: number = +inp.getAttribute('data-quantity');
+      let newQuantity: number = +inp.value || quantity;
       updateCartItemQuantity(id, newQuantity);
     }) ;
   }
@@ -123,8 +114,8 @@ function addEventForInp() {
 /**
  * Add event remove item in cart for buttons have class name btn-remove-item 
  */
-function addEventRemoveCartItem() {
-  let butts = document.getElementsByClassName('btn-remove-item');
+function addEventRemoveCartItem(): void {
+  let butts: any = document.getElementsByClassName('btn-remove-item');
   for (let butt of butts) {
     let id = +butt.getAttribute('data-id');
     butt.addEventListener('click', () =>  removeCartItem(id));
@@ -134,8 +125,8 @@ function addEventRemoveCartItem() {
 /**
  * Add event remove all item in cart for button has class name btn-remove-all 
  */
-function addEventRemoveAll() {
-  let butt = document.querySelector('.btn-remove-all');
+function addEventRemoveAll(): void {
+  let butt: any = document.querySelector('.btn-remove-all');
   if(butt) {
     butt.addEventListener('click', removeAll);
   }
@@ -144,37 +135,43 @@ function addEventRemoveAll() {
 /**
  * Transform data in cart. Then fill in it into cart group to display and add event for it.
  */
-function renderCartItem() {
-  let clearAll = `
+function renderCartItem(): void {
+  let clearAll: string = `
     <li class="cart-product-group-action">
       <button class="btn btn-flat-primary btn-remove-all"">Remove all</button>
     </li>
     `;
-  document.querySelector('.cart-product-group').innerHTML = cart.length ? cart.map(convertCartItemToHTML).join('') + clearAll : 'Hiện không có sản phẩm nào trong giỏ hàng';
-  addEventForBtn();
-  addEventForInp();
-  addEventRemoveCartItem();
-  addEventRemoveAll();
+  let cartGroup: any = document.querySelector('.cart-product-group');
+  if(cartGroup) {
+    cartGroup.innerHTML = cart.length ? cart.map(convertCartItemToHTML).join('') + clearAll : 'Hiện không có sản phẩm nào trong giỏ hàng';
+    addEventForBtn();
+    addEventForInp();
+    addEventRemoveCartItem();
+    addEventRemoveAll();
+  }
 }
 
 /**
  * Compute total price of items in cart. Then fill in it into element has class is .total-price to display.
  */
-function renderTotalPrice() {
-  document.querySelector('.total-price').innerHTML = cart.reduce((total, cartItem) => {
-    return total + (cartItem.price * cartItem.quantity);
-  }, 0).toFixed(2);
+function renderTotalPrice(): void {
+  let totalPrice: any = document.querySelector('.total-price');
+  if(totalPrice) {
+    totalPrice.innerHTML = cart.reduce((total, cartItem) => {
+      return total + (cartItem.price * cartItem.quantity);
+    }, 0).toFixed(2);
+  }
 }
 
 /**
  * Rerender items in cart, total price and quantity at header
  */
-function render() {
+function render(): void {
   setCart(cart);
   renderCartItem();
   renderTotalPrice();
   setCartQuantity();
 }
 
-let cart = getCart();
+let cart: Array<ICartItem> = getCart();
 render();
