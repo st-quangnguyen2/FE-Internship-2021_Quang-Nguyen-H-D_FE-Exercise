@@ -1,0 +1,52 @@
+// Cart Section
+.cart-section {
+  @include pxRem(min-height, 600);
+  @include pxRem(padding, 24);
+  background: map-get($color, "gray-a");
+  .section-header {
+    .section-title {
+      @include text-style(map-get($font-size, "3xl"), $weight-light);
+    }
+  }
+  .section-body {
+    .section-body-left {
+      .cart-product-group {
+        @include pxRem(padding, 20);
+        @include pxRem(border-radius, 4);
+        background: map-get($color, "white");
+        .cart-product-item {
+          @include pxRem(padding, 20);
+          @include pxRem(margin-bottom, 20);
+          @include pxRem(box-shadow, 0 0 4 rgba(0, 0, 0, 0.2));
+          @include pxRem(border-radius, 4);
+        }
+      }
+    }
+    .section-body-right {
+      .cart-total-price {
+        @include pxRem(margin-bottom, 24);
+        @include pxRem(padding, 20);
+        @include pxRem(border-radius, 4);
+        background: map-get($color, "white");
+        .total-price-txt{
+          @include text-style(map-get($font-size, "2xl"), $weight-bold);
+          @include pxRem(margin-bottom, 16);
+          @include pxRem(border-bottom, 0.5 solid map-get($color, "gray-e"));
+        }
+        .total-price {
+          @include text-style(map-get($font-size, "3xl"), $weight-regular);
+          text-align: right;
+          &::before{
+            content: "\0024";
+          }
+        }
+      }
+      button {
+        @include text-style(map-get($font-size, "lg"), $weight-bold);
+        @include pxRem(border-radius, 4);
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
