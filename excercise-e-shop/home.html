@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E - SHOP</title>
     <link rel="stylesheet" href="./assets/scss/style.css" />
+    <script src="./javascript/home.js" defer ></script>
   </head>
   <body>
     <header>
       <div class="container fl-center-y fl-space-between d-none d-xs">
-        <a href="#">
+        <a href="home.html">
           <img
             src="./assets/images/main/logo-black.svg"
             alt="e-shop-logo"
@@ -70,16 +71,17 @@
                   src="./assets/images/icon/search.svg"
                   alt="search"
                   class="nav-icon"
-                >
+                />
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="cart.html" class="nav-link cart-link">
                 <img
                   src="./assets/images/icon/cart.svg"
                   alt="cart"
                   class="nav-icon"
                 >
+                <span class="cart-quantity">2</span>
               </a>
             </li>
             <li class="nav-item">
@@ -224,93 +226,7 @@
             <a href="#" class="btn btn-outline-primary section-link">
               SHOW MORE
             </a>
-            <ul class="selected-group row">
-              <li class="selected-item col-3 col-xs-6">
-                <div class="prd">
-                  <span class="discount">-30%</span>
-                  <a href="#" class="prd-link prd-img-group">
-                    <img
-                      src="./assets/images/sample/product-1.png"
-                      alt="product image"
-                      class="prd-img"
-                    >
-                  </a>
-                  <div class="prd-body">
-                    <a href="#" class="prd-link">
-                      <p class="prd-name">T-Shirt Summer Vibes</p>
-                    </a>
-                    <p
-                      class="prd-price prd-price-discount"
-                      data-price="$119.99"
-                    >
-                      $89.99
-                    </p>
-                  </div>
-                  <div class="prd-action">
-                    <button class="btn btn-primary">Add to cart</button>
-                  </div>
-                </div>
-              </li>
-              <li class="selected-item col-3 col-xs-6">
-                <div class="prd">
-                  <a href="#" class="prd-link prd-img-group">
-                    <img
-                      src="./assets/images/sample/product-2.png"
-                      alt="product image"
-                      class="prd-img"
-                    >
-                  </a>
-                  <div class="prd-body">
-                    <a href="#" class="prd-link">
-                      <p class="prd-name">Loose Knit 3/4 Sleeve</p>
-                    </a>
-                    <p class="prd-price">$119.99</p>
-                  </div>
-                  <div class="prd-action">
-                    <button class="btn btn-primary">Add to cart</button>
-                  </div>
-                </div>
-              </li>
-              <li class="selected-item col-3 col-xs-6">
-                <div class="prd">
-                  <a href="#" class="prd-link prd-img-group">
-                    <img
-                      src="./assets/images/sample/product-3.png"
-                      alt="product image"
-                      class="prd-img"
-                    >
-                  </a>
-                  <div class="prd-body">
-                    <a href="#" class="prd-link">
-                      <p class="prd-name">Basic Slim Fit T-Shirt</p>
-                    </a>
-                    <p class="prd-price">$79.99</p>
-                  </div>
-                  <div class="prd-action">
-                    <button class="btn btn-primary">Add to cart</button>
-                  </div>
-                </div>
-              </li>
-              <li class="selected-item col-3 col-xs-6">
-                <div class="prd">
-                  <a href="#" class="prd-link prd-img-group">
-                    <img
-                      src="./assets/images/sample/product-4.png"
-                      alt="product image"
-                      class="prd-img"
-                    >
-                  </a>
-                  <div class="prd-body">
-                    <a href="#" class="prd-link">
-                      <p class="prd-name">Loose Textured T-Shirt</p>
-                    </a>
-                    <p class="prd-price">$119.99</p>
-                  </div>
-                  <div class="prd-action">
-                    <button class="btn btn-primary">Add to cart</button>
-                  </div>
-                </div>
-              </li>
+            <ul class="list-group selected-group row">
             </ul>
           </div>
         </div>
@@ -400,7 +316,7 @@
             <h3 class="section-title txt-center">Products in today</h3>
           </div>
           <div class="section-body">
-            <ul class="today-group row">
+            <ul class="list-group today-group row">
               <li class="today-item col-3 col-xs-6">
                 <div class="prd">
                   <span class="discount">-30%</span>
@@ -520,11 +436,13 @@
     <footer>
       <div class="container section-body fl-space-between">
         <div class="body-left">
-          <img
+          <a href="#" class="footer-link">
+            <img
             src="./assets/images/main/logo.svg"
             alt="E-Shop"
             class="footer-logo"
-          >
+            >
+          </a>
           <p class="footer-title">
             House My Brand designs clothing for the young, the old &everyone in
             between – but most importantly, for the fashionable
@@ -656,7 +574,9 @@
         </div>
       </div>
       <div class="section-footer">
-        <p class="txt-center">DESIGN BY ICEO.CO -	&copy; 2019. ALL RIGHTS RESERVED.</p>
+        <p class="txt-center">
+          DESIGN BY ICEO.CO - &copy; 2019. ALL RIGHTS RESERVED.
+        </p>
       </div>
     </footer>
   </body>
