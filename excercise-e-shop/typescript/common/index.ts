@@ -1,4 +1,4 @@
-import ICartItem from '../interfaces/ICartItem.js';
+import ICartItem from '../interfaces/ICartItem';
 
 /**
  * Update cart in localStorage.

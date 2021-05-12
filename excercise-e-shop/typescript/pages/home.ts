@@ -1,8 +1,7 @@
-import IProduct from '../interfaces/IProduct.js';
-import ICartItem from '../interfaces/ICartItem.js';
+import IProduct from '../interfaces/IProduct';
+import ICartItem from '../interfaces/ICartItem';
 import {setCart, getCart, setCartQuantity, findIndex, getElementById} from '../common/index.js';
 import {LEN_MONEY} from '../constants/index.js';
-
 
 let products: Array<IProduct> = [
   {
@@ -96,8 +95,7 @@ function addProductToCart(id: number | string) {
     let product: IProduct = getElementById(products, id);
     let cartItem: ICartItem = {...product, quantity: 1};
     cart.push(cartItem);
-  } 
-  else {
+  } else {
     cart[findId].quantity += 1;
   }
   setCart(cart);
@@ -107,19 +105,19 @@ function addProductToCart(id: number | string) {
 function render() {
   // Fill data selected group
   let selectedGroup: any = document.querySelector('.selected-group');
-  if(selectedGroup) {
+  if (selectedGroup) {
     selectedGroup.innerHTML =  products.map(function (product) {
       return convertProductToHtml(product, 'selected');
     }).join('');
   }
   // Fill data today group
   let todayGroup: any = document.querySelector('.today-group');
-  if(todayGroup) {
+  if (todayGroup) {
     todayGroup.innerHTML =  products.map(function (product) {
       return convertProductToHtml(product, 'today');
     }).join('');
   }
-  if(selectedGroup || todayGroup) {
+  if (selectedGroup || todayGroup) {
     addEventAddToCartForBtn();
   }
   setCartQuantity();

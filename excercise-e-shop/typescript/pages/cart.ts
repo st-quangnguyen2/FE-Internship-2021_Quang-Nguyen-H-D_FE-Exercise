@@ -1,9 +1,9 @@
-import ICartItem from '../interfaces/ICartItem.js';
+import ICartItem from '../interfaces/ICartItem';
 import {setCart, getCart, setCartQuantity, findIndex, getElementById} from '../common/index.js';
 import {LEN_MONEY} from '../constants/index.js';
 
 let header: any = document.querySelector('header');
-if(header) {
+if (header) {
   header.style.background = "#444444";
   header.style.position = "static";
 }
@@ -89,7 +89,7 @@ function convertCartItemToHTML(cartItem: ICartItem): string {
  */
 function addEventForBtn(): void {
   let butts: any = document.getElementsByClassName('amount-btn');
-  for (let butt of butts){
+  for (let butt of butts) {
     let id: number = +butt.getAttribute('data-id');
     let quantity: number = +butt.getAttribute('data-quantity');
     butt.addEventListener('click', () => updateCartItemQuantity(id, quantity));
@@ -127,7 +127,7 @@ function addEventRemoveCartItem(): void {
  */
 function addEventRemoveAll(): void {
   let butt: any = document.querySelector('.btn-remove-all');
-  if(butt) {
+  if (butt) {
     butt.addEventListener('click', removeAll);
   }
 }
@@ -142,7 +142,7 @@ function renderCartItem(): void {
     </li>
     `;
   let cartGroup: any = document.querySelector('.cart-product-group');
-  if(cartGroup) {
+  if (cartGroup) {
     cartGroup.innerHTML = cart.length ? cart.map(convertCartItemToHTML).join('') + clearAll : 'Hiện không có sản phẩm nào trong giỏ hàng';
     addEventForBtn();
     addEventForInp();
@@ -156,7 +156,7 @@ function renderCartItem(): void {
  */
 function renderTotalPrice(): void {
   let totalPrice: any = document.querySelector('.total-price');
-  if(totalPrice) {
+  if (totalPrice) {
     totalPrice.innerHTML = cart.reduce((total, cartItem) => {
       return total + (cartItem.price * cartItem.quantity);
     }, 0).toFixed(2);

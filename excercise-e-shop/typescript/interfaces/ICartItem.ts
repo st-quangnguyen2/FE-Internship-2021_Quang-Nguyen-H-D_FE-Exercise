@@ -1,4 +1,4 @@
-import IProduct from './IProduct.js';
+import IProduct from './IProduct';
 
 type ICartItem = IProduct & {
   quantity: number;
