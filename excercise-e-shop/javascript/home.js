@@ -1,4 +1,7 @@
-var products = [
+import {setCart, getCart, setCartQuantity, findIndex, getElementById} from './common.js';
+import {LEN_MONEY} from './constants.js';
+
+let products = [
   {
     id: 1,
     name: 'T-Shirt Summer Vibes',
@@ -30,30 +33,6 @@ var products = [
 ]
 
 /**
- * Return cart in localStorage.
- */
-function getCart() {
-  return localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
-}
-
-/**
- * Update cart in localStorage.
- * @param {array} cart The cart will be updated.
- */
-function setCart(cart) {
-  localStorage.setItem('cart', JSON.stringify(cart));
-}
-
-/**
- * Compute quantity of products in cart. Then display it at header.
- */
-function setCartQuantity() {
-  document.querySelector('.cart-quantity').innerHTML = getCart().reduce(function (totalQuantity, cartItem) {
-    return totalQuantity + cartItem.quantity;
-  }, 0);
-}
-
-/**
  * Returns a string as a result after transform product object.
  * 
  * @param {object} product The product.
@@ -61,63 +40,45 @@ function setCartQuantity() {
  * @return {string} HTML Node as a string.
  */
 function convertProductToHtml(product, section) {
-  return '' +
-    '<li class="list-item col-3 col-xs-6">' + 
-      '<div class="prd ' + section + '">' +
-        (product.discount ? '<span class="discount">-' + product.discount + '%</span>' : '') +
-        '<a href="#" class="prd-link prd-img-group">' + 
-          '<img ' + 
-            'src="' + product.image + '"' +
-            'alt="product image"' +
-            'class="prd-img"' +
-          '>' +
-        '</a>' +
-        '<div class="prd-body">' +
-          '<a href="#" class="prd-link">' +
-            '<p class="prd-name">' + product.name + '</p>' +
-          '</a>' +
-          '<p ' +
-            'class="prd-price ' + (product.discount ? 'prd-price-discount"' : '"') +
-            'data-price="$' + (product.price * 100 / (100 - product.discount)).toFixed(2) + '"' +
-          '>' + 
-            '$' + product.price.toFixed(2) +
-          '</p>' +
-        '</div>' +
-        '<div class="prd-action">' +
-          '<button class="btn btn-primary" onclick="addProductToCart(' + product.id + ')">Add to cart</button>' +
-        '</div>' +
-      '</div>' + 
-    '</li>';
+  return `
+    <li class="list-item col-3 col-xs-6"> 
+      <div class="prd ${section}">
+        ${product.discount ? `<span class="discount">-${product.discount}%</span>` : ''}
+        <a href="#" class="prd-link prd-img-group">
+          <img
+            src="${product.image}"
+            alt="product image"
+            class="prd-img"
+          >
+        </a>
+        <div class="prd-body">
+          <a href="#" class="prd-link">
+            <p class="prd-name">${product.name}</p>
+          </a>
+          <p
+            class="prd-price ${product.discount ? 'prd-price-discount' : ''}"
+            data-price="$${(product.price * 100 / (100 - product.discount)).toFixed(LEN_MONEY)}"
+          >
+            $${product.price.toFixed(LEN_MONEY)}
+          </p>
+        </div>
+        <div class="prd-action">
+          <button class="btn btn-primary btn-add-to-cart" data-id="${product.id}">Add to cart</button>
+        </div>
+      </div>
+    </li>
+  `;
 }
 
-
 /**
- * Returns an element has id equal passed id in an array.
- *
- * @param {array} arr The array.
- * @param {number || string} id The id .
- * @return {object} The element.
+ * Add event Add to cart for button has class btn-add-to-cart
  */
-function getElementById(arr, id) {
-  for (var i = 0; i < arr.length; i++){
-    if (arr[i].id === id) {
-      return arr[i];
-    }
+function addEventAddToCartForBtn() {
+  let butts = document.getElementsByClassName('btn-add-to-cart');
+  for (let butt of butts) {
+    let id = +butt.getAttribute('data-id'); // Get ud of product from custom attribute has name data-id
+    butt.addEventListener('click', () => addProductToCart(id));
   }
-  return null;
-}
-
-/**
- * Returns index of element has id equal passed id in an array.
- *
- * @param {array} arr The array.
- * @param {number || string} id The id .
- * @return {number} index of element.
- */
-function findIndex(arr, id) {
-  return arr.map(function (element) {
-    return element.id;
-  }).indexOf(id);
 }
 
 /**
@@ -127,9 +88,9 @@ function findIndex(arr, id) {
  * @param {number || string} id The id of a cartItem.
  */
 function addProductToCart(id) {
-  var findId = findIndex(cart, id);
+  let findId = findIndex(cart, id);
   if (findId === -1) {
-    var product = getElementById(products, id);
+    let product = getElementById(products, id);
     product.quantity = 1;
     cart.push(product);
   } 
@@ -140,15 +101,18 @@ function addProductToCart(id) {
   setCartQuantity();
 }
 
-var cart = getCart();
-setCartQuantity();
-
-// Fill data selected group
-document.querySelector('.selected-group').innerHTML =  products.map(function (product) {
-  return convertProductToHtml(product, 'selected');
+function render() {
+  // Fill data selected group
+  document.querySelector('.selected-group').innerHTML =  products.map(function (product) {
+    return convertProductToHtml(product, 'selected');
   }).join('');
+  // Fill data today group
+  document.querySelector('.today-group').innerHTML =  products.map(function (product) {
+    return convertProductToHtml(product, 'today');
+  }).join('');
+  addEventAddToCartForBtn();
+  setCartQuantity();
+}
 
-// Fill data today group
-document.querySelector('.today-group').innerHTML =  products.map(function (product) {
-  return convertProductToHtml(product, 'today')
-}).join('');
+render();
+let cart = getCart();
