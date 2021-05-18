@@ -1,9 +1,10 @@
-import {setCart, getCart, setCartQuantity, findIndex} from './common.js';
-import {LEN_MONEY} from './constants.js';
+import { setCart, getCart, setCartQuantity, findIndex } from './common.js';
+import { LEN_MONEY } from './constants.js';
+import '../assets/scss/style.scss';
 
 let header = document.querySelector('header');
-header.style.background = "#444444";
-header.style.position = "static";
+header.style.background = '#444444';
+header.style.position = 'static';
 
 /**
  * Update quantity of a cartItem in cart. Then update cart and rerender components related.
@@ -40,22 +41,22 @@ function quantityInputChange(target, id, quantity) {
  *
  * @param {number || string} id The id of a cartItem.
  */
- function removeCartItem(id) {
-  cart = cart.filter(cartItem =>  cartItem.id !== id);
+function removeCartItem(id) {
+  cart = cart.filter((cartItem) => cartItem.id !== id);
   render();
 }
 
 /**
  * Remove all items in cart. Then update cart in localStorage and rerender components related.
  */
- function removeAll() {
+function removeAll() {
   cart = [];
   render();
 }
 
 /**
  * Returns a string as a result after transform cartItem object.
- * 
+ *
  * @param {object} cartItem The item in cart.
  * @return {string} HTML Node as a string.
  */
@@ -74,17 +75,34 @@ function convertCartItemToHTML(cartItem) {
               <h4 class="cart-product-name">${cartItem.name}</h4>
               </a>
               <p class="cart-product-price">${cartItem.price.toFixed(LEN_MONEY)}</p>
-              ${cartItem.discount ? `<p class="cart-product-price-discount">${(cartItem.price * (100 + cartItem.discount) / 100).toFixed(LEN_MONEY)}</p>` : ''}
+              ${
+                cartItem.discount
+                  ? `<p class="cart-product-price-discount">${(
+                      (cartItem.price * (100 + cartItem.discount)) /
+                      100
+                    ).toFixed(LEN_MONEY)}</p>`
+                  : ''
+              }
             </div>
           <div class="cart-product-body-right">
-          <p class="cart-product-total-price">${(cartItem.price * cartItem.quantity).toFixed(LEN_MONEY)}</p>
+          <p class="cart-product-total-price">${(cartItem.price * cartItem.quantity).toFixed(
+            LEN_MONEY
+          )}</p>
             <div class="cart-product-amount-group flex">
-              <button class="amount-btn amount-decrease" data-id="${cartItem.id}" data-quantity="${cartItem.quantity - 1}">-</button>
-              <input class="amount-inp" value="${cartItem.quantity}" type="number" data-id="${cartItem.id}" data-quantity="${cartItem.quantity}"> 
-              <button class="amount-btn amount-increase" data-id="${cartItem.id}" data-quantity="${cartItem.quantity + 1}">+</button>
+              <button class="amount-btn amount-decrease" data-id="${cartItem.id}" data-quantity="${
+    cartItem.quantity - 1
+  }">-</button>
+              <input class="amount-inp" value="${cartItem.quantity}" type="number" data-id="${
+    cartItem.id
+  }" data-quantity="${cartItem.quantity}"> 
+              <button class="amount-btn amount-increase" data-id="${cartItem.id}" data-quantity="${
+    cartItem.quantity + 1
+  }">+</button>
             </div>
             <div class="cart-product-remove-group">
-              <button class="btn btn-flat-primary btn-remove-item" data-id="${cartItem.id}">Remove</button>
+              <button class="btn btn-flat-primary btn-remove-item" data-id="${
+                cartItem.id
+              }">Remove</button>
             </div>
           </div>
         </div>
@@ -98,7 +116,7 @@ function convertCartItemToHTML(cartItem) {
  */
 function addEventForBtn() {
   let butts = document.getElementsByClassName('amount-btn');
-  for (let butt of butts){
+  for (let butt of butts) {
     let id = +butt.getAttribute('data-id');
     let quantity = +butt.getAttribute('data-quantity');
     butt.addEventListener('click', () => updateCartItemQuantity(id, quantity));
@@ -116,27 +134,27 @@ function addEventForInp() {
       let quantity = +inp.getAttribute('data-quantity');
       let newQuantity = +inp.value || quantity;
       updateCartItemQuantity(id, newQuantity);
-    }) ;
+    });
   }
 }
 
 /**
- * Add event remove item in cart for buttons have class name btn-remove-item 
+ * Add event remove item in cart for buttons have class name btn-remove-item
  */
 function addEventRemoveCartItem() {
   let butts = document.getElementsByClassName('btn-remove-item');
   for (let butt of butts) {
     let id = +butt.getAttribute('data-id');
-    butt.addEventListener('click', () =>  removeCartItem(id));
+    butt.addEventListener('click', () => removeCartItem(id));
   }
 }
 
 /**
- * Add event remove all item in cart for button has class name btn-remove-all 
+ * Add event remove all item in cart for button has class name btn-remove-all
  */
 function addEventRemoveAll() {
   let butt = document.querySelector('.btn-remove-all');
-  if(butt) {
+  if (butt) {
     butt.addEventListener('click', removeAll);
   }
 }
@@ -150,7 +168,9 @@ function renderCartItem() {
       <button class="btn btn-flat-primary btn-remove-all"">Remove all</button>
     </li>
     `;
-  document.querySelector('.cart-product-group').innerHTML = cart.length ? cart.map(convertCartItemToHTML).join('') + clearAll : 'Hiện không có sản phẩm nào trong giỏ hàng';
+  document.querySelector('.cart-product-group').innerHTML = cart.length
+    ? cart.map(convertCartItemToHTML).join('') + clearAll
+    : 'Hiện không có sản phẩm nào trong giỏ hàng';
   addEventForBtn();
   addEventForInp();
   addEventRemoveCartItem();
@@ -161,9 +181,11 @@ function renderCartItem() {
  * Compute total price of items in cart. Then fill in it into element has class is .total-price to display.
  */
 function renderTotalPrice() {
-  document.querySelector('.total-price').innerHTML = cart.reduce((total, cartItem) => {
-    return total + (cartItem.price * cartItem.quantity);
-  }, 0).toFixed(2);
+  document.querySelector('.total-price').innerHTML = cart
+    .reduce((total, cartItem) => {
+      return total + cartItem.price * cartItem.quantity;
+    }, 0)
+    .toFixed(2);
 }
 
 /**

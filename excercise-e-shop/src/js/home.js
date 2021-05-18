@@ -1,5 +1,6 @@
-import {setCart, getCart, setCartQuantity, findIndex, getElementById} from './common.js';
-import {LEN_MONEY} from './constants.js';
+import { setCart, getCart, setCartQuantity, findIndex, getElementById } from './common.js';
+import { LEN_MONEY, IMGS_PATH } from './constants.js';
+import '../assets/scss/style.scss';
 
 let products = [
   {
@@ -7,34 +8,34 @@ let products = [
     name: 'T-Shirt Summer Vibes',
     price: 89.99,
     discount: 25,
-    image: './assets/images/sample/product-1.png'
+    image: IMGS_PATH + 'product-1.png',
   },
   {
     id: 2,
     name: 'Loose Knit 3/4 Sleeve',
     price: 119.99,
     discount: 0,
-    image: './assets/images/sample/product-2.png'
+    image: IMGS_PATH + 'product-2.png',
   },
   {
     id: 3,
     name: 'Basic Slim Fit T-Shirt',
     price: 79.99,
     discount: 0,
-    image: './assets/images/sample/product-3.png'
+    image: IMGS_PATH + 'product-3.png',
   },
   {
     id: 4,
     name: 'Loose Textured T-Shirt',
     price: 119.99,
     discount: 0,
-    image: './assets/images/sample/product-4.png'
-  }
-]
+    image: IMGS_PATH + 'product-4.png',
+  },
+];
 
 /**
  * Returns a string as a result after transform product object.
- * 
+ *
  * @param {object} product The product.
  * @param {string} section The section contains products.
  * @return {string} HTML Node as a string.
@@ -57,13 +58,15 @@ function convertProductToHtml(product, section) {
           </a>
           <p
             class="prd-price ${product.discount ? 'prd-price-discount' : ''}"
-            data-price="$${(product.price * 100 / (100 - product.discount)).toFixed(LEN_MONEY)}"
+            data-price="$${((product.price * 100) / (100 - product.discount)).toFixed(LEN_MONEY)}"
           >
             $${product.price.toFixed(LEN_MONEY)}
           </p>
         </div>
         <div class="prd-action">
-          <button class="btn btn-primary btn-add-to-cart" data-id="${product.id}">Add to cart</button>
+          <button class="btn btn-primary btn-add-to-cart" data-id="${
+            product.id
+          }">Add to cart</button>
         </div>
       </div>
     </li>
@@ -93,8 +96,7 @@ function addProductToCart(id) {
     let product = getElementById(products, id);
     product.quantity = 1;
     cart.push(product);
-  } 
-  else {
+  } else {
     cart[findId].quantity += 1;
   }
   setCart(cart);
@@ -103,13 +105,17 @@ function addProductToCart(id) {
 
 function render() {
   // Fill data selected group
-  document.querySelector('.selected-group').innerHTML =  products.map(function (product) {
-    return convertProductToHtml(product, 'selected');
-  }).join('');
+  document.querySelector('.selected-group').innerHTML = products
+    .map(function (product) {
+      return convertProductToHtml(product, 'selected');
+    })
+    .join('');
   // Fill data today group
-  document.querySelector('.today-group').innerHTML =  products.map(function (product) {
-    return convertProductToHtml(product, 'today');
-  }).join('');
+  document.querySelector('.today-group').innerHTML = products
+    .map(function (product) {
+      return convertProductToHtml(product, 'today');
+    })
+    .join('');
   addEventAddToCartForBtn();
   setCartQuantity();
 }
