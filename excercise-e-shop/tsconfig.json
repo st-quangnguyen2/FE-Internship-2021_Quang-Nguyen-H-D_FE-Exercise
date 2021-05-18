@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "module": "es2015",
+    "target": "es5",
+    "module": "es6",
     "moduleResolution": "node",
     "watch": true,
+    "allowJs": true,
     "noImplicitAny": true,
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "outDir": "javascript"
-  },
+    "outDir": "./dist" /* Disallow inconsistently-cased references to the same file. */
+  }
 }
