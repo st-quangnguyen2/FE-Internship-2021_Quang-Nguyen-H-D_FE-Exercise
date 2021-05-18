@@ -1,0 +1,63 @@
+.cart-product {
+  .cart-product-img-container {
+    @include pxRem(margin-right, 20);
+    .cart-product-img {
+      @include pxRem(width, 120);
+      object-fit: cover;
+    }
+  }
+  .cart-product-body {
+    .cart-product-body-left {
+      .cart-product-name {
+        @include text-style(map-get($font-size, "xl"), $weight-light);
+        color: map-get($color, "black-a");
+        &:hover {
+          color: map-get($color, "primary");
+        }
+      }
+      .cart-product-price {
+        &::before{
+          content: "\0024";
+        }
+      }
+      .cart-product-price-discount {
+        @include text-style(map-get($font-size, "sm"), $weight-light);
+        text-decoration: line-through;
+        color: map-get($color, "gray-e");
+        &::before{
+          content: "\0024";
+        }
+      }
+    }
+    .cart-product-body-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      .cart-product-total-price {
+        @include text-style(map-get($font-size, "2xl"), $weight-bold);
+        @include pxRem(margin-bottom, 16);
+        text-align: right;
+        &::before{
+          content: "\0024";
+        }
+      }
+      .cart-product-amount-group {
+        @include pxRem(margin-bottom, 16);
+        button {
+          @include text-style(map-get($font-size, "md"), $weight-regular);
+          @include pxRem(padding, 6 16);
+          @include pxRem(border, 1 solid map-get($color, 'gray-c'));
+          font-family: "Poppins", sans-serif;
+        }
+        input {
+          @include pxRem(width, 48);
+          @include pxRem(padding, 6);
+          @include text-style(map-get($font-size, "md"), $weight-regular);
+          @include pxRem(border, 1 solid map-get($color, 'gray-c'));
+          font-family: "Poppins", sans-serif;
+          text-align: center;
+        }
+      }
+    }
+  }
+} 

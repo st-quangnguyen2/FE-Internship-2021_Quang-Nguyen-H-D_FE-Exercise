@@ -1,8 +1,48 @@
-@function to-rem($px) {
-  @return #{$px/$size-base}rem; 
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
 }
 
-@mixin to-rem-prop($property, $top: 0, $right: 0, $bottom:0, $left: 0) {
+@function convertPxToRem($px) {
+  @return 0rem + strip-units($px) / $size-base;
+}
+
+@mixin pxRem($property, $values) {
+  // Create a couple of empty lists as output buffers:
+  $px-values: ();
+  $rem-values: ();
+  // Ensure $values is a list.
+  @if type-of($values) != 'list' {
+    $values: join((), $values);
+  }
+  // Loop through the $values list:
+  @each $value in $values {
+    @if type-of($value) == number and (unitless($value) or unit($value) == px) {
+    $px-values: join($px-values, 0px + ($value));
+      $rem-values: join($rem-values, convertPxToRem($value));
+    }
+    @else {
+    // no conversion:
+    $px-values: join($px-values, $value);
+    $rem-values: join($rem-values, $value);
+    }
+  }
+  #{$property}: $px-values;
+  // don't add media query if it's not needed:
+  @if $px-values != $rem-values {
+    // @media only all {
+      #{$property}: $rem-values;
+    // }
+  }
+}
+
+@function to-rem($px) {
+  @if ($px == null) {
+    @return null; 
+  }
+  @return #{$px/$size-base}rem;
+}
+
+@mixin to-rem-prop($property, $top: 0, $right: 0, $bottom: 0, $left: 0) {
   #{$property}: to-rem($top) to-rem($right) to-rem($bottom) to-rem($left);
 }
 

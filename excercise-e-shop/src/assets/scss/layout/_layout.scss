@@ -45,7 +45,7 @@
 }
 
 .container {
-  max-width: to-rem(1152);
+  @include pxRem(max-width, 1152);
   margin: 0 auto;
 }
 
@@ -59,7 +59,7 @@
 
 @media only screen and (max-width: map-get($screen-size, "xs")) {
   .container {
-    margin: 0 to-rem(24);
+    @include pxRem(margin, 0 24);
   }
 
   .d-xs {
@@ -70,4 +70,3 @@
     display: none !important;
   }
 }
-
