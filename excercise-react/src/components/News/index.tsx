@@ -17,7 +17,7 @@ const News = (props: INews) => {
           <p className="news-desc">{props.desc}</p>
           <div className="news-footer">
             <span className="news-auhtor">BY: <strong>{props.author}</strong></span>
-            <span>{props.createdAt}</span>
+            <span>{props.createdAt.slice(0, 16).replace('T', ' ')}</span>
             <span>{props.minsRead} MINS READ</span>
           </div>
         </div>
