@@ -3,7 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: path.join(__dirname, 'src', 'index.tsx'),
-  output: { path: path.join(__dirname, 'dist'), filename: 'index.bundle.js' },
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: 'index.bundle.js',
+    publicPath: '/',
+  },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
@@ -30,7 +34,11 @@ module.exports = {
       template: path.join(__dirname, 'src', 'index.html'),
     }),
   ],
-  devServer: { contentBase: path.join(__dirname, 'src'), port: 6996 },
+  devServer: {
+    contentBase: path.join(__dirname, 'src'),
+    historyApiFallback: true,
+    port: 6996,
+  },
   devtool: 'inline-source-map',
   mode: 'development',
 };
