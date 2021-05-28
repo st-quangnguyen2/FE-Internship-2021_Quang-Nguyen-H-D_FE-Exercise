@@ -1,0 +1,8 @@
+.articles-section {
+  @include pxRem(padding, 20);
+}
+
+.articles-group {
+  @include pxRem(max-width, 600);
+  margin: 0 auto;
+}

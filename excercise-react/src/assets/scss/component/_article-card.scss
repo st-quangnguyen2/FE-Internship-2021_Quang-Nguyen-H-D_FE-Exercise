@@ -1,0 +1,59 @@
+.articles-item {
+  @include pxRem(margin-bottom, 20);
+  @include pxRem(padding, 8);
+  @include pxRem(border-radius, 8);
+  width: 100%;
+  background-color: map-get($color, 'white');
+}
+
+.article-card {
+  display: flex;
+  .img-wrapper {
+    @include pxRem(margin-right, 10);
+    @include pxRem(width, 180);
+    @include pxRem(height, 180);
+    @include pxRem(border-radius, 10);
+    overflow: hidden;
+  }
+  .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .body {
+    @include pxRem(padding, 8 0);
+    flex: 1;
+  }
+  .category {
+    @include pxRem(margin-bottom, 8);
+    @include txtStyle(map-get($font-size, 'xs'), map-get($font-weight, 'bold'));
+    color: map-get($color, 'red');
+  }
+  .title {
+    @include pxRem(height, 48);
+    @include txtStyle(map-get($font-size, 'md'), map-get($font-weight, 'bold'));
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+  }
+  .desc {
+    @include pxRem(height, 63);
+    @include pxRem(margin-bottom, 8);
+    @include txtStyle(map-get($font-size, 'sm'), map-get($font-weight, 'regular'));
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    color: map-get($color, 'gray-c');
+  }
+  .footer {
+    @include txtStyle(map-get($font-size, '2xs'), map-get($font-weight, 'light'));
+    color: map-get($color, 'gray-b');
+    span {
+      @include pxRem(margin-right, 16);
+    }
+    strong {
+      color: map-get($color, 'black-a');
+    }
+  }
+}

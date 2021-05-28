@@ -1,26 +1,13 @@
-import React, {useState, useEffect} from 'react';
-import News from './components/News/index';
-import './App.scss';
-import INews from './types/INews';
-import axios from 'axios';
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import routes from './routes';
 
-export default function App() {
+const App = () => {
+  function getRoutes() {
+    return routes.map((route, index) => <Route key={index} {...route} />);
+  }
 
-  const [news, setNews] = useState([]);
+  return <Switch>{getRoutes()}</Switch>;
+};
 
-  useEffect(() => {
-    axios.get('https://6088e20da6f4a300174271e7.mockapi.io/articles').then(({data}) => {
-      setNews(data);
-    })
-    .catch(err => {
-      console.log(err);
-    })
-  }, []);
-  return (
-    <section className="news-section">
-      <ul className="list-group news-group">
-        {news.map((item, index)=> <News key={index} {...item}/>)}
-      </ul>
-    </section>
-  );
-}
+export default App;

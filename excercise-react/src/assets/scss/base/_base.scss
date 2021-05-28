@@ -1,0 +1,16 @@
+html {
+  font-size: #{$size-base}px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', san-serif;
+}
+
+* {
+  line-height: 1.5em;
+}
+
+body {
+  background: map-get($color, 'gray-a');
+}
+
+a {
+  color: map-get($color, 'black-a');
+}
