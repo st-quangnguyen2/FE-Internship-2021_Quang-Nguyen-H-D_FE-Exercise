@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ArticleCard from '../ArticleCard';
 import { ARTICLES_ENDPOINT } from '../../constants/endpoint';
-import { H3 } from 'native-base';
 
 export default function ArticleList() {
   const [articles, setArticles] = useState([]);
@@ -12,7 +11,7 @@ export default function ArticleList() {
     return articles.map((article, index) => <ArticleCard key={index} {...article} />);
   }
 
-  const Loading = () => <h3 className="txt-center">Loading</h3>;
+  const Loading = () => <h3 className="txt-center">Loading...</h3>;
 
   const Empty = () => <h3 className="txt-center">Articles is empty</h3>;
 

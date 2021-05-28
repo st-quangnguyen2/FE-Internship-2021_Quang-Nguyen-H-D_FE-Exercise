@@ -44,7 +44,7 @@ const ArticleDetail = () => {
     );
   }
 
-  const Loading = () => <h3 className="txt-center">Loading</h3>;
+  const Loading = () => <h3 className="txt-center">Loading...</h3>;
 
   const Empty = () => <h3 className="txt-center">Article is not found</h3>;
 
