@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ArticleCard from '../ArticleCard';
-import { ARTICLES_ENDPOINT } from '../../constants/endpoint';
+import { ENDPOINT } from '../../constants/endpoint';
+
+const PATH = 'articles';
 
 export default function ArticleList() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   function fillArticles() {
-    return articles.map((article, index) => <ArticleCard key={index} {...article} />);
+    return articles.map((article) => <ArticleCard key={article.id} {...article} />);
   }
 
   const Loading = () => <h3 className="txt-center">Loading...</h3>;
@@ -17,13 +19,15 @@ export default function ArticleList() {
 
   useEffect(() => {
     axios
-      .get(ARTICLES_ENDPOINT)
+      .get(`${ENDPOINT}${PATH}`)
       .then(({ data }) => {
         setArticles(data);
-        setIsLoading(false);
       })
       .catch((err) => {
         throw err;
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }, []);
 

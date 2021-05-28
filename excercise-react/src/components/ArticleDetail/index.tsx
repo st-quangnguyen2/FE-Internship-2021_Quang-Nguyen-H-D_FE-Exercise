@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router';
-import { ARTICLES_ENDPOINT } from '../../constants/endpoint';
+import { ENDPOINT } from '../../constants/endpoint';
+
+const PATH = 'articles';
 
 const ArticleDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -10,13 +12,15 @@ const ArticleDetail = () => {
 
   function fetchData() {
     axios
-      .get(ARTICLES_ENDPOINT + id)
+      .get(`${ENDPOINT}${PATH}/${id}`)
       .then(({ data }) => {
         setArticle(data);
-        setIsLoading(false);
       })
       .catch((err) => {
         throw err;
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }
 
