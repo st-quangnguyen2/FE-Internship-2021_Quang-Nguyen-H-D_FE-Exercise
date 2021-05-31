@@ -1,0 +1,45 @@
+.flex {
+  display: flex;
+}
+
+.fl-row {
+  @extend .flex;
+  flex-direction: row;
+}
+
+.fl-row-rev {
+  @extend .flex;
+  flex-direction: row-reverse;
+}
+
+.fl-column {
+  @extend .flex;
+  flex-direction: column;
+}
+
+.fl-center-x {
+  @extend .flex;
+  justify-content: center;
+}
+
+.fl-center-y {
+  @extend .flex;
+  align-items: center;
+}
+
+.fl-space-between {
+  @extend .flex;
+  justify-content: space-between;
+}
+
+.fl-1 {
+  flex: 1;
+}
+
+.fl-2 {
+  flex: 2;
+}
+
+.txt-center {
+  text-align: center;
+}
