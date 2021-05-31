@@ -3,28 +3,28 @@ $weight-regular: 400;
 $weight-bold: 700;
 
 $color: (
-  'red': #ff0000,
-  'white': #fff,
-  'black-a': #000,
-  'black-b': #333,
-  'gray-a': #f0f0f0,
-  'gray-b': #aaa,
-  'gray-c': #999,
+  red: #ff0000,
+  white: #fff,
+  black-a: #000,
+  black-b: #333,
+  gray-a: #f0f0f0,
+  gray-b: #aaa,
+  gray-c: #999,
 );
 
 $font-size: (
-  '3xs': 8,
-  '2xs': 10,
-  'xs': 12,
-  'sm': 14,
-  'md': 16,
-  'lg': 18,
-  'xl': 20,
+  3xs: 8,
+  2xs: 10,
+  xs: 12,
+  sm: 14,
+  md: 16,
+  lg: 18,
+  xl: 20,
 );
 
 $font-weight: (
   light: 300,
-  egular: 400,
+  regular: 400,
   bold: 700,
 );
 

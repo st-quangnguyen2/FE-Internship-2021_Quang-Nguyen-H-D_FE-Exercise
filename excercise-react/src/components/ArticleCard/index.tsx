@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { formatDateTime } from '../../utils/dateTime';
 import IPropsArticle from '../../models/props/IPropsArticle';
 
 const ArticleCard = (props: IPropsArticle) => {
@@ -23,7 +24,7 @@ const ArticleCard = (props: IPropsArticle) => {
             <span className="auhtor">
               BY: <strong>{props.author}</strong>
             </span>
-            <span>{props.createdAt.slice(0, 16).replace('T', ' ')}</span>
+            <span>{formatDateTime(props.createdAt)}</span>
             <span>{props.minsRead} MINS READ</span>
           </div>
         </div>

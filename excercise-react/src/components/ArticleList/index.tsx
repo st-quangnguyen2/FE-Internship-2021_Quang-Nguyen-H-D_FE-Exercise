@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ArticleCard from '../ArticleCard';
 import { ENDPOINT } from '../../constants/endpoint';
+import Loading from '../common/Loading';
+import Empty from '../common/Empty';
 
 const PATH = 'articles';
 
@@ -12,10 +14,6 @@ export default function ArticleList() {
   function fillArticles() {
     return articles.map((article) => <ArticleCard key={article.id} {...article} />);
   }
-
-  const Loading = () => <h3 className="txt-center">Loading...</h3>;
-
-  const Empty = () => <h3 className="txt-center">Articles is empty</h3>;
 
   useEffect(() => {
     axios

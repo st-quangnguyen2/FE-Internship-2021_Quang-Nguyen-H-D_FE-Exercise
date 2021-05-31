@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router';
 import { ENDPOINT } from '../../constants/endpoint';
+import { formatDateTime } from '../../utils/dateTime';
+import Loading from '../common/Loading';
+import Empty from '../common/Empty';
 
 const PATH = 'articles';
 
@@ -40,17 +43,13 @@ const ArticleDetail = () => {
             <span className="auhtor">
               BY: <strong>{article.author}</strong>
             </span>
-            <span>{article.createdAt.slice(0, 16).replace('T', ' ')}</span>
+            <span>{formatDateTime(article.createdAt)}</span>
             <span>{article.minsRead} MINS READ</span>
           </div>
         </div>
       </div>
     );
   }
-
-  const Loading = () => <h3 className="txt-center">Loading...</h3>;
-
-  const Empty = () => <h3 className="txt-center">Article is not found</h3>;
 
   useEffect(() => {
     fetchData();
