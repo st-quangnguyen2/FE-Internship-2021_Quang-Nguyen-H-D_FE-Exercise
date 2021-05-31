@@ -8,11 +8,11 @@ html {
 }
 
 body {
-  background: map-get($color, 'gray-a');
+  background: map-get($color, gray-a);
 }
 
 a {
-  color: map-get($color, 'black-a');
+  color: map-get($color, black-a);
 }
 
 img {
