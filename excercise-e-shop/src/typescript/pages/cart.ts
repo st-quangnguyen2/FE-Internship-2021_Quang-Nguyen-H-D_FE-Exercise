@@ -1,11 +1,12 @@
 import ICartItem from '../interfaces/ICartItem';
-import {setCart, getCart, setCartQuantity, findIndex, getElementById} from '../common/index.js';
-import {LEN_MONEY} from '../constants/index.js';
+import { setCart, getCart, setCartQuantity, findIndex, getElementById } from '../common/index';
+import { LEN_MONEY } from '../constants/index';
+import '../../assets/scss/style.scss';
 
 let header: any = document.querySelector('header');
 if (header) {
-  header.style.background = "#444444";
-  header.style.position = "static";
+  header.style.background = '#444444';
+  header.style.position = 'static';
 }
 
 /**
@@ -31,22 +32,22 @@ function updateCartItemQuantity(id: number, quantity: number) {
  *
  * @param {number || string} id The id of a cartItem.
  */
- function removeCartItem(id: number | string) {
-  cart = cart.filter(cartItem =>  cartItem.id !== id);
+function removeCartItem(id: number | string) {
+  cart = cart.filter((cartItem) => cartItem.id !== id);
   render();
 }
 
 /**
  * Remove all items in cart. Then update cart in localStorage and rerender components related.
  */
- function removeAll(): void {
+function removeAll(): void {
   cart = [];
   render();
 }
 
 /**
  * Returns a string as a result after transform cartItem object.
- * 
+ *
  * @param {ICartItem} cartItem The item in cart.
  * @return {string} HTML Node as a string.
  */
@@ -65,17 +66,34 @@ function convertCartItemToHTML(cartItem: ICartItem): string {
               <h4 class="cart-product-name">${cartItem.name}</h4>
               </a>
               <p class="cart-product-price">${cartItem.price.toFixed(LEN_MONEY)}</p>
-              ${cartItem.discount ? `<p class="cart-product-price-discount">${(cartItem.price * (100 + cartItem.discount) / 100).toFixed(LEN_MONEY)}</p>` : ''}
+              ${
+                cartItem.discount
+                  ? `<p class="cart-product-price-discount">${(
+                      (cartItem.price * (100 + cartItem.discount)) /
+                      100
+                    ).toFixed(LEN_MONEY)}</p>`
+                  : ''
+              }
             </div>
           <div class="cart-product-body-right">
-          <p class="cart-product-total-price">${(cartItem.price * cartItem.quantity).toFixed(LEN_MONEY)}</p>
+          <p class="cart-product-total-price">${(cartItem.price * cartItem.quantity).toFixed(
+            LEN_MONEY
+          )}</p>
             <div class="cart-product-amount-group flex">
-              <button class="amount-btn amount-decrease" data-id="${cartItem.id}" data-quantity="${cartItem.quantity - 1}">-</button>
-              <input class="amount-inp" value="${cartItem.quantity}" type="number" data-id="${cartItem.id}" data-quantity="${cartItem.quantity}"> 
-              <button class="amount-btn amount-increase" data-id="${cartItem.id}" data-quantity="${cartItem.quantity + 1}">+</button>
+              <button class="amount-btn amount-decrease" data-id="${cartItem.id}" data-quantity="${
+    cartItem.quantity - 1
+  }">-</button>
+              <input class="amount-inp" value="${cartItem.quantity}" type="number" data-id="${
+    cartItem.id
+  }" data-quantity="${cartItem.quantity}"> 
+              <button class="amount-btn amount-increase" data-id="${cartItem.id}" data-quantity="${
+    cartItem.quantity + 1
+  }">+</button>
             </div>
             <div class="cart-product-remove-group">
-              <button class="btn btn-flat-primary btn-remove-item" data-id="${cartItem.id}">Remove</button>
+              <button class="btn btn-flat-primary btn-remove-item" data-id="${
+                cartItem.id
+              }">Remove</button>
             </div>
           </div>
         </div>
@@ -107,23 +125,23 @@ function addEventForInp() {
       let quantity: number = +inp.getAttribute('data-quantity');
       let newQuantity: number = +inp.value || quantity;
       updateCartItemQuantity(id, newQuantity);
-    }) ;
+    });
   }
 }
 
 /**
- * Add event remove item in cart for buttons have class name btn-remove-item 
+ * Add event remove item in cart for buttons have class name btn-remove-item
  */
 function addEventRemoveCartItem(): void {
   let butts: any = document.getElementsByClassName('btn-remove-item');
   for (let butt of butts) {
     let id = +butt.getAttribute('data-id');
-    butt.addEventListener('click', () =>  removeCartItem(id));
+    butt.addEventListener('click', () => removeCartItem(id));
   }
 }
 
 /**
- * Add event remove all item in cart for button has class name btn-remove-all 
+ * Add event remove all item in cart for button has class name btn-remove-all
  */
 function addEventRemoveAll(): void {
   let butt: any = document.querySelector('.btn-remove-all');
@@ -143,7 +161,9 @@ function renderCartItem(): void {
     `;
   let cartGroup: any = document.querySelector('.cart-product-group');
   if (cartGroup) {
-    cartGroup.innerHTML = cart.length ? cart.map(convertCartItemToHTML).join('') + clearAll : 'Hiện không có sản phẩm nào trong giỏ hàng';
+    cartGroup.innerHTML = cart.length
+      ? cart.map(convertCartItemToHTML).join('') + clearAll
+      : 'Hiện không có sản phẩm nào trong giỏ hàng';
     addEventForBtn();
     addEventForInp();
     addEventRemoveCartItem();
@@ -157,9 +177,11 @@ function renderCartItem(): void {
 function renderTotalPrice(): void {
   let totalPrice: any = document.querySelector('.total-price');
   if (totalPrice) {
-    totalPrice.innerHTML = cart.reduce((total, cartItem) => {
-      return total + (cartItem.price * cartItem.quantity);
-    }, 0).toFixed(2);
+    totalPrice.innerHTML = cart
+      .reduce((total, cartItem) => {
+        return total + cartItem.price * cartItem.quantity;
+      }, 0)
+      .toFixed(2);
   }
 }
 
