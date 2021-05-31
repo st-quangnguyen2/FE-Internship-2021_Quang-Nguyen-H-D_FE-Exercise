@@ -1,11 +1,11 @@
 footer {
   background-color: map-get($color, "primary");
   .section-body {
-    @include to-rem-prop(padding, 40, 0, 52, 0);
+    @include pxRem(padding, 40 0 52);
   }
   .section-footer {
-    padding: to-rem(24) 0;
-    border-top: 1px solid map-get($color, "white");
+    @include pxRem(padding, 24 0);
+    @include pxRem(border-top, 1 solid map-get($color, "white"));
     p {
       @include text-style(map-get($font-size, "xs"), $weight-regular);
       margin: auto 0;
@@ -15,23 +15,23 @@ footer {
 }
 
 .body-left {
-  max-width: to-rem(375);
+  @include pxRem(max-width, 375);
   .footer-logo {
-    width: to-rem(138);
-    height: to-rem(35);
+    @include pxRem(width, 138);
+    @include pxRem(height, 35);
   }
   .footer-title {
     @include text-style(map-get($font-size, "sm"), $weight-light);
-    @include to-rem-prop(margin, 24, 0, 56, 0);
+    @include pxRem(margin, 24 0 56);
     color: map-get($color, "white");
   }
 }
 
 .social-item {
-  margin-right: to-rem(32);
+  @include pxRem(margin-right, 32);
   .social-icon {
-    width: to-rem(18);
-    height: to-rem(18);
+    @include pxRem(width, 18);
+    @include pxRem(height, 18);
     object-fit: fill;
   }
 }
@@ -41,11 +41,11 @@ footer {
   .nav-item {
     .nav-item-title {
       @include text-style(map-get($font-size, "md"), $weight-bold);
-      margin-bottom: to-rem(20);
+      @include pxRem(margin-bottom, 20);
       color: map-get($color, "white");
     }
     li {
-      margin-bottom: to-rem(16);
+      @include pxRem(margin-bottom, 16);
       p {
         @include text-style(map-get($font-size, "xs"), $weight-regular);
         color: map-get($color, "white");
@@ -57,28 +57,28 @@ footer {
 @media only screen and (max-width: map-get($screen-size, "xs")) {
   footer {
     .section-body {
+      @include pxRem(padding-bottom, 40);
       flex-direction: column;
-      padding-bottom: to-rem(40);
     }
     .body-left {
       .footer-title {
-        @include to-rem-prop(margin, 24, 0, 48, 0);
+        @include pxRem(margin, 24 0 48);
       }
     }
     .footer-social {
       display: none;
     }
     .nav-group {
-      gap: to-rem(24);
+      @include pxRem(gap, 24);
       flex-direction: column;
       .nav-item {
         .nav-item-title {
           @include text-style(map-get($font-size, "md"), $weight-bold);
-          margin-bottom: to-rem(20);
+          @include pxRem(margin-bottom, 20);
           color: map-get($color, "white");
         }
         li {
-          margin-bottom: to-rem(16);
+          @include pxRem(margin-bottom, 16);
           p {
             @include text-style(map-get($font-size, "xs"), $weight-regular);
             color: map-get($color, "white");

@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es6",
+    "moduleResolution": "node",
+    "watch": true,
+    "allowJs": true,
+    "noImplicitAny": true,
+    "outDir": "./dist" /* Disallow inconsistently-cased references to the same file. */
+  }
+}

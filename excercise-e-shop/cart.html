@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E - SHOP</title>
+    <link rel="stylesheet" href="./assets/scss/style.css" />
+    <script type="module" src="./javascript/pages/cart.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="container fl-center-y fl-space-between d-none d-xs">
+        <a href="index.html">
+          <img src="./src/assets/images/main/logo-black.svg" alt="e-shop-logo" class="logo-image" />
+        </a>
+        <div class="nav-sub">
+          <ul class="nav-list flex">
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <img src="./src/assets/images/icon/cart-black.svg" alt="cart" class="nav-icon" />
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <img
+                  src="./src/assets/images/icon/personal-black.svg"
+                  alt="personal"
+                  class="nav-icon"
+                />
+              </a>
+            </li>
+            <li class="nav-item">
+              <img src="./src/assets/images/icon/ham.svg" alt="personal" class="nav-icon" />
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container fl-center-y fl-space-between d-lg">
+        <a href="index.html">
+          <img src="./src/assets/images/main/logo.svg" alt="e-shop-logo" class="logo-image" />
+        </a>
+        <div class="nav-main">
+          <ul class="nav-list flex">
+            <li class="nav-item"><a href="#" class="nav-link">Men</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Women</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Kids</a></li>
+          </ul>
+        </div>
+        <div class="nav-sub">
+          <ul class="nav-list flex">
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <img src="./src/assets/images/icon/search.svg" alt="search" class="nav-icon" />
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="cart.html" class="nav-link cart-link">
+                <img src="./src/assets/images/icon/cart.svg" alt="cart" class="nav-icon" />
+                <span class="cart-quantity">2</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <img src="./src/assets/images/icon/personal.svg" alt="personal" class="nav-icon" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="cart-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Cart</h2>
+          </div>
+          <div class="section-body row">
+            <div class="section-body-left col-9">
+              <ul class="list-group cart-product-group">
+                <li class="list-item cart-product-item">
+                  <div class="cart-product fl-row fl-1">
+                    <div class="cart-product-img-container">
+                      <a href="#" class="cart-product-link">
+                        <img
+                          src="https://picsum.photos/id/237/200/300"
+                          alt="this is product image"
+                          class="cart-product-img"
+                        />
+                      </a>
+                    </div>
+                    <div class="cart-product-body flex fl-space-between fl-1">
+                      <div class="cart-product-body-left">
+                        <a href="#" class="cart-product-link">
+                          <h4 class="cart-product-name">T-Shirt Summer Vibes</h4>
+                        </a>
+                        <p class="cart-product-total-price">$99.99</p>
+                      </div>
+                      <div class="cart-product-body-right">
+                        <p class="cart-product-price">$199.98</p>
+                        <div class="cart-product-amount-group flex">
+                          <button class="amount-decrease">-</button>
+                          <input class="amount-inp" value="1" type="text" />
+                          <button class="amount-increase">+</button>
+                        </div>
+                        <div class="cart-product-remove-group">
+                          <button class="btn btn-flat-primary">Remove</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-item cart-product-item">
+                  <div class="cart-product fl-row fl-1">
+                    <div class="cart-product-img-container">
+                      <a href="#" class="cart-product-link">
+                        <img
+                          src="https://picsum.photos/id/255/200/300"
+                          alt="this is product image"
+                          class="cart-product-img"
+                        />
+                      </a>
+                    </div>
+                    <div class="cart-product-body flex fl-space-between fl-1">
+                      <div class="cart-product-body-left">
+                        <a href="#" class="cart-product-link">
+                          <h4 class="cart-product-name">T-Shirt Summer Vibes</h4>
+                        </a>
+                        <p class="cart-product-price">$99.99</p>
+                      </div>
+                      <div class="cart-product-body-right">
+                        <p class="cart-product-total-price">$99.99</p>
+                        <div class="cart-product-amount-group flex">
+                          <button class="amount-decrease">-</button>
+                          <input class="amount-inp" value="1" type="text" />
+                          <button class="amount-increase">+</button>
+                        </div>
+                        <div class="cart-product-remove-group">
+                          <button class="btn btn-flat-primary">Remove</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="section-body-right col-3">
+              <div class="cart-total-price">
+                <p class="total-price-txt">Total</p>
+                <p class="total-price">200</p>
+              </div>
+              <button class="btn btn-secondary">Checkout</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container section-body fl-space-between">
+        <div class="body-left">
+          <a href="home.html" class="footer-link">
+            <img src="./src/assets/images/main/logo.svg" alt="E-Shop" class="footer-logo" />
+          </a>
+          <p class="footer-title">
+            House My Brand designs clothing for the young, the old &everyone in between – but most
+            importantly, for the fashionable
+          </p>
+          <div class="footer-social">
+            <ul class="social-group flex">
+              <li class="social-item">
+                <a href="#" class="social-link fl-center-x fl-center-y">
+                  <img
+                    src="./src/assets/images/icon/facebook.svg"
+                    alt="facebook"
+                    class="social-icon"
+                  />
+                </a>
+              </li>
+              <li class="social-item">
+                <a href="#" class="social-link">
+                  <img
+                    src="./src/assets/images/icon/twitter.svg"
+                    alt="twitter"
+                    class="social-icon"
+                  />
+                </a>
+              </li>
+              <li class="social-item">
+                <a href="#" class="social-link">
+                  <img
+                    src="./src/assets/images/icon/linkedin.svg"
+                    alt="linkedin"
+                    class="social-icon"
+                  />
+                </a>
+              </li>
+              <li class="social-item">
+                <a href="#" class="social-link">
+                  <img
+                    src="./src/assets/images/icon/instagram.svg"
+                    alt="instagram"
+                    class="social-icon"
+                  />
+                </a>
+              </li>
+              <li class="social-item">
+                <a href="#" class="social-link">
+                  <img
+                    src="./src/assets/images/icon/youtube.svg"
+                    alt="youtube"
+                    class="social-icon"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="body-right">
+          <ul class="flex nav-group">
+            <li class="nav-item">
+              <h4 class="nav-item-title">Shopping online</h4>
+              <ul class="shipping-group">
+                <li class="shipping-item">
+                  <a href="#">
+                    <p>Order Status</p>
+                  </a>
+                </li>
+                <li class="shipping-item">
+                  <a href="#">
+                    <p>Shipping and Delivery</p>
+                  </a>
+                </li>
+                <li class="shipping-item">
+                  <a href="#">
+                    <p>Returns</p>
+                  </a>
+                </li>
+                <li class="shipping-item">
+                  <a href="#">
+                    <p>Payment Options</p>
+                  </a>
+                </li>
+                <li class="shipping-item">
+                  <a href="#">
+                    <p>Contact Us</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <h4 class="nav-item-title">Information</h4>
+              <ul class="information-group">
+                <li class="information-item">
+                  <a href="#" class="information-link">
+                    <p class="information-title">Gift Cards</p>
+                  </a>
+                </li>
+                <li class="information-item">
+                  <a href="#" class="information-link">
+                    <p class="information-title">Find a store</p>
+                  </a>
+                </li>
+                <li class="information-item">
+                  <a href="#" class="information-link">
+                    <p class="information-title">Newsletter</p>
+                  </a>
+                </li>
+                <li class="information-item">
+                  <a href="#" class="information-link">
+                    <p class="information-title">Become a member</p>
+                  </a>
+                </li>
+                <li class="information-item">
+                  <a href="#" class="information-link">
+                    <p class="information-title">Site feedback</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <h4 class="nav-item-title">Contact</h4>
+              <ul class="contact-group">
+                <li class="contact-item">
+                  <p>store@uikit.com</p>
+                </li>
+                <li class="contact-item">
+                  <p>Hotline: +1 131 138 138</p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-footer">
+        <p class="txt-center">DESIGN BY ICEO.CO - &copy; 2019. ALL RIGHTS RESERVED.</p>
+      </div>
+    </footer>
+  </body>
+</html>
