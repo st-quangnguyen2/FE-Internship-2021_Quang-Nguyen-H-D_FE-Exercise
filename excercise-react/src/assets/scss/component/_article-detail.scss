@@ -17,7 +17,7 @@
     @include pxRem(margin-bottom, 10);
     @include txtStyle(map-get($font-size, sm), map-get($font-weight, bold));
     display: block;
-    color: map-get($color, 'red');
+    color: map-get($color, red);
   }
   .title {
     @include pxRem(margin-bottom, 10);
