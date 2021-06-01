@@ -4,16 +4,16 @@ import ArticleCard from '../ArticleCard';
 import { ENDPOINT } from '../../constants/endpoint';
 import Loading from '../common/Loading';
 import Empty from '../common/Empty';
+import { loadData } from '../../hocs/loadData';
 
 const PATH = 'articles';
 
 export default function ArticleList() {
-  const [articles, setArticles] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [articles, setArticles] = useState(null);
 
-  function fillArticles() {
-    return articles.map((article) => <ArticleCard key={article.id} {...article} />);
-  }
+  const fillArticles = (articles: any) => {
+    return articles.map((article: any) => <ArticleCard key={article.id} {...article} />);
+  };
 
   useEffect(() => {
     axios
@@ -23,17 +23,18 @@ export default function ArticleList() {
       })
       .catch((err) => {
         throw err;
-      })
-      .finally(() => {
-        setIsLoading(false);
       });
   }, []);
 
-  return (
-    <section className="articles-section">
-      <ul className="list-group articles-group">
-        {isLoading ? <Loading /> : articles.length ? fillArticles() : <Empty />}
-      </ul>
-    </section>
-  );
+  const ArticleListContainer = (props: any) => {
+    return (
+      <section className="articles-section">
+        <ul className="list-group articles-group">{fillArticles(props.data)}</ul>
+      </section>
+    );
+  };
+
+  const LoadArticleList = loadData(ArticleListContainer);
+
+  return <LoadArticleList data={articles} />;
 }
