@@ -1,0 +1,90 @@
+footer {
+  background-color: map-get($color, "primary");
+  .section-body {
+    @include pxRem(padding, 40 0 52);
+  }
+  .section-footer {
+    @include pxRem(padding, 24 0);
+    @include pxRem(border-top, 1 solid map-get($color, "white"));
+    p {
+      @include text-style(map-get($font-size, "xs"), $weight-regular);
+      margin: auto 0;
+      color: map-get($color, "white");
+    }
+  }
+}
+
+.body-left {
+  @include pxRem(max-width, 375);
+  .footer-logo {
+    @include pxRem(width, 138);
+    @include pxRem(height, 35);
+  }
+  .footer-title {
+    @include text-style(map-get($font-size, "sm"), $weight-light);
+    @include pxRem(margin, 24 0 56);
+    color: map-get($color, "white");
+  }
+}
+
+.social-item {
+  @include pxRem(margin-right, 32);
+  .social-icon {
+    @include pxRem(width, 18);
+    @include pxRem(height, 18);
+    object-fit: fill;
+  }
+}
+
+.nav-group {
+  gap: to-rem(90);
+  .nav-item {
+    .nav-item-title {
+      @include text-style(map-get($font-size, "md"), $weight-bold);
+      @include pxRem(margin-bottom, 20);
+      color: map-get($color, "white");
+    }
+    li {
+      @include pxRem(margin-bottom, 16);
+      p {
+        @include text-style(map-get($font-size, "xs"), $weight-regular);
+        color: map-get($color, "white");
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: map-get($screen-size, "xs")) {
+  footer {
+    .section-body {
+      @include pxRem(padding-bottom, 40);
+      flex-direction: column;
+    }
+    .body-left {
+      .footer-title {
+        @include pxRem(margin, 24 0 48);
+      }
+    }
+    .footer-social {
+      display: none;
+    }
+    .nav-group {
+      @include pxRem(gap, 24);
+      flex-direction: column;
+      .nav-item {
+        .nav-item-title {
+          @include text-style(map-get($font-size, "md"), $weight-bold);
+          @include pxRem(margin-bottom, 20);
+          color: map-get($color, "white");
+        }
+        li {
+          @include pxRem(margin-bottom, 16);
+          p {
+            @include text-style(map-get($font-size, "xs"), $weight-regular);
+            color: map-get($color, "white");
+          }
+        }
+      }
+    }
+  }
+}

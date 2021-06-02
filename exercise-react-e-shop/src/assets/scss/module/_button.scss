@@ -1,0 +1,52 @@
+.btn {
+  @include text-style(map-get($font-size, "btn"), $weight-bold);
+  @include pxRem(border-radius, 33);
+  font-family: "Poppins", sans-serif;
+  color: map-get($color, "black-a");
+  cursor: pointer;
+  &.btn-primary {
+    @include pxRem(padding, 14 18);
+    background: map-get($color, "white");
+    &:hover {
+      color: map-get($color, "white");
+      background: map-get($color, "black-a");
+    }
+  }
+  &.btn-outline-primary {
+    @include pxRem(padding, 14 30);
+    background: map-get($color, "white");
+    @include pxRem(border, 1 solid #c4c4c4);
+    &:hover {
+      color: map-get($color, "white");
+      background: map-get($color, "black-a");
+    }
+  }
+  &.btn-secondary {
+    @include pxRem(padding, 14 46);
+    background: map-get($color, "primary");
+  }
+  &.btn-flat-primary{
+    @include pxRem(padding, 8 16);
+    background: transparent;
+    font-weight: $weight-regular;
+    &:hover{
+      color: map-get($color, "primary");
+    }
+  }
+}
+
+@media only screen and (max-width: map-get($screen-size, "xs")) {
+  .btn {
+    @include pxRem(font-size, 10);
+    &.btn-primary {
+      @include pxRem(padding, 3 10);
+    }
+    &.btn-outline-primary {
+      @include pxRem(padding, 3 10);
+      border: none;
+    }
+    &.btn-secondary {
+      @include pxRem(padding, 7 20);
+    }
+  }
+}

@@ -1,0 +1,424 @@
+// Banner Section
+
+.banner-section {
+  @include pxRem(height, 800);
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  background-image: url("../images/main/banner.png");
+  &::after{
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  }
+  .section-body {
+    @include pxRem(margin, 222 96);
+    .section-title {
+      @include text-style(map-get($font-size, "5xl"), $weight-bold);
+      @include pxRem(margin-bottom, 24);
+      @include pxRem(max-width, 403);
+      line-height: 1em;
+      color: map-get($color, "white");
+      .highlight {
+        color: map-get($color, "primary");
+      }
+    }
+    .section-link {
+      .btn-cir {
+        @include pxRem(width, 36);
+        @include pxRem(height, 36);
+        position: relative;
+        border-radius: 50%;
+        background-color: map-get($color, "primary");
+        @include pxRem(margin-right, 21);
+        img {
+          @include pxRem(width, 17);
+          @include pxRem(height, 14);
+        }
+      }
+      span {
+        @include text-style(map-get($font-size, "2xl"), $weight-bold);
+        text-decoration: underline;
+        color: map-get($color, "white");
+      }
+    }
+  }
+  .section-footer {
+    @include pxRem(padding, 38 0 26);
+    @include pxRem(bottom, 0);
+    @include pxRem(border-top-right-radius, 70);
+    position: absolute;
+    width: 100%;
+    right: calc(50% - #{to-rem(576)} + #{to-rem(196)});
+    background: map-get($color, "white");
+    .advantage-group {
+      @include pxRem(margin-right, 100);
+      @include pxRem(gap, 50);
+    }
+  }
+}
+
+.advantage-horizontal {
+  @include pxRem(gap, 16);
+  .advantage-icon {
+    @include pxRem(width, 36);
+    @include pxRem(height, 36);
+    @include pxRem(margin-bottom, 6);
+    @include pxRem(border-radius, 10);
+    background: map-get($color, "yellow");
+    img {
+      @include pxRem(width, 16);
+    @include pxRem(height, 16);
+    }
+  }
+  .advantage-body {
+    @include pxRem(max-width, 179);
+    .advantage-title {
+      @include text-style(map-get($font-size, "sm"), $weight-bold);
+      @include pxRem(margin-bottom, 4);
+      color: map-get($color, "black-b");
+    }
+    .advantage-description {
+      @include text-style(map-get($font-size, "xs"), $weight-regular);
+      @include pxRem(padding-right, 1);
+      color: map-get($color, "gray-e");
+    }
+  }
+}
+// News Section
+
+.news-section {
+  @include pxRem(padding, 38 0 20);
+  .news-group {
+    .news-wrap {
+      @include pxRem(height, 360);
+      &-1{
+        background-image: url("../images/sample/news-1.png");
+      }
+      &-2{
+        background-image: url("../images/sample/news-2.png");
+      }
+      &-3{
+        background-image: url("../images/sample/news-3.png");
+      }
+    }
+  }
+}
+
+.news {
+  @include pxRem(padding, 167 40 53);
+  position: relative;
+  .discount {
+    @include text-style(map-get($font-size, "xs"), $weight-bold);
+    @include pxRem(top, 130);
+    @include pxRem(left, 40);
+  }
+  .news-body {
+    height: 100%;
+    .news-title {
+      @include text-style(map-get($font-size, "2xl"), $weight-regular);
+      @include pxRem(margin-bottom, 18);
+      height: 3em;
+      color: map-get($color, "white");
+    }
+  }
+}
+
+// Selected Section
+
+.selected-section {
+  @include pxRem(padding, 40 0);
+  .section-header {
+    @include pxRem(margin, 20 0 40);
+    .section-title {
+      @include text-style(map-get($font-size, "3xl"), $weight-light);
+    }
+  }
+  .section-body {
+    position: relative;
+    .section-link {
+      @include pxRem(top, -87);
+      right: 0;
+      position: absolute;
+    }
+  }
+}
+
+// Section Advantage
+
+.advantage-section {
+  @include pxRem(padding, 40 0);
+  background: map-get($color, "gray-a");
+  .section-header {
+    @include pxRem(margin-bottom, 40);
+    .section-title {
+      @include text-style(map-get($font-size, "3xl"), $weight-regular);
+    }
+  }
+  .section-body {
+    .advantage-group {
+      @include pxRem(gap, 60);
+      .advantage:hover {
+        .advantage-title {
+          color: map-get($color, "primary");
+        }
+      }
+    }
+  }
+}
+
+.advantage-vertical {
+  .advantage-icon {
+    @include pxRem(margin-bottom, 48);
+    @include pxRem(width, 68);
+    @include pxRem(height, 68);
+    @include pxRem(border-radius, 10);
+    background: map-get($color, "white");
+    img {
+      @include pxRem(width, 32);
+      @include pxRem(height, 32);
+      object-fit: fill;
+    }
+  }
+  .advantage-body {
+    .advantage-title {
+      @include text-style(map-get($font-size, "md"), $weight-bold);
+      @include pxRem(margin-bottom, 16);
+    }
+    .advantage-description {
+      @include text-style(map-get($font-size, "sm"), $weight-regular);
+      color: map-get($color, "gray-f");
+    }
+  }
+}
+
+// Today Section
+
+.today-section {
+  @include pxRem(padding, 40 0);
+  .section-header {
+    @include pxRem(margin-bottom, 40);
+    .section-title {
+      @include text-style(map-get($font-size, "3xl"), $weight-light);
+    }
+  }
+}
+
+// Newsletter Section
+
+.newsletter-section {
+  @include pxRem(height, 240);
+  width: 100%;
+  background-image: url("../images/main/newsletter.png");
+  &::after{
+    background: linear-gradient(90deg, #000000 33.28%, rgba(0, 0, 0, 0) 94.05%);
+    opacity: 0.7;
+  }
+  .overlay {
+    @include pxRem(padding, 85 0);
+  }
+  .section-body-left {
+    .section-title {
+      @include text-style(map-get($font-size, "2xl"), $weight-regular);
+      color: map-get($color, "white");
+    }
+  }
+  .section-body-right {
+    input {
+      @include text-style(map-get($font-size, "btn"), $weight-regular);
+      @include pxRem(padding, 14 24);
+      @include pxRem(width, 350);
+      @include pxRem(border-radius, 60);
+      color: map-get($color, "gray-d");
+      background-color: map-get($color, "white");
+      &::placeholder {
+        color: map-get($color, "gray-d");
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: map-get($screen-size, "xs" )) {
+  // Banner Section
+  .banner-section {
+    @include pxRem(height, 740);
+    background-image: url("../images/main/banner-sm.png");
+    .container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      .section-body {
+        margin: 0;
+        .section-title {
+          @include text-style(map-get($font-size, "4xl"), $weight-bold);
+          @include pxRem(margin-bottom, 16);
+        }
+        .section-link {
+          .btn-cir {
+            @include pxRem(width, 32);
+            @include pxRem(height, 32);
+            @include pxRem(margin-right, 16);
+            position: relative;
+            img {
+              @include pxRem(width, 15);
+              @include pxRem(height, 12);
+            }
+          }
+          span {
+            @include text-style(map-get($font-size, "sm"), $weight-bold);
+          }
+        }
+      }
+    }
+    .section-footer {
+      display: none;
+    }
+  }
+
+  // News Section
+
+  .news-section {
+    @include pxRem(padding, 20 0);
+    .news-group {
+      .news-wrap {
+        @include pxRem(height, 224);
+      }
+    }
+  }
+
+  .news {
+    position: relative;
+    @include pxRem(padding, 140 16 53);
+    .discount {
+      @include text-style(map-get($font-size, "3xs"), $weight-bold);
+      @include pxRem(top, 120);
+      @include pxRem(left, 16);
+    }
+    .news-body {
+      .news-title {
+        @include text-style(map-get($font-size, "sm"), $weight-regular);
+        @include pxRem(margin-bottom, 6);
+        @include pxRem(max-width, 120);
+      }
+    }
+  }
+
+  // Selected Section
+
+  .selected-section {
+    @include pxRem(padding-bottom, 48);
+    .section-header {
+      @include pxRem(margin-bottom, 16);
+      .section-title {
+        @include text-style(map-get($font-size, "lg"), $weight-light);
+      }
+    }
+    .section-body {
+      .section-link {
+        @include pxRem(top, -39);
+        right: 0;
+      }
+    }
+  }
+
+  // Section Advantage
+
+  .advantage-section {
+    @include pxRem(padding, 40 0);
+    background: map-get($color, "gray-a");
+    .section-header {
+      @include pxRem(margin-bottom, 40);
+      .section-title {
+        @include text-style(map-get($font-size, "lg"), $weight-light);
+      }
+    }
+    .section-body {
+      .advantage-group {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+  }
+
+  .advantage-vertical {
+    display: flex;
+    .advantage-icon {
+      @include pxRem(margin-right, 16);
+      @include pxRem(width, 68);
+      @include pxRem(height, 68);
+      background: map-get($color, "white");
+      @include pxRem(border-radius, 10);
+      img {
+        @include pxRem(width, 32);
+        @include pxRem(height, 32);
+      }
+    }
+    .advantage-body {
+      flex: 1;
+      @include pxRem(padding-top, 8);
+      .advantage-title {
+        @include text-style(map-get($font-size, "xs"), $weight-bold);
+        @include pxRem(margin-bottom, 8);
+      }
+      .advantage-description {
+        @include text-style(map-get($font-size, "2xs"), $weight-regular);
+      }
+    }
+  }
+
+  // Today Section
+
+  .today-section {
+    @include pxRem(padding, 48 0);
+    .section-header {
+      @include pxRem(margin-bottom, 16);
+      .section-title {
+        @include text-style(map-get($font-size, "lg"), $weight-light);
+        text-align: left;
+      }
+    }
+  }
+
+  // Newsletter Section
+
+  .newsletter-section {
+    width: 100%;
+    @include pxRem(height, 210);
+    background-image: url("../images/main/newsletter-sm.png");
+    .overlay {
+      @include pxRem(padding, 24 0);
+    }
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .section-body-left {
+      .section-title {
+        @include text-style(map-get($font-size, "sm"), $weight-regular);
+        @include pxRem(max-width, 200);
+        @include pxRem(margin-bottom, 24);
+      }
+    }
+    .section-body-right {
+      width: 100%;
+      .section-form {
+        display: block;
+      }
+      input {
+        @include text-style(map-get($font-size, "xs"), $weight-regular);
+        @include pxRem(padding, 6 12);
+        @include pxRem(margin-bottom, 16);
+        @include pxRem(border-radius, 60);
+        width: 100%;
+        font-family: "Poppins", sans-serif;
+        color: map-get($color, "gray-d");
+        background-color: map-get($color, "white");
+        &::placeholder {
+          color: map-get($color, "gray-d");
+        }
+      }
+    }
+  }
+}

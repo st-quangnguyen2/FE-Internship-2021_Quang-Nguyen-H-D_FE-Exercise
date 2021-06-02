@@ -1,0 +1,87 @@
+header {
+  @include pxRem(padding, 55 0);
+  @include pxRem(top, 0);
+  @include pxRem(left, 0);
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  background: transparent;
+  .logo-image {
+    @include pxRem(width, 139);
+    @include pxRem(height, 35);
+  }
+  .nav-main {
+    .nav-item {
+      @include pxRem(margin-right, 96);
+      .nav-link {
+        @include text-style(map-get($font-size, "lg"), $weight-bold);
+        @include pxRem(padding, 4 8);
+        color: map-get($color, "primary");
+      }
+    }
+    .nav-item:last-child {
+      @include pxRem(margin-right, 0);
+    }
+  }
+  .nav-sub {
+    .nav-item {
+      @include pxRem(margin-right, 24);
+      .nav-link {
+        @include pxRem(padding, 4);
+      }
+      .nav-icon {
+        @include pxRem(width, 24);
+        @include pxRem(height, 24);
+      }
+    }
+  }
+  .cart-link {
+    position: relative;
+    .cart-quantity {
+      @include pxRem(top, 0);
+      @include pxRem(right, 0);
+      position: absolute;
+      transform: translate(50%, -50%);
+      color: map-get($color, 'primary');
+    }
+  }
+}
+
+@media only screen and (max-width: map-get($screen-size, "xs" )) {
+  header {
+    display: block;
+    position: sticky;
+    @include pxRem(padding, 20 0);
+    background: map-get($color, "white");
+    .logo-image {
+      @include pxRem(width, 128);
+      @include pxRem(height, 32);
+    }
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header-sm {
+      display: flex;
+    }
+    .nav-sub {
+      .nav-item {
+        cursor: pointer;
+        .nav-link {
+          padding: 0;
+        }
+        .nav-icon {
+          @include pxRem(width, 20);
+          @include pxRem(height, 20);
+        }
+      }
+    }
+  }
+}

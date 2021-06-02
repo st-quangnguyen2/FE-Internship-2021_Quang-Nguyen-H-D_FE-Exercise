@@ -1,0 +1,83 @@
+.prd {
+  position: relative;
+  .discount {
+    @include pxRem(top, 30);
+    @include pxRem(left, 27);
+  }
+  .prd-link {
+    width: 100%;
+    .prd-img {
+      width: 100%;
+      @include pxRem(height, 385);
+      object-fit: cover;
+    }
+  }
+  .prd-body {
+    @include pxRem(margin-top, 16);
+    .prd-name {
+      @include text-style(map-get($font-size, "md"), $weight-light);
+      color: map-get($color, "black-b");
+    }
+    .prd-price {
+      @include text-style(map-get($font-size, "xl"), $weight-regular);
+      color: map-get($color, "black-b");
+    }
+  }
+  .prd-price.prd-price-discount {
+    position: relative;
+    color: map-get($color, "red");
+    &::after {
+      @include pxRem(right, 0);
+      content: attr(data-price);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: map-get($color, "gray-b");
+    }
+  }
+  .prd-action {
+    display: none;
+    position: absolute;
+    @include pxRem(top, 300);
+    left: 50%;
+    transform: translateX(-50%);
+    &:hover {
+      display: inline-block;
+    }
+  }
+  .prd-img-group:hover {
+    ~ .prd-action{
+      display: inline-block;
+    }
+  }
+}
+
+@media only screen and(max-width: map-get($screen-size, 'xs')) {
+  .prd {
+    .discount {
+      @include pxRem(padding, 3 5);
+      @include pxRem(top, 14);
+      @include pxRem(left, 19);
+      @include text-style(map-get($font-size, "3xs"), $weight-bold);
+      @include pxRem(border-radius, 9);
+      line-height: 1.5em;
+    }
+    .prd-link {
+      .prd-img {
+        @include pxRem(height, 227);
+      }
+    }
+    .prd-body {
+      @include pxRem(margin-top, 16);
+      .prd-name {
+        @include text-style(map-get($font-size, "xs"), $weight-light);
+      }
+      .prd-price {
+        @include text-style(map-get($font-size, "2xs"), $weight-regular);
+      }
+    }
+    .prd-action{
+      @include pxRem(top, 180);
+    }
+  }
+}

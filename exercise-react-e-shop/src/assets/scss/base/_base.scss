@@ -1,0 +1,48 @@
+html {
+  font-family: "Poppins", sans-serif;
+  font-size: #{$size-base}px;
+  font-style: normal;
+}
+
+* {
+  line-height: 1.5em;
+}
+
+body {
+  position: relative;
+}
+
+img {
+  object-fit: cover;
+}
+
+.container-fluid {
+  max-width: 100%;
+}
+
+.container {
+  @include pxRem(max-width, 1152);
+  margin: 0 auto;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.d-none{
+  display: none;
+}
+
+@media only screen and (max-width: map-get($screen-size, "xs")) {
+  .container {
+    @include pxRem(margin, 0 24);
+  }
+
+  .d-xs {
+    display: flex;
+  }
+
+  .d-lg {
+    display: none;
+  }
+}
